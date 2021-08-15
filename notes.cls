@@ -114,10 +114,9 @@
 
 
 %% MATH 55A SHORTCUTS
-\newcommand{\inn}[1]{\left\langle #1\right\rangle}
+% \newcommand{\inn}[1]{\left\langle #1\right\rangle}
+% \newcommand{\tens}{\otimes}
 \newcommand{\norm}[1]{\left\Vert #1\right\Vert}
-\newcommand{\tens}{\otimes}
-\newcommand{\dsum}{\oplus}
 \newcommand{\dual}[1]{\widehat{ #1 }}
 \newcommand{\ddual}[1]{\widehat{\widehat{ #1 }}}
 
@@ -126,6 +125,7 @@
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\F}{\mathbb F}
 \newcommand{\Q}{\mathbb Q}
+\newcommand{\P}{\mathcal P}
 \renewcommand{\O}{\emptyset}
 
 \newcommand{\inj}{\hookrightarrow}
