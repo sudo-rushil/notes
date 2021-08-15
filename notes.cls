@@ -125,7 +125,7 @@
 \newcommand{\Z}{\mathbb Z}
 \newcommand{\F}{\mathbb F}
 \newcommand{\Q}{\mathbb Q}
-\newcommand{\P}{\mathcal P}
+\renewcommand{\P}{\mathcal P}
 \renewcommand{\O}{\emptyset}
 
 \newcommand{\inj}{\hookrightarrow}
