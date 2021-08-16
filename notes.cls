@@ -129,6 +129,10 @@
 \renewcommand{\P}{\mathcal P}
 \renewcommand{\O}{\emptyset}
 
+\let\temp\phi
+\let\phi\varphi
+\let\varphi\temp
+
 \newcommand{\inj}{\hookrightarrow}
 \newcommand{\surj}{\twoheadrightarrow}
 
