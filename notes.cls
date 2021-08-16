@@ -12,6 +12,7 @@
 \RequirePackage[margin=1in]{geometry}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{titlesec}
+\RequirePackage{fancyhdr}
 \RequirePackage[shortlabels]{enumitem} % Lettered lists
 
 
@@ -91,13 +92,13 @@
     blanker,breakable,
     left=4mm,right=0mm,
     before skip=15pt,after skip=15pt,
-    borderline west={0.5pt}{0pt}{black},
+    % borderline west={0.5pt}{0pt}{black},
 }
 \tcolorboxenvironment{corollary}{% `corollary' from `amsthm'
     blanker,breakable,
     left=4mm,right=0mm,
     before skip=15pt,after skip=15pt,
-    borderline west={0.5pt}{0pt}{black},
+    % borderline west={0.5pt}{0pt}{black},
 }
 
 %%%% Box or Indent
@@ -132,9 +133,12 @@
 \newcommand{\surj}{\twoheadrightarrow}
 
 \newcommand{\dmo}{\DeclareMathOperator}
-\dmo{\im}{im }
-\dmo{\ev}{ev }
-\dmo{\tr}{tr }
+\dmo{\im}{im}
+\dmo{\id}{id}
+\dmo{\spn}{span}
+\dmo{\chr}{char}
+\dmo{\ev}{ev}
+\dmo{\tr}{tr}
 \dmo{\vect}{Vect}
 \dmo{\Hom}{Hom}
 \dmo{\Mor}{Mor}
@@ -144,10 +148,12 @@
 \dmo{\rank}{rank}
 \dmo{\lcm}{lcm}
 \dmo{\Stab}{Stab}
-
+\dmo{\gKer}{gKer}
+\dmo{\evIm}{evIm}
+\dmo{\nll}{null}
+\dmo{\Ann}{Ann}
 
 %% FORMATTING
-\usepackage{fancyhdr}
 \pagestyle{fancy}
 
 \fancyhf{}
@@ -185,4 +191,6 @@
 \rule{0.5\textwidth}{0.75pt}
 \normalfont\bfseries
 ] % after-code
+
+\renewcommand{\emph}[1]{\underline{\bfseries{#1}}}
 
