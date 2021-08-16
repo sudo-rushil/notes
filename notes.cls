@@ -118,8 +118,8 @@
 % \newcommand{\inn}[1]{\left\langle #1\right\rangle}
 % \newcommand{\tens}{\otimes}
 \newcommand{\norm}[1]{\left\Vert #1\right\Vert}
-\newcommand{\dual}[1]{\widehat{ #1 }}
-\newcommand{\ddual}[1]{\widehat{\widehat{ #1 }}}
+\newcommand{\gdual}[1]{\widehat{ #1 }}
+\newcommand{\gddual}[1]{\widehat{\widehat{ #1 }}}
 
 \newcommand{\R}{\mathbb R}
 \newcommand{\C}{\mathbb C}
