@@ -12,6 +12,7 @@
 \RequirePackage[margin=1in]{geometry}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{titlesec}
+\RequirePackage{fancyhdr}
 \RequirePackage[shortlabels]{enumitem} % Lettered lists
 
 
@@ -67,27 +68,34 @@
 
 
 %% MATH 55A SHORTCUTS
-\newcommand{\inn}[1]{\left\langle #1\right\rangle}
+% \newcommand{\inn}[1]{\left\langle #1\right\rangle}
+% \newcommand{\tens}{\otimes}
 \newcommand{\norm}[1]{\left\Vert #1\right\Vert}
-\newcommand{\tens}{\otimes}
-\newcommand{\dsum}{\oplus}
-\newcommand{\dual}[1]{\widehat{ #1 }}
-\newcommand{\ddual}[1]{\widehat{\widehat{ #1 }}}
+\newcommand{\gdual}[1]{\widehat{ #1 }}
+\newcommand{\gddual}[1]{\widehat{\widehat{ #1 }}}
 
-\newcommand{\R}{\mathbb R}
-\newcommand{\C}{\mathbb C}
-\newcommand{\Z}{\mathbb Z}
-\newcommand{\F}{\mathbb F}
-\newcommand{\Q}{\mathbb Q}
-\renewcommand{\O}{\emptyset}
+\newcommand{\R}{\ensuremath{\mathbb R}}
+\newcommand{\C}{\ensuremath{\mathbb C}}
+\newcommand{\Z}{\ensuremath{\mathbb Z}}
+\newcommand{\F}{\ensuremath{\mathbb F}}
+\newcommand{\Q}{\ensuremath{\mathbb Q}}
+\renewcommand{\P}{\ensuremath{\mathcal P}}
+\renewcommand{\O}{\ensuremath{\emptyset}}
+
+\let\temp\phi
+\let\phi\varphi
+\let\varphi\temp
 
 \newcommand{\inj}{\hookrightarrow}
 \newcommand{\surj}{\twoheadrightarrow}
 
 \newcommand{\dmo}{\DeclareMathOperator}
-\dmo{\im}{im }
-\dmo{\ev}{ev }
-\dmo{\tr}{tr }
+\dmo{\im}{im}
+\dmo{\id}{id}
+\dmo{\spn}{span}
+\dmo{\chr}{char}
+\dmo{\ev}{ev}
+\dmo{\tr}{tr}
 \dmo{\vect}{Vect}
 \dmo{\Hom}{Hom}
 \dmo{\Mor}{Mor}
@@ -97,10 +105,16 @@
 \dmo{\rank}{rank}
 \dmo{\lcm}{lcm}
 \dmo{\Stab}{Stab}
-
+\dmo{\gKer}{gKer}
+\dmo{\evIm}{evIm}
+\dmo{\nll}{null}
+\dmo{\Ann}{Ann}
+\dmo{\SL}{SL}
+\dmo{\GL}{GL}
+\dmo{\PSL}{PSL}
+\dmo{\PGL}{PGL}
 
 %% FORMATTING
-\usepackage{fancyhdr}
 \pagestyle{fancy}
 
 \fancyhf{}
@@ -110,7 +124,7 @@
 }
 \fancyfoot[R]{Pg. \thepage}
 
-\renewcommand{\headrulewidth}{1pt}
+% \renewcommand{\headrulewidth}{1pt}
 % \renewcommand{\footrulewidth}{0pt}
 
 \setlength{\headheight}{14pt}
@@ -139,3 +153,4 @@
 \normalfont\bfseries
 ] % after-code
 
+\renewcommand{\emph}[1]{\underline{\bfseries{#1}}}

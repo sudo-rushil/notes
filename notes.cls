@@ -121,13 +121,13 @@
 \newcommand{\gdual}[1]{\widehat{ #1 }}
 \newcommand{\gddual}[1]{\widehat{\widehat{ #1 }}}
 
-\newcommand{\R}{\mathbb R}
-\newcommand{\C}{\mathbb C}
-\newcommand{\Z}{\mathbb Z}
-\newcommand{\F}{\mathbb F}
-\newcommand{\Q}{\mathbb Q}
-\renewcommand{\P}{\mathcal P}
-\renewcommand{\O}{\emptyset}
+\newcommand{\R}{\ensuremath{\mathbb R}}
+\newcommand{\C}{\ensuremath{\mathbb C}}
+\newcommand{\Z}{\ensuremath{\mathbb Z}}
+\newcommand{\F}{\ensuremath{\mathbb F}}
+\newcommand{\Q}{\ensuremath{\mathbb Q}}
+\renewcommand{\P}{\ensuremath{\mathcal P}}
+\renewcommand{\O}{\ensuremath{\emptyset}}
 
 \let\temp\phi
 \let\phi\varphi
@@ -156,6 +156,10 @@
 \dmo{\evIm}{evIm}
 \dmo{\nll}{null}
 \dmo{\Ann}{Ann}
+\dmo{\SL}{SL}
+\dmo{\GL}{GL}
+\dmo{\PSL}{PSL}
+\dmo{\PGL}{PGL}
 
 %% FORMATTING
 \pagestyle{fancy}

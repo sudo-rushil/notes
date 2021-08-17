@@ -102,11 +102,17 @@ snippet desc "Description" b
 \end{description}
 endsnippet
 
+# Text Completions
+
+#snippet 
+
+#endsnippet
+
 # Math Environments and Braces
 
 snippet mk "Math" wA
 $${1}$`!p
-if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', ':', ';']:
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', ':', ';', ')']:
 	snip.rv = ' '
 else:
 	snip.rv = ''
@@ -181,7 +187,7 @@ snippet bs "indexed basis" wA
 \\{{$1}_{$2}\\}
 endsnippet
 
-snippet emph "emphasis" wA
+snippet em "emphasis" wA
 \emph{$1}`!p
 if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', ':', ';']:
 	snip.rv = ' '
@@ -205,10 +211,12 @@ snippet floor "floor" iA
 \left\lfloor $1 \right\rfloor $0
 endsnippet
 
+context "math()"
 snippet pmat "pmat" iA
 \begin{pmatrix} $1 \end{pmatrix} $0
 endsnippet
 
+context "math()"
 snippet bmat "bmat" iA
 \begin{bmatrix} $1 \end{bmatrix} $0
 endsnippet
@@ -272,7 +280,7 @@ endsnippet
 
 priority 300
 context "math()"
-snippet '(?<!\\)(phi|lambda|varphi|psi|pi|mu|rho|sigma|tau|chi)' "greeks" rwA
+snippet '(?<!\\)(alpha|beta|gamma|phi|lambda|varphi|psi|pi|mu|rho|sigma|tau|chi|pm|circ)' "greeks" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
@@ -308,22 +316,18 @@ snippet AA "forall" iA
 \forall 
 endsnippet
 
-context "math()"
 snippet RR "reals" iA
 \R 
 endsnippet
 
-context "math()"
 snippet ZZ "integers" iA
 \Z 
 endsnippet
 
-context "math()"
 snippet CC "complex" iA
 \C 
 endsnippet
 
-context "math()"
 snippet OO "emptyset" iA
 \O 
 endsnippet
@@ -334,22 +338,25 @@ snippet 'F(\d)' "field" irA
 \F_`!p snip.rv = match.group(1)` 
 endsnippet
 
-priority 100
 context "math()"
+snippet 'Z(\d)' "cyclic group" irA
+\Z/`!p snip.rv = match.group(1)` 
+endsnippet
+
+priority 100
 snippet FF "field" iA
 \F 
 endsnippet
 
-context "math()"
 snippet QQ "forall" iA
 \Q 
 endsnippet
 
-context "math()"
 snippet PP "powerset" iA
 \P 
 endsnippet
 
+context "math()"
 snippet lll "l" iA
 \ell 
 endsnippet
@@ -374,6 +381,7 @@ snippet rd "to the ... power" iA
 ^{($1)}$0
 endsnippet
 
+context "math()"
 snippet __ "subscript" iA
 _{$1}$0
 endsnippet
@@ -386,6 +394,28 @@ endsnippet
 context "math()"
 snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`} 
+endsnippet
+
+#priority -100
+#context "math()"
+#snippet '([A-Za-z])([A-Za-z])' "auto subscript3" wrA
+#`!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
+#endsnippet
+
+priority 100
+context "math()"
+snippet ii "sub i" iA
+_i
+endsnippet
+
+context "math()"
+snippet jj "sub j" iA
+_j
+endsnippet
+
+context "math()"
+snippet kk "sub k" iA
+_k
 endsnippet
 
 context "math()"
@@ -455,17 +485,17 @@ endsnippet
 
 priority 200
 context "math()"
-snippet "([A-Z])mbb" "mathbb" riA
+snippet "([A-Z])mb" "mathbb" riA
 \mathbb{`!p snip.rv=match.group(1)`} 
 endsnippet
 
 context "math()"
-snippet "([A-Z])mcal" "mathcal" riA
+snippet "([A-Z])mc" "mathcal" riA
 \mathcal{`!p snip.rv=match.group(1)`} 
 endsnippet
 
 snippet "([A-Za-z])mk" "math mode" rwA
-$`!p snip.rv=match.group(1)`$ 
+$`!p snip.rv=match.group(1)`$
 endsnippet
 
 priority 0
@@ -473,11 +503,6 @@ priority 0
 # Operators, Arrows
 
 ## Operators
-
-context "math()"
-snippet +... "ldot sum" iA
-+ \ldots + 
-endsnippet
 
 context "math()"
 snippet xx "cross" iA
@@ -505,6 +530,7 @@ snippet op "oplus" iA
 \oplus 
 endsnippet
 
+context "math()"
 snippet notin "not in " iA
 \not\in 
 endsnippet
@@ -514,10 +540,12 @@ snippet inn "in " iA
 \in 
 endsnippet
 
+context "math()"
 snippet Nn "cap" iA
 \cap 
 endsnippet
 
+context "math()"
 snippet Uu "cup" iA
 \cup 
 endsnippet
@@ -532,14 +560,17 @@ snippet c=c "subseteq" Ai
 \subseteq 
 endsnippet
 
-snippet <! "normal" iA
+context "math()"
+snippet <] "normal" iA
 \triangleleft 
 endsnippet
 
-snippet <] "normaleq" iA
+context "math()"
+snippet <! "normaleq" iA
 \trianglelefteq 
 endsnippet
 
+context "math()"
 snippet x! "semidirect" iA
 \rtimes 
 endsnippet
@@ -549,38 +580,47 @@ snippet \\\ "setminus" iA
 \setminus 
 endsnippet
 
+context "math()"
 snippet >> ">>" iA
 \gg 
 endsnippet
 
+context "math()"
 snippet << "<<" iA
 \ll 
 endsnippet
 
+context "math()"
 snippet || "mid" iA
 \mid  
 endsnippet
 
+context "math()"
 snippet <= "leq" iA
 \le 
 endsnippet
 
+context "math()"
 snippet >= "geq" iA
 \ge 
 endsnippet
 
+context "math()"
 snippet == "equals" iA
 &= $1 \\\\
 endsnippet
 
+context "math()"
 snippet != "equals" iA
 \neq 
 endsnippet
 
+context "math()"
 snippet ~~ "sym" iA
 \sim 
 endsnippet
 
+context "math()"
 snippet ~= "cong" iA
 \cong 
 endsnippet
@@ -686,7 +726,7 @@ endsnippet
 
 priority 500
 context "math()"
-snippet '(?<!\\)(dim|ker|im|id|spn|chr|ev|tr|vect|Hom|Mor|End|Sym|Aut|rank|Stab|gKer|evIm|nll|Ann)' "customfuncs" rwA
+snippet '(?<!\\)(dim|ker|im|id|spn|chr|ev|tr|vect|Hom|Mor|End|Sym|Aut|rank|Stab|gKer|evIm|nll|Ann|GL|SL|PSL|PGL)' "customfuncs" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
@@ -697,12 +737,12 @@ snippet sq "\sqrt{}" iA
 endsnippet
 
 context "math()"
-snippet lvec "List of vectors" wA
+snippet lv "List of vectors" wA
 {$1}_{$2},\ldots,{$1}_{$3} $0
 endsnippet
 
 context "math()"
-snippet lsum "sum of vectors" wA
+snippet ls "sum of vectors" wA
 {$1}_{$2}+\ldots+{$1}_{$3} $0
 endsnippet
 
@@ -746,11 +786,28 @@ snippet lim "limit" w
 \lim_{$1 \to $2}  
 endsnippet
 
-#snippet part "d/dx" w
-#\frac{\partial ${1:V}}{\partial ${2:x}} $0
-#endsnippet
+context "math()"
+snippet d/dx "d/dx" wA
+\frac{d}{dx}
+endsnippet
+
+context "math()"
+snippet d/dt "d/dt" wA
+\frac{d}{dt}
+endsnippet
+
+context "math()"
+snippet vd/dx "d/dx" wA
+\frac{d $1}{d $2} $0
+endsnippet
+
+context "math()"
+snippet vpart "d/dx" wA
+\frac{\partial $1}{\partial $2} $0
+endsnippet
 
 priority 500
+context "math()"
 snippet bop "bigoplus" wA
 \bigoplus
 endsnippet
