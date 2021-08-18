@@ -56,10 +56,71 @@
   {}%         Thm head spec
 
 \theoremstyle{break}
-\newtheorem{problem}{Problem}
-\renewcommand*{\proofname}{Solution}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem*{proposition}{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
 
+\theoremstyle{defbreak}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem*{fact}{Fact}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{problem}[section]{Problem}
+\newtheorem*{solution}{Solution}
 
+\theoremstyle{rmkbreak}
+\newtheorem*{remark}{Remark}
+
+% \renewcommand*{\proofname}{Solution}
+
+%%%% Double line
+\tcolorboxenvironment{theorem}{% `theorem' from `amsthm'
+    blanker,breakable,
+    left=4mm,right=0mm,
+    before skip=15pt,after skip=15pt,
+    borderline west={0.5pt}{0pt}{black},
+    borderline west={0.5pt}{1.5pt}{black},
+}
+\tcolorboxenvironment{defn}{% `definition' from `amsthm'
+    blanker,breakable,
+    left=4mm,right=0mm,
+    before skip=15pt,after skip=15pt,
+    borderline west={0.5pt}{0pt}{black},
+    borderline west={0.5pt}{1.5pt}{black},
+}
+\tcolorboxenvironment{problem}{% `definition' from `amsthm'
+    blanker,breakable,
+    left=4mm,right=0mm,
+    before skip=15pt,after skip=15pt,
+    borderline west={0.5pt}{0pt}{black},
+    borderline west={0.5pt}{1.5pt}{black},
+}
+
+%%%% Single line
+\tcolorboxenvironment{proposition}{% `proposition' from `amsthm'
+    blanker,breakable,
+    left=4mm,right=0mm,
+    before skip=15pt,after skip=15pt,
+    % borderline west={0.5pt}{0pt}{black},
+}
+\tcolorboxenvironment{corollary}{% `corollary' from `amsthm'
+    blanker,breakable,
+    left=4mm,right=0mm,
+    before skip=15pt,after skip=15pt,
+    % borderline west={0.5pt}{0pt}{black},
+}
+
+%%%% Box or Indent
+\tcolorboxenvironment{example}{% `example' from `amsthm'
+    blanker,breakable,boxsep=2mm,
+    before skip=15pt,after skip=15pt,
+    borderline={0.5pt}{0pt}{black},
+}
+\tcolorboxenvironment{solution}{% `proof' from `amsthm'
+    blanker,breakable,
+    left=4mm,right=0mm,
+    before skip=15pt,after skip=15pt
+}
 \tcolorboxenvironment{proof}{% `proof' from `amsthm'
     blanker,breakable,
     left=8mm,right=8mm,
@@ -79,8 +140,8 @@
 \newcommand{\Z}{\ensuremath{\mathbb Z}}
 \newcommand{\F}{\ensuremath{\mathbb F}}
 \newcommand{\Q}{\ensuremath{\mathbb Q}}
-\renewcommand{\P}{\ensuremath{\mathcal P}}
-\renewcommand{\O}{\ensuremath{\emptyset}}
+\renewcommand{\P}{\mathcal P}
+\renewcommand{\O}{\emptyset}
 
 \let\temp\phi
 \let\phi\varphi

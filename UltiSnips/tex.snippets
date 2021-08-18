@@ -55,7 +55,7 @@ snippet df "defn" bA
 \end{defn}
 endsnippet
 
-snippet fa "fact" bA
+snippet ft "fact" bA
 \begin{fact}
 	$1
 \end{fact}
@@ -73,13 +73,25 @@ snippet rm "remark" bA
 \end{remark}
 endsnippet
 
+snippet pb "problem" bA
+\begin{remark} %$1
+	$2
+\end{remark}
+endsnippet
+
+snippet so "solution" bA
+\begin{solution}
+	$1
+\end{solution}
+endsnippet
+
 snippet dg "digression" bA
 \begin{digression}
 	$1
 \end{digression}
 endsnippet
 
-snippet enum "Enumerate" bA
+snippet en "Enumerate" bA
 \begin{enumerate}[(a)]
 	\item $1
 \end{enumerate}
@@ -104,9 +116,101 @@ endsnippet
 
 # Text Completions
 
-#snippet 
+snippet gr "group" wA
+group
+endsnippet
 
-#endsnippet
+snippet bs "basis" wA
+basis
+endsnippet
+
+snippet fn "finite" wA
+finite
+endsnippet
+
+snippet dl "dimensional" wA
+dimensional
+endsnippet
+
+snippet ir "irreducible" wA
+irreducible
+endsnippet
+
+snippet rp "representation" wA
+representation
+endsnippet
+
+snippet iv "invariant" wA
+representation
+endsnippet
+
+snippet gd "generated" wA
+generated
+endsnippet
+
+snippet lt "let be a" wA
+let $1 be a
+endsnippet
+
+snippet ab "abelian" wA
+abelian
+endsnippet
+
+snippet ie "i.e." wA
+i.e.
+endsnippet
+
+snippet st "s.t." wA
+s.t.
+endsnippet
+
+snippet sg "subgroup" wA
+subgroup
+endsnippet
+
+snippet sv "space" wA
+space
+endsnippet
+
+snippet sb "subspace" wA
+subspace
+endsnippet
+
+snippet vc "vector" wA
+vector
+endsnippet
+
+snippet vs "vector space" wA
+vector space
+endsnippet
+
+snippet fy "for any" wA
+for any
+endsnippet
+
+snippet tx "there exists" wA
+there exists
+endsnippet
+
+snippet hm "homomorphism" wA
+homomorphism
+endsnippet
+
+snippet lr "linear" wA
+linear
+endsnippet
+
+snippet ip "isomorphism" wA
+isomorphism
+endsnippet
+
+snippet cj "conjugacy" wA
+conjugacy
+endsnippet
+
+snippet wrt "with respect to" wA
+with respect to
+endsnippet
 
 # Math Environments and Braces
 
@@ -231,14 +335,6 @@ snippet () "left( right)" iA
 \left( ${1:${VISUAL}} \right) $0
 endsnippet
 
-snippet lr "left( right)" i
-\left( ${1:${VISUAL}} \right) $0
-endsnippet
-
-snippet lr( "left( right)" i
-\left( ${1:${VISUAL}} \right) $0
-endsnippet
-
 snippet lr| "left| right|" i
 \left| ${1:${VISUAL}} \right| $0
 endsnippet
@@ -317,17 +413,18 @@ snippet AA "forall" iA
 endsnippet
 
 snippet RR "reals" iA
-\R 
+\R
 endsnippet
 
 snippet ZZ "integers" iA
-\Z 
+\Z
 endsnippet
 
 snippet CC "complex" iA
-\C 
+\C
 endsnippet
 
+context "math()"
 snippet OO "emptyset" iA
 \O 
 endsnippet
@@ -345,13 +442,14 @@ endsnippet
 
 priority 100
 snippet FF "field" iA
-\F 
+{\F}
 endsnippet
 
 snippet QQ "forall" iA
-\Q 
+\Q
 endsnippet
 
+context "math()"
 snippet PP "powerset" iA
 \P 
 endsnippet
@@ -424,22 +522,17 @@ snippet conj "conjugate" iA
 endsnippet
 
 context "math()"
-snippet invs "inverse" iA
-^{-1}
-endsnippet
-
-context "math()"
 snippet --1 "inverse" iA
 ^{-1}
 endsnippet
 
 context "math()"
-snippet compl "complement" iA
+snippet cl "complement" iA
 ^{c}
 endsnippet
 
 context "math()"
-snippet perp "perpendicular" iA
+snippet pr "perpendicular" iA
 ^{\perp}
 endsnippet
 
@@ -535,11 +628,13 @@ snippet notin "not in " iA
 \not\in 
 endsnippet
 
+priority 600
 context "math()"
-snippet inn "in " iA
+snippet in "in " iA
 \in 
 endsnippet
 
+priority 100
 context "math()"
 snippet Nn "cap" iA
 \cap 
@@ -719,7 +814,7 @@ endsnippet
 
 priority 400
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec)' "funcs" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|int)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
@@ -810,6 +905,11 @@ priority 500
 context "math()"
 snippet bop "bigoplus" wA
 \bigoplus
+endsnippet
+
+context "math()"
+snippet b@ "bigotimes" wA
+\bigotimes
 endsnippet
 
 # vim:ft=snippets

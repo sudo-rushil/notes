@@ -126,8 +126,8 @@
 \newcommand{\Z}{\ensuremath{\mathbb Z}}
 \newcommand{\F}{\ensuremath{\mathbb F}}
 \newcommand{\Q}{\ensuremath{\mathbb Q}}
-\renewcommand{\P}{\ensuremath{\mathcal P}}
-\renewcommand{\O}{\ensuremath{\emptyset}}
+\renewcommand{\P}{\mathcal P}
+\renewcommand{\O}{\emptyset}
 
 \let\temp\phi
 \let\phi\varphi
