@@ -12,13 +12,17 @@ Drag the `.cls` file into your the folder of your current LaTeX project. If you 
 `notes.cls` has the formatting and biblatex support. For each course, `<course>.sty` has specific math formulae and functions. Finally, the `epistemic.sh` script sets a symlink to course specific snippets.
 
 `\snippets`:
-- `Ultisnips\tex.snippets`
+- `tex.snippets`
 - `\55\Ultisnips\tex.snippets`
 - `\Stat110\Ultisnips\tex.snippets`
 - `\Econ1011\Ultisnips\tex.snippets`
+
+The main snippets file is symlinked to `~\.vim\Ultisnips`. The others are changed by setting the `current` symlink, in `~\Documents\Harvard\Classes`
 
 ## TODO
 
 General
   - Biblatex
+  - epistemic.sh
+  - newdoc.sh
 

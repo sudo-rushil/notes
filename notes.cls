@@ -4,17 +4,25 @@
 
 %% PACKAGES
 \LoadClass[11pt]{article}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[english]{babel}
+
 \RequirePackage{amsthm}
 \RequirePackage{amsfonts}
 \RequirePackage[margin=1in]{geometry}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
+\RequirePackage{comment}
+\RequirePackage[
+backend=biber,
+style=abbrv,
+sorting=ynt
+]{biblatex}
 \RequirePackage[shortlabels]{enumitem} % Lettered lists
 
 
 %% UNIVERSAL MATH
-
 \newcommand{\R}{\ensuremath{\mathbb R}}
 \newcommand{\C}{\ensuremath{\mathbb C}}
 \newcommand{\Z}{\ensuremath{\mathbb Z}}
@@ -26,6 +34,7 @@
 \let\temp\phi
 \let\phi\varphi
 \let\varphi\temp
+
 
 %% ENVIRONMENTS
 \newtcolorbox{digression}{
@@ -138,6 +147,7 @@
     before skip=15pt,after skip=15pt
 }
 
+
 %% FORMATTING
 \pagestyle{fancy}
 
@@ -152,7 +162,6 @@
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{1.25ex}
-
 
 \titleformat
 {\section} % command
