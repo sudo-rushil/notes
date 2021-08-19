@@ -1,0 +1,51 @@
+# Econ1011 Snippets
+
+global !p
+def math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+
+def text():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '0'
+
+def comment(): 
+	return vim.eval('vimtex#syntax#in_comment()') == '1'
+
+def env(name):
+	[x,y] = vim.eval("vimtex#env#is_inside('" + name + "')") 
+	return x != '0' and y != '0'
+
+endglobal
+
+# Text Completions ––––––––––––––––––––––––––––––––––––––––
+
+context "text()"
+snippet om "optimize" wA
+optimize
+endsnippet
+
+# Differentials ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet lim "limit" w
+\lim_{$1 \to $2}  
+endsnippet
+
+context "math()"
+snippet d/dx "d/dx" wA
+\frac{d}{dx}
+endsnippet
+
+context "math()"
+snippet d/dt "d/dt" wA
+\frac{d}{dt}
+endsnippet
+
+context "math()"
+snippet vd/dx "d/dx" wA
+\frac{d $1}{d $2} $0
+endsnippet
+
+context "math()"
+snippet vpart "d/dx" wA
+\frac{\partial $1}{\partial $2} $0
+endsnippet

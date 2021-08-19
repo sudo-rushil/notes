@@ -5,9 +5,6 @@
 %% PACKAGES
 \LoadClass[11pt]{article}
 \RequirePackage{amsthm}
-\RequirePackage{amsmath}
-\RequirePackage{amssymb}
-\RequirePackage{mathtools}
 \RequirePackage{amsfonts}
 \RequirePackage[margin=1in]{geometry}
 \RequirePackage[most]{tcolorbox}
@@ -15,6 +12,20 @@
 \RequirePackage{fancyhdr}
 \RequirePackage[shortlabels]{enumitem} % Lettered lists
 
+
+%% UNIVERSAL MATH
+
+\newcommand{\R}{\ensuremath{\mathbb R}}
+\newcommand{\C}{\ensuremath{\mathbb C}}
+\newcommand{\Z}{\ensuremath{\mathbb Z}}
+\newcommand{\F}{\ensuremath{\mathbb F}}
+\newcommand{\Q}{\ensuremath{\mathbb Q}}
+\newcommand{\N}{\ensuremath{\mathbb N}}
+\renewcommand{\O}{\emptyset}
+
+\let\temp\phi
+\let\phi\varphi
+\let\varphi\temp
 
 %% ENVIRONMENTS
 \newtcolorbox{digression}{
@@ -65,6 +76,8 @@
 \newtheorem{defn}[theorem]{Definition}
 \newtheorem*{fact}{Fact}
 \newtheorem{example}[theorem]{Example}
+\newtheorem{problem}[section]{Problem}
+\newtheorem*{solution}{Solution}
 
 \theoremstyle{rmkbreak}
 \newtheorem*{remark}{Remark}
@@ -80,6 +93,13 @@
     borderline west={0.5pt}{1.5pt}{black},
 }
 \tcolorboxenvironment{defn}{% `definition' from `amsthm'
+    blanker,breakable,
+    left=4mm,right=0mm,
+    before skip=15pt,after skip=15pt,
+    borderline west={0.5pt}{0pt}{black},
+    borderline west={0.5pt}{1.5pt}{black},
+}
+\tcolorboxenvironment{problem}{% `definition' from `amsthm'
     blanker,breakable,
     left=4mm,right=0mm,
     before skip=15pt,after skip=15pt,
@@ -107,59 +127,16 @@
     before skip=15pt,after skip=15pt,
     borderline={0.5pt}{0pt}{black},
 }
+\tcolorboxenvironment{solution}{% `proof' from `amsthm'
+    blanker,breakable,
+    left=4mm,right=0mm,
+    before skip=15pt,after skip=15pt
+}
 \tcolorboxenvironment{proof}{% `proof' from `amsthm'
     blanker,breakable,
     left=8mm,right=8mm,
     before skip=15pt,after skip=15pt
 }
-
-
-%% MATH 55A SHORTCUTS
-% \newcommand{\inn}[1]{\left\langle #1\right\rangle}
-% \newcommand{\tens}{\otimes}
-\newcommand{\norm}[1]{\left\Vert #1\right\Vert}
-\newcommand{\gdual}[1]{\widehat{ #1 }}
-\newcommand{\gddual}[1]{\widehat{\widehat{ #1 }}}
-
-\newcommand{\R}{\ensuremath{\mathbb R}}
-\newcommand{\C}{\ensuremath{\mathbb C}}
-\newcommand{\Z}{\ensuremath{\mathbb Z}}
-\newcommand{\F}{\ensuremath{\mathbb F}}
-\newcommand{\Q}{\ensuremath{\mathbb Q}}
-\renewcommand{\P}{\mathcal P}
-\renewcommand{\O}{\emptyset}
-
-\let\temp\phi
-\let\phi\varphi
-\let\varphi\temp
-
-\newcommand{\inj}{\hookrightarrow}
-\newcommand{\surj}{\twoheadrightarrow}
-
-\newcommand{\dmo}{\DeclareMathOperator}
-\dmo{\im}{im}
-\dmo{\id}{id}
-\dmo{\spn}{span}
-\dmo{\chr}{char}
-\dmo{\ev}{ev}
-\dmo{\tr}{tr}
-\dmo{\vect}{Vect}
-\dmo{\Hom}{Hom}
-\dmo{\Mor}{Mor}
-\dmo{\End}{End}
-\dmo{\Sym}{Sym}
-\dmo{\Aut}{Aut}
-\dmo{\rank}{rank}
-\dmo{\lcm}{lcm}
-\dmo{\Stab}{Stab}
-\dmo{\gKer}{gKer}
-\dmo{\evIm}{evIm}
-\dmo{\nll}{null}
-\dmo{\Ann}{Ann}
-\dmo{\SL}{SL}
-\dmo{\GL}{GL}
-\dmo{\PSL}{PSL}
-\dmo{\PGL}{PGL}
 
 %% FORMATTING
 \pagestyle{fancy}
@@ -170,9 +147,6 @@
     \fancyhead[R]{#2}
 }
 \fancyfoot[R]{Pg. \thepage}
-
-% \renewcommand{\headrulewidth}{1pt}
-% \renewcommand{\footrulewidth}{0pt}
 
 \setlength{\headheight}{14pt}
 
@@ -201,4 +175,3 @@
 ] % after-code
 
 \renewcommand{\emph}[1]{\underline{\bfseries{#1}}}
-

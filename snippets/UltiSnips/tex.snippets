@@ -1,0 +1,615 @@
+global !p
+def math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+
+def text():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '0'
+
+def comment(): 
+	return vim.eval('vimtex#syntax#in_comment()') == '1'
+
+def env(name):
+	[x,y] = vim.eval("vimtex#env#is_inside('" + name + "')") 
+	return x != '0' and y != '0'
+
+endglobal
+
+# Environment Snippets ––––––––––––––––––––––––––––––––––––––––
+
+snippet bg "begin{} / end{}" bA
+\\begin{$1}
+	$0
+\\end{$1}
+endsnippet
+
+snippet cr "corollary" bA
+\begin{corollary}
+	$1
+\end{corollary}
+endsnippet
+
+snippet df "defn" bA
+\begin{defn}
+	$1
+\end{defn}
+endsnippet
+
+snippet dg "digression" bA
+\begin{digression}
+	$1
+\end{digression}
+endsnippet
+
+snippet em "emphasis" wA
+\emph{$1}`!p
+if t[2] and t[2][0] not in ',.?- :;)':
+	snip.rv = ' '
+else:
+	snip.rv = ''
+`
+endsnippet
+
+snippet en "Enumerate" bA
+\begin{enumerate}[(a)]
+	\item $1
+\end{enumerate}
+endsnippet
+
+snippet ex "example" bA
+\begin{example}
+	$1
+\end{example}
+endsnippet
+
+snippet ft "fact" bA
+\begin{fact}
+	$1
+\end{fact}
+endsnippet
+
+snippet il "Itemize (List)" bA
+\begin{itemize}
+	\item $1
+\end{itemize}
+endsnippet
+
+snippet it "item" bA
+\item 
+endsnippet
+
+snippet lm "lemma" bA
+\begin{lemma}
+	$1
+\end{lemma}
+endsnippet
+
+snippet pb "problem" bA
+\begin{remark} %$1
+	$2
+\end{remark}
+endsnippet
+
+snippet pf "proof" bA
+\begin{proof}
+	$1
+\end{proof}
+endsnippet
+
+snippet pr "proposition" bA
+\begin{proposition}
+	$1
+\end{proposition}
+endsnippet
+
+snippet rm "remark" bA
+\begin{remark}
+	$1
+\end{remark}
+endsnippet
+
+snippet so "solution" bA
+\begin{solution}
+	$1
+\end{solution}
+endsnippet
+
+snippet th "theorem" bA
+\begin{theorem}
+	$1
+\end{theorem}
+endsnippet
+
+# Text Completions ––––––––––––––––––––––––––––––––––––––––
+
+
+context "text()"
+snippet fy "for any" wA
+for any
+endsnippet
+
+context "text()"
+snippet ie "i.e." wA
+i.e.
+endsnippet
+
+context "text()"
+snippet tx "there exists" wA
+there exists
+endsnippet
+
+context "text()"
+snippet st "s.t." wA
+s.t.
+endsnippet
+
+context "text()"
+snippet wrt "with respect to" wA
+with respect to
+endsnippet
+
+# Math Environments ––––––––––––––––––––––––––––––––––––––––
+
+snippet mk "Math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in ',.?- :;)':
+# [',', '.', '?', '-', ' ', ':', ';', ')']:
+	snip.rv = ' '
+else:
+	snip.rv = ''
+`$2
+endsnippet
+
+snippet al "Align" bA
+\begin{align*}
+	${1:${VISUAL}}
+.\end{align*}
+endsnippet
+
+snippet bn "big function" bA
+\begin{align*}
+	$1 \colon $2 &\longrightarrow $3 \\\\
+	$4 &\longmapsto $0
+.\end{align*}
+endsnippet
+
+context "math()"
+snippet bx "Boxed math" wA
+\boxed{$1}
+endsnippet
+
+context "math()"
+snippet cs "cases" wA
+\begin{cases}
+	$1
+\end{cases}
+endsnippet
+
+snippet dm "Math" bA
+\[
+${1:${VISUAL}}
+\] $0
+endsnippet
+
+snippet d.m "Math" bA
+\[
+${1:${VISUAL}}
+.\] $0
+endsnippet
+
+snippet d,m "Math" bA
+\[
+${1:${VISUAL}}
+,\] $0
+endsnippet
+
+context "math()"
+snippet fn "function" iA
+$1 \colon $2 \to 
+endsnippet
+
+context "math()"
+snippet tt "text" iA
+\text{$1}$0
+endsnippet
+
+context "math()"
+snippet ub "underbrace" wA
+\underbrace{$1}_{$2}
+endsnippet
+
+context "math()"
+snippet ceil "ceil" wA
+\left\lceil $1 \right\rceil $0
+endsnippet
+
+context "math()"
+snippet floor "floor" wA
+\left\lfloor $1 \right\rfloor $0
+endsnippet
+
+context "math()"
+snippet pmat "pmat" wA
+\begin{pmatrix} $1 \end{pmatrix} $0
+endsnippet
+
+context "math()"
+snippet bmat "bmat" wA
+\begin{bmatrix} $1 \end{bmatrix} $0
+endsnippet
+
+context "math()"
+snippet set "set" wA
+\left\\{ $1 \right\\}
+endsnippet
+
+context "math()"
+snippet mbb "mathbb" iA
+\mathbb{$1}$0
+endsnippet
+
+context "math()"
+snippet mcal "mathcal" iA
+\mathcal{$1}$0
+endsnippet
+
+context "math()"
+snippet mfrak "mathfrak" iA
+\mathfrak{$1}$0
+endsnippet
+
+snippet "([A-Za-z])mk" "math mode" rwA
+$`!p snip.rv=match.group(1)`$
+endsnippet
+
+context "math()"
+snippet "([A-Z])mb" "mathbb" riA
+\mathbb{`!p snip.rv=match.group(1)`} 
+endsnippet
+
+context "math()"
+snippet "([A-Z])mc" "mathcal" riA
+\mathcal{`!p snip.rv=match.group(1)`} 
+endsnippet
+
+## CRITICAL: Requires anything with a slash is literal
+
+priority 1000
+context "math()"
+snippet '(?<=\\)(\w+)' "slash-esc" rwA
+\\`!p snip.rv = match.group(1)` 
+endsnippet
+
+# Delimiters ––––––––––––––––––––––––––––––––––––––––
+
+priority 0
+context "math()"
+snippet () "left( right)" iA
+\left( ${1:${VISUAL}} \right) $0
+endsnippet
+
+snippet lr| "left| right|" iA
+\left| ${1:${VISUAL}} \right| $0
+endsnippet
+
+snippet lr{ "left\{ right\}" iA
+\left\\{ ${1:${VISUAL}} \right\\} $0
+endsnippet
+
+snippet lr[ "left[ right]" iA
+\left[ ${1:${VISUAL}} \right] $0
+endsnippet
+
+snippet lra "leftangle rightangle" iA
+\left\langle ${1:${VISUAL}} \right\rangle $0
+endsnippet
+
+# Symbols –––––––––––––––––––––––––––––––––––––––-
+
+context "math()"
+snippet tx "exists" iA
+\exists 
+endsnippet
+
+context "math()"
+snippet fy "forall" iA
+\forall 
+endsnippet
+
+snippet RR "reals" iA
+\R
+endsnippet
+
+snippet ZZ "integers" iA
+\Z
+endsnippet
+
+snippet CC "complex" iA
+\C
+endsnippet
+
+context "math()"
+snippet OO "emptyset" iA
+\O 
+endsnippet
+
+snippet FF "field" iA
+{\F}
+endsnippet
+
+snippet QQ "rationals" iA
+\Q
+endsnippet
+
+context "math()"
+snippet ooo "\infty" iA
+\infty 
+endsnippet
+
+context "math()"
+snippet ... "ldots" iA
+\ldots 
+endsnippet
+
+priority 10
+context "math()"
+snippet bar "bar" riA
+\overline{$1}$0
+endsnippet
+
+context "math()"
+snippet hat "hat" riA
+\hat{$1}$0
+endsnippet
+
+priority 100
+context "math()"
+snippet "([a-zA-Z])bar" "bar" riA
+\overline{`!p snip.rv=match.group(1)`}
+endsnippet
+
+context "math()"
+snippet "([a-zA-Z])hat" "hat" riA
+\hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+context "math()"
+snippet '(?<!\\)(alpha|beta|gamma|delta|epsilon|zeta|eta|theta|vartheta|iota|kappa|lambda|mu)' "greeks" rwA
+\\`!p snip.rv = match.group(1)` 
+endsnippet
+
+context "math()"
+snippet '(?<!\\)(nu|xi|pi|rho|sigma|tau|upsilon|phi|varphi|chi|psi|omega)' "greeks2" rwA
+\\`!p snip.rv = match.group(1)` 
+endsnippet
+
+context "math()"
+snippet '(?<!\\)(Gamma|Delta|Theta|Lambda|Xi|Pi|Sigma|Upsilon|Phi|Psi|Omega)' "greeks3" rwA
+\\`!p snip.rv = match.group(1)` 
+endsnippet
+
+# Superscripts ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet sr "^2" iA
+^2 
+endsnippet
+
+context "math()"
+snippet cb "^3" iA
+^3 
+endsnippet
+
+context "math()"
+snippet ^^ "to the ... power" iA
+^{$1}$0
+endsnippet
+
+context "math()"
+snippet --1 "inverse" iA
+^{-1}
+endsnippet
+
+context "math()"
+snippet --c "complement" iA
+^{c}
+endsnippet
+
+# Subscripts ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet __ "subscript" iA
+_{$1}$0
+endsnippet
+
+context "math()"
+snippet '([A-Za-z])(\d)' "auto subscript" wrA
+`!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)` 
+endsnippet
+
+context "math()"
+snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
+`!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`} 
+endsnippet
+
+context "math()"
+snippet '([A-Zabcuvwxyz])([ijknm])' "auto subscript3" wrA
+`!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
+endsnippet
+
+# General Operators ––––––––––––––––––––––––––––––––––––––––
+
+priority 0
+context "math()"
+snippet xx "cross" iA
+\times 
+endsnippet
+
+context "math()"
+snippet ** "cdot" iA
+\cdot 
+endsnippet
+
+context "math()"
+snippet oo "circ" iA
+\circ 
+endsnippet
+
+context "math()"
+snippet pm "pm" iA
+\pm 
+endsnippet
+
+# Set Operators ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet notin "not in " iA
+\not\in 
+endsnippet
+
+priority 600
+context "math()"
+snippet in "in " iA
+\in 
+endsnippet
+
+priority 100
+context "math()"
+snippet Nn "cap" iA
+\cap 
+endsnippet
+
+context "math()"
+snippet Uu "cup" iA
+\cup 
+endsnippet
+
+context "math()"
+snippet cc "subset" Ai
+\subset 
+endsnippet
+
+context "math()"
+snippet c=c "subseteq" Ai
+\subseteq 
+endsnippet
+
+context "math()"
+snippet \\\ "setminus" iA
+\setminus 
+endsnippet
+
+context "math()"
+snippet || "mid" iA
+\mid  
+endsnippet
+
+context "math()"
+snippet uuu "bigcup" iA
+\bigcup 
+endsnippet
+
+context "math()"
+snippet nnn "bigcap" iA
+\bigcap 
+endsnippet
+
+# Relations ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet <= "leq" iA
+\le 
+endsnippet
+
+context "math()"
+snippet >= "geq" iA
+\ge 
+endsnippet
+
+context "math()"
+snippet >> ">>" iA
+\gg 
+endsnippet
+
+context "math()"
+snippet << "<<" iA
+\ll 
+endsnippet
+
+context "math()"
+snippet == "equals" iA
+&= $1 \\\\
+endsnippet
+
+context "math()"
+snippet != "equals" iA
+\neq 
+endsnippet
+
+context "math()"
+snippet ~~ "sym" iA
+\sim 
+endsnippet
+
+# Map Arrows ––––––––––––––––––––––––––––––––––––––––
+
+priority 100
+context "math()"
+snippet -> "to" iA
+\to 
+endsnippet
+
+context "math()"
+snippet !> "mapsto" iA
+\mapsto 
+endsnippet
+
+context "math()"
+snippet <-> "leftrightarrow" iA
+\leftrightarrow 
+endsnippet
+
+# Logical Arrows ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet => "implies" Ai
+\implies 
+endsnippet
+
+context "math()"
+snippet =< "implied by" Ai
+\impliedby 
+endsnippet
+
+context "math()"
+snippet iff "iff" Ai
+\iff 
+endsnippet
+
+# Fractions ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet // "Fraction" iA
+\\frac{$1}{$2}$0
+endsnippet
+
+# Functions ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet sq "\sqrt{}" iA
+\sqrt{${1:${VISUAL}}} $0
+endsnippet
+
+priority 100
+context "math()"
+snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp)' "funcs" rwA
+\\`!p snip.rv = match.group(1)` 
+endsnippet
+
+priority 200
+context "math()"
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|int|sum|prod)' "funcs" rwA
+\\`!p snip.rv = match.group(1)` 
+endsnippet	
+
+
+# vim:ft=snippets
