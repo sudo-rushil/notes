@@ -1,1 +1,3 @@
-example.synctex.gz
+*.synctex.gz
+*.snm
+*.nav

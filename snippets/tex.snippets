@@ -333,7 +333,7 @@ snippet OO "emptyset" iA
 endsnippet
 
 snippet FF "field" iA
-{\F}
+\F
 endsnippet
 
 snippet QQ "rationals" iA
@@ -462,17 +462,15 @@ endsnippet
 # Set Operators ––––––––––––––––––––––––––––––––––––––––
 
 context "math()"
-snippet notin "not in " iA
-\not\in 
-endsnippet
-
-priority 600
-context "math()"
 snippet in "in " iA
 \in 
 endsnippet
 
-priority 100
+context "math()"
+snippet ni "not in " iA
+\not\in 
+endsnippet
+
 context "math()"
 snippet Nn "cap" iA
 \cap 

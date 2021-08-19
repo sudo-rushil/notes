@@ -1,0 +1,272 @@
+\documentclass[10pt]{beamer}
+\usepackage{lmodern}
+
+\usepackage[orientation=landscape,
+size=custom,width=32,height=18.0,scale=.75]{beamerposter}
+
+\usepackage{mathtools,amsmath,amssymb}
+
+\title{symbol-table}
+
+\begin{document}
+
+\begin{frame}
+\underline{NOTE: postfix completions omitted for simplicity.}
+
+% 19 to a line!
+
+\begin{tabular}{ll}
+\textit{env} begin & bg \\
+\textit{env} corollary & cr \\
+\textit{env} defn & df \\
+\textit{env} digression & dg \\
+\textit{env} emphasis & em \\
+\textit{env} enumerate & en \\
+\textit{env} example & ex \\
+\textit{env} fact & ft \\
+\textit{env} itemize & il \\
+$\backslash$item & it \\
+\textit{env} lemma & lm \\
+\textit{env} problem & pb \\
+\textit{env} proof & pf \\
+\textit{env} proposition & pr \\
+\textit{env} remark & rm \\
+\textit{env} solution & so \\
+\textit{env} theorem & th \\
+"for any" & fy \\
+"i.e." & ie \\
+\end{tabular}
+\hspace*{1ex}
+\vrule
+\begin{tabular}{ll}
+"there exists" & tx \\
+"s.t." & st \\
+"with respect to" & wrt \\
+\textit{env} inline math & mk \\
+\textit{env} align & al \\
+\textit{env} big function & bn \\
+\textit{math} box & bx \\
+\textit{math} cases & cs \\
+\textit{env} display math & dm d.m d,m \\
+$\text{\$1}\colon \text{\$2} \to$ & fn \\
+\textit{math} text & tt \\
+\textit{math} underbrace & ub \\
+\textit{math} ceil & ceil \\
+\textit{math} floor & floor \\
+\textit{math} pmat & pmat \\
+\textit{math} bmat & bmat \\
+$\{ \text{\$1} \}$ & set \\
+\textit{math} mathbb & mbb \\
+\textit{math} mathcal & mcal
+\end{tabular}
+\hspace*{1ex}
+\vrule
+\begin{tabular}{ll}
+\textit{math} mathfrak & mfrak \\
+$\backslash$left$($ $\backslash$right$)$ & $()$ \\
+$\backslash$left$|$ $\backslash$right$|$ & lr$|$ \\
+$\backslash$left$\{$ $\backslash$right$\}$ & lr$\{$ \\
+$\backslash$left$[$ $\backslash$right$]$ & lr$[$ \\
+$\backslash$left$\langle$ $\backslash$right$\rangle$ & lra \\
+$\exists$ & tx \\
+$\forall$ & fy \\
+$\mathbb R$ & RR \\
+$\mathbb Z$ & ZZ \\
+$\mathbb C$ & CC \\
+$\emptyset$ & OO \\
+$\mathbb F$ & FF \\
+$\mathbb Q$ & QQ \\
+$\infty$ & ooo \\
+$\ldots$ & ... \\
+$\overline{x}$ & bar \\
+$\hat{x}$ & hat \\
+$\textit{math} greeks$ & $\langle$name$\rangle$ \\
+\end{tabular}
+\hspace*{1ex}
+\vrule
+\begin{tabular}{ll}
+$A^2$ & sr \\
+$A^3$ & cb \\
+$A^{\text{\$1}}$ & \string^\string^ \\
+$A^{-1}$ & --1 \\
+$A^{c}$ & --c \\
+$A_{\text{\$1}}$ & \_\_ \\
+$\times$ & xx \\
+$\cdot$ & ** \\
+$\circ$ & oo \\
+$\pm$ & pm \\
+$\in$ & in \\
+$\not\in$ & ni \\
+$\cap$ & Nn \\
+$\cup$ & Uu \\
+$\subset$ & cc \\
+$\subseteq$ & c=c \\
+$\setminus$ & $\backslash$ \\
+$\mid$ & $||$ \\
+$\bigcup$ & uuu
+\end{tabular}
+
+\end{frame}
+
+% ----------------------------------------------------------
+
+\begin{frame}
+
+\begin{tabular}{ll}
+$\bigcap$ & nnn \\
+$\le$ & $<=$ \\
+$\ge$ & $>=$ \\
+$\gg$ & $>>$ \\
+$\ll$ & $<<$ \\
+$\neq$ & != \\
+$\sim$ & $\sim\sim$ \\
+$\to$ & -$>$ \\
+$\mapsto$ & !$>$ \\
+$\leftrightarrow$ & $<$-$>$ \\
+$\implies$ & $=>$ \\
+$\impliedby$ & $=<$ \\
+$\iff$ & iff \\
+\textit{math} fraction & $//$ \\
+$\sqrt{x}$ & sq \\
+$\textit{math}$ func & $\langle$name$\rangle$ \\
+$\sum$ & sum \\
+$\prod$ & prod \\
+$\int$ & int
+\end{tabular}
+
+\end{frame}
+
+% ----------------------------------------------------------
+
+\begin{frame}
+\underline{Math 55}
+
+\begin{tabular}{ll}
+"abelian" & ab \\
+"basis" & bs \\
+"conjugacy" & cj \\
+"dimensional" & dl \\
+"finite" & fn \\
+"generated" & gd \\
+"group" & gr \\
+"homomorphism" & hm \\
+"isomorphism" & ip \\
+"irreducible" & ir \\
+"inverse" & iv \\
+"invariant" & iw \\
+"linear" & lr \\
+"let \$1 be a" & lt \\
+"representation" & rp \\
+"subspace" & sb \\
+"subgroup" & sg \\
+"space" & sv \\
+"vector" & vc \\
+\end{tabular}
+\hspace*{1ex}
+\vrule
+\begin{tabular}{ll}
+"vector space" & vs \\
+$\{ \text{\$1}_{\{[ijk]\}} \}$ & [ijk]bs \\
+$\{ \text{\$1}_\text{\$2} \}$ & bs \\
+$\left\langle \text{\$1} \right\rangle$ & $<>$ \\
+$\Vert \text{\$1} \Vert$ & $][$ \\
+$\lambda$ & eig \\
+$\phi$ & vphi \\
+$\sigma$ & sig \\
+$\ell$ & lll \\
+$\mathcal{P}$ & PP \\
+$A^{\perp}$ & --p \\
+$A^{t}$ & --t \\
+$A^{*}$ & --d \\
+$A^{**}$ & --* \\ % 14
+$\otimes$ & @ \\
+$\oplus$ & op \\
+$\bigoplus$ & bop \\
+$\bigotimes$ & b@ \\
+$\triangleleft$ & $<]$ \\
+\end{tabular}
+\hspace*{1ex}
+\vrule
+\begin{tabular}{ll}
+$\trianglelefteq$ & $<!$ \\
+$\rtimes$ & $x!$ \\
+$\simeq$ & $\sim=$ \\
+$\cong$ & $=\sim$ \\
+$\hookrightarrow$ & i$>$ \\
+$\twoheadrightarrow$ & s$>$ \\
+$\xrightarrow{x}$ & x $>$ \\
+$a_1,\ldots,a_n$ & lv \\
+$a_1+\ldots+a_n$ & ls \\
+\textit{math} funcs & $\langle$name$\rangle$\\ % 10
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\end{tabular}
+
+\end{frame}
+
+% ----------------------------------------------------------
+
+\begin{frame}
+\underline{Stat 110}
+
+\begin{tabular}{ll}
+"distribution" & dt \\
+"i.i.d." & iid \\
+"random variable" & rv \\
+$\mathbb{E}$ & EE \\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\end{tabular}
+
+\end{frame}
+
+% ----------------------------------------------------------
+
+\begin{frame}
+\underline{Econ 1011}
+
+\begin{tabular}{ll}
+"optimize" & om \\
+$\lim_{\to}$ & lim \\
+$\frac{d}{dx}$ & d/dx \\
+$\frac{d}{dt}$ & d/dt \\
+$\frac{d\text{\$1}}{d\text{\$2}}$ & vd/dx \\
+$\frac{\partial \text{\$1}}{\partial \text{\$2}}$ & vpart \\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\end{tabular}
+
+\end{frame}
+
+\end{document}
