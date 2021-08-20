@@ -6,7 +6,6 @@
 \LoadClass[11pt]{article}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[english]{babel}
-
 \RequirePackage{amsthm}
 \RequirePackage{amsfonts}
 \RequirePackage[margin=1in]{geometry}
@@ -14,9 +13,10 @@
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
 \RequirePackage{comment}
+\RequirePackage{csquotes}
 \RequirePackage[
 backend=biber,
-style=abbrv,
+style=alphabetic,
 sorting=ynt
 ]{biblatex}
 \RequirePackage[shortlabels]{enumitem} % Lettered lists

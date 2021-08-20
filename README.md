@@ -22,7 +22,6 @@ The main snippets file is symlinked to `~\.vim\Ultisnips`. The others are change
 ## TODO
 
 General
-  - Biblatex
-  - epistemic.sh
-  - newdoc.sh
+  - `slash-esc` has issues cooperating with everything else.
+  - Deactivated `autosnippet3`.
 
