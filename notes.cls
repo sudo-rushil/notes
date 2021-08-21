@@ -109,11 +109,12 @@ sorting=ynt
     borderline west={0.5pt}{1.5pt}{black},
 }
 \tcolorboxenvironment{problem}{% `definition' from `amsthm'
-    blanker,breakable,
-    left=4mm,right=0mm,
+    colback=black!5!white,colframe=black,
+    breakable,arc=1mm,
+    left=2mm,right=2mm,
     before skip=15pt,after skip=15pt,
-    borderline west={0.5pt}{0pt}{black},
-    borderline west={0.5pt}{1.5pt}{black},
+    sharp corners=downhill,
+    boxrule=0.2mm
 }
 
 %%%% Single line
