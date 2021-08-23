@@ -83,6 +83,11 @@ snippet lm "lemma" bA
 \end{lemma}
 endsnippet
 
+snippet nl "newline" bA
+\newline
+
+endsnippet
+
 snippet pb "problem" bA
 \begin{problem} %$1
 	$2
@@ -485,14 +490,15 @@ snippet Uu "cup" iA
 \cup 
 endsnippet
 
+# Note: \subset means subset OR equal; proper given by \subsetneq! (ref: Math 55 Slack)
 context "math()"
 snippet cc "subset" Ai
-\subseteq 
+\subset 
 endsnippet
 
 context "math()"
-snippet c=c "subseteq" Ai
-\subseteq 
+snippet c=c "subsetneq" Ai
+\subsetneq 
 endsnippet
 
 context "math()"

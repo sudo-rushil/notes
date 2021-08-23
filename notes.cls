@@ -162,7 +162,7 @@ sorting=ynt
 \setlength{\headheight}{14pt}
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{1.25ex}
+\setlength{\parskip}{10ex}
 
 \titleformat
 {\section} % command
