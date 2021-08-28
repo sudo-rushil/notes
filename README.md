@@ -24,4 +24,5 @@ The main snippets file is symlinked to `~\.vim\Ultisnips`. The others are change
 General
   - `slash-esc` has issues cooperating with everything else.
   - Deactivated `autosnippet3`.
+  - Update `guide.pdf` for Ec 1011/Math 55 completions.
 

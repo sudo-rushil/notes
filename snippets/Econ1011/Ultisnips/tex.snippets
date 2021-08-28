@@ -19,33 +19,108 @@ endglobal
 # Text Completions ––––––––––––––––––––––––––––––––––––––––
 
 context "text()"
-snippet om "optimize" wA
+snippet co. "constraint" wA
+constraint
+endsnippet
+
+context "text()"
+snippet dr "derivative" wA
+derivative
+endsnippet
+
+context "text()"
+snippet foc "first order condition" wA
+first order condition
+endsnippet
+
+context "text()"
+snippet gl. "global" wA
+global
+endsnippet
+
+context "text()"
+snippet lc "local" wA
+local
+endsnippet
+
+context "text()"
+snippet lg "Lagrangian" wA
+Lagrangian
+endsnippet
+
+context "text()"
+snippet mi. "minimum" wA
+minimum
+endsnippet
+
+context "text()"
+snippet mx "maximum" wA
+maximum
+endsnippet
+
+context "text()"
+snippet om. "optimize" wA
 optimize
+endsnippet
+
+context "text()"
+snippet op. "optimum" wA
+optimium
+endsnippet
+
+context "text()"
+snippet pt "partial" wA
+partial
+endsnippet
+
+context "text()"
+snippet to. "total" wA
+total
 endsnippet
 
 # Differentials ––––––––––––––––––––––––––––––––––––––––
 
 context "math()"
-snippet lim "limit" w
+snippet lm "limit" wA
 \lim_{$1 \to $2}  
 endsnippet
 
 context "math()"
-snippet d/dx "d/dx" wA
-\frac{d}{dx}
+snippet 'dd([A-Za-z])' "d/dx" wrA
+\dv{`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet d/dt "d/dt" wA
-\frac{d}{dt}
+snippet dr "dy/dx" wA
+\deriv{$1}{$2} $0
 endsnippet
 
 context "math()"
-snippet vd/dx "d/dx" wA
-\frac{d $1}{d $2} $0
+snippet 'pp([A-Za-z])' "∂/∂x" wrA
+\pv{`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
-snippet vpart "d/dx" wA
-\frac{\partial $1}{\partial $2} $0
+snippet pr "∂y/∂x" wA
+\pderiv{$1}{$2} $0
+endsnippet
+
+# Setups ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet do "defined on" wA
+\text{ defined on }
+endsnippet
+
+# Functions ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet lv "List of vectors" wA
+{$1}_{$2},\ldots,{$1}_{$3} $0
+endsnippet
+
+priority 1200
+context "math()"
+snippet '(?<!\\)(grad|lag|bm|dv|deriv|pv|pderiv)' "funcs" rwA
+\\`!p snip.rv = match.group(1)` 
 endsnippet
