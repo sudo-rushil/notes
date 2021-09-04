@@ -40,7 +40,7 @@ snippet dg "digression" bA
 \end{digression}
 endsnippet
 
-snippet em "emphasis" wA
+snippet em. "emphasis" wA
 \emph{$1}`!p
 if t[2] and t[2][0] not in ',.?- :;)':
 	snip.rv = ' '
@@ -75,6 +75,15 @@ endsnippet
 
 snippet it "item" bA
 \item 
+endsnippet
+
+snippet iz "italicize" wA
+\textit{$1}`!p
+if t[2] and t[2][0] not in ',.?- :;)':
+	snip.rv = ' '
+else:
+	snip.rv = ''
+`
 endsnippet
 
 snippet lm "lemma" bA
