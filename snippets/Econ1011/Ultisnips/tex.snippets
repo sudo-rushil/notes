@@ -19,12 +19,17 @@ endglobal
 # Text Completions ––––––––––––––––––––––––––––––––––––––––
 
 context "text()"
+snippet cb "Cobb-Douglas" wA
+Cobb-Douglas
+endsnippet
+
+context "text()"
 snippet co. "constraint" wA
 constraint
 endsnippet
 
 context "text()"
-snippet dr "derivative" wA
+snippet dr. "derivative" wA
 derivative
 endsnippet
 
@@ -78,6 +83,43 @@ snippet to. "total" wA
 total
 endsnippet
 
+# Notation ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet -s "optimum" iA
+^\ast
+endsnippet
+
+context "math()"
+snippet a. "alpha" iA
+\alpha 
+endsnippet
+
+context "math()"
+snippet b. "beta" iA
+\beta 
+endsnippet
+
+context "math()"
+snippet g. "gamma" iA
+\gamma 
+endsnippet
+
+context "math()"
+snippet d. "delta" iA
+\delta 
+endsnippet
+
+context "math()"
+snippet t. "tau" iA
+\tau 
+endsnippet
+
+context "math()"
+snippet l. "lambda" iA
+\lambda 
+endsnippet
+
 # Differentials ––––––––––––––––––––––––––––––––––––––––
 
 context "math()"
@@ -121,6 +163,6 @@ endsnippet
 
 priority 1200
 context "math()"
-snippet '(?<!\\)(grad|lag|bm|dv|deriv|pv|pderiv)' "funcs" rwA
+snippet '(?<!\\)(grad|lag|bm|dv|deriv|pv|pderiv|del|max|min)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet

@@ -169,7 +169,7 @@ sorting=ynt
 {\bfseries\Large\itshape} % format
 {\thesection}{.5em}{} % before-code
 [
-\vspace{-5mm}%
+\vspace{-20mm}%
 \rule{0.75\textwidth}{1pt}
 \normalfont\bfseries
 ] % after-code
@@ -179,9 +179,12 @@ sorting=ynt
 {\bfseries\Large\itshape} % format
 {\thesubsection.}{.5em}{} % before-code
 [
-\vspace{-5mm}%
+\vspace{-20mm}%
 \rule{0.5\textwidth}{0.75pt}
 \normalfont\bfseries
 ] % after-code
+
+\titlespacing*{\section}{0pt}{-15mm}{-10mm}
+\titlespacing*{\subsection}{0pt}{-15mm}{-10mm}
 
 \renewcommand{\emph}[1]{\underline{\bfseries{#1}}}
