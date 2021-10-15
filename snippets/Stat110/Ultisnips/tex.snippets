@@ -30,20 +30,31 @@ endsnippet
 
 context "text()"
 snippet rv "random variable" wA
+r.v.
+endsnippet
+
+context "text()"
+snippet r.v "random variable" wA
 random variable
 endsnippet
 
 # Symbols ––––––––––––––––––––––––––––––––––––––––
 
-context "math()"
-snippet EE "Expectation" iA
-\E
-endsnippet
+# context "math()"
+# snippet EE "Expectation" iA
+# \E
+# endsnippet
 
 # Functions ––––––––––––––––––––––––––––––––––––––––
 
 context "math()"
 snippet bi "binominal" wA
 \binom{$1}{$2} 
+endsnippet
+
+priority 1200
+context "math()"
+snippet '(?<!\\)(Bern|Bin|HGeom|Geom|FS|Pois|Var|NHGeom)' "funcs" rwA
+\\`!p snip.rv = match.group(1)` 
 endsnippet
 

@@ -144,13 +144,13 @@ endsnippet
 # Delimiter ––––––––––––––––––––––––––––––––––––––––
 
 context "math"
-snippet <> "inner product" wA
-\left\langle $1 \right\rangle
+snippet <> "inner product" iA
+\left\langle $1 \right\rangle 
 endsnippet
 
 context "math()"
 snippet ][ "norm" iA
-\norm{$1} $0
+\| $1 \| $0
 endsnippet
 
 # Symbols ––––––––––––––––––––––––––––––––––––––––
@@ -206,11 +206,6 @@ endsnippet
 
 context "math()"
 snippet --d "dual" iA
-^{*}
-endsnippet
-
-context "math()"
-snippet --* "ddual" iA
 ^{**}
 endsnippet
 
@@ -294,6 +289,11 @@ endsnippet
 
 priority 1200
 context "math()"
-snippet '(?<!\\)(gdual|gddual|dim|ker|im|id|spn|chr|ev|tr|vect|Hom|Mor|End|Sym|Aut|rank|Stab|gKer|evIm|nll|Ann|GL|SL|PSL|PGL)' "funcs" rwA
+snippet '(?<!\\)(gdual|gddual|dim|ker|im|id|spn|sgn|chr|tr|Vect|Hom|Mor|End|Sym|Aut|rank|Stab|gKer|evIm|nll|Ann|GL|SL|PSL|PGL)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
+endsnippet
+
+context "math"
+snippet ev. "eval — for clash with evIm" wA
+\ev 
 endsnippet
