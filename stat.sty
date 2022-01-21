@@ -1,0 +1,42 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{stat}
+
+%% PACKAGES
+
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage{mathtools}
+\RequirePackage{amsfonts}
+
+%% STAT SHORTCUTS
+
+\newcommand{\bracenom}{\genfrac{\lbrace}{\rbrace}{0pt}{}}
+\renewcommand{\N}{\mathcal{N}}
+
+\newcommand{\dmo}{\DeclareMathOperator}
+\dmo{\Bin}{Bin}
+\dmo{\Bern}{Bern}
+\dmo{\HGeom}{HGeom}
+\dmo{\Geom}{Geom}
+\dmo{\Pois}{Pois}
+\dmo{\Unif}{Unif}
+\dmo{\FS}{FS}
+\dmo{\Var}{Var}
+\dmo{\NHGeom}{NHGeom}
+\dmo{\Expo}{Expo}
+\dmo{\SD}{SD}
+\dmo{\Cov}{Cov}
+\dmo{\Mult}{Mult}
+\dmo{\Corr}{Corr}
+\dmo{\Beta}{Beta}
+\dmo{\Gam}{Gamma}
+
+\newcommand{\bm}[1]{\boldsymbol{#1}}
+
+\newcommand{\lag}{\mathcal L}
+ 
+\newcommand{\del}{\partial}
+\newcommand{\deriv}[2]{\frac{\text{d} #1}{\text{d} #2}}
+\newcommand{\dv}[1]{\deriv{}{#1}}
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\pv}[1]{\pderiv{}{#1}}

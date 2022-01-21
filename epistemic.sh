@@ -14,13 +14,12 @@ rm_course () {
 
 help_msg () {
 	cat <<HELP
-Usage: ep (55|110|1011|rm|clean)
+Usage: ep (ma|st|rm|clean)
 
 Commands:
 
-  - ma 			Set "current" to Math55
-  - st			Set "current" to Stat110
-  - ec			Set "current" to Econ1011
+  - ma 			Set "current" to Math
+  - st			Set "current" to Stat
   - rm			Remove "current"
   - clean		Clean current directory of LaTeX build files
 HELP
@@ -29,19 +28,29 @@ HELP
 ep () {
 	case $1 in
 		ma)
-			set_course ~/Projects/Live/notes/snippets/Math55
-			cd ~/Classes/Math55A/HW/
+			set_course ~/Projects/Live/notes/snippets/Math
 			;;
 		st)
-			set_course ~/Projects/Live/notes/snippets/Stat110
-			cd ~/Classes/Stat110/HW/
-			;;
-		ec)
-			set_course ~/Projects/Live/notes/snippets/Econ1011
-			cd ~/Classes/Econ1011A/HW/
+			set_course ~/Projects/Live/notes/snippets/Stat
 			;;
 		rm)
 			rm_course
+			;;
+		go)
+			case $2 in
+				55)
+					cd ~/Classes/Math55B/HW
+					;;
+				231)
+					cd ~/Classes/Math231BR/HW
+					;;
+				123)
+					cd ~/Classes/Stat123/HW
+					;;
+				171)
+					cd ~/Classes/Stat171/HW
+					;;
+			esac
 			;;
 		clean)
 			# Run *IN* directory!
