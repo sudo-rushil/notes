@@ -1,0 +1,421 @@
+# Math55 Snippets
+
+global !p
+def math():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '1'
+
+def text():
+	return vim.eval('vimtex#syntax#in_mathzone()') == '0'
+
+def comment(): 
+	return vim.eval('vimtex#syntax#in_comment()') == '1'
+
+def env(name):
+	[x,y] = vim.eval("vimtex#env#is_inside('" + name + "')") 
+	return x != '0' and y != '0'
+
+endglobal
+
+# Text Completions ––––––––––––––––––––––––––––––––––––––––
+
+priority 1000
+context "text()"
+snippet abb "abelian" wA
+abelian
+endsnippet
+
+context "text()"
+snippet bs "basis" wA
+basis
+endsnippet
+
+context "text()"
+snippet cj "conjugacy" wA
+conjugacy
+endsnippet
+
+context "text()"
+snippet cd "closed" wA
+closed
+endsnippet
+
+context "text()"
+snippet cls "closure" wA
+closure
+endsnippet
+
+context "text()"
+snippet cnd "connected" wA
+connected
+endsnippet
+
+context "text()"
+snippet cp "compact" wA
+compact
+endsnippet
+
+context "text()"
+snippet cns "continuous" wA
+continuous
+endsnippet
+
+context "text()"
+snippet dj "disjoint" wA
+disjoint
+endsnippet
+
+context "text()"
+snippet dl "dimensional" wA
+dimensional
+endsnippet
+
+context "text()"
+snippet elt "elt" wA
+element
+endsnippet
+
+context "text()"
+snippet fn "finite" wA
+finite
+endsnippet
+
+context "text()"
+snippet gd "generated" wA
+generated
+endsnippet
+
+context "text()"
+snippet gp "group" wA
+group
+endsnippet
+
+context "text()"
+snippet hd "hausdorff" wA
+Hausdorff
+endsnippet
+
+context "text()"
+snippet heo "homeomorphism" wA
+homeomorphism
+endsnippet
+
+context "text()"
+snippet hm "homomorphism" wA
+homomorphism
+endsnippet
+
+context "text()"
+snippet ij "injective" wA
+injective
+endsnippet
+
+context "text()"
+snippet ip "isomorphism" wA
+isomorphism
+endsnippet
+
+context "text()"
+snippet ir "irreducible" wA
+irreducible
+endsnippet
+
+context "text()"
+snippet iv "inverse" wA
+inverse
+endsnippet
+
+context "text()"
+snippet iw "invariant" wA
+invariant
+endsnippet
+
+context "text()"
+snippet lr "linear" wA
+linear
+endsnippet
+
+context "text()"
+snippet lt "let be a" wA
+let $1 be a 
+endsnippet
+
+context "text()"
+snippet Lt "let be a" wA
+Let $1 be a 
+endsnippet
+
+context "text()"
+snippet nbd "neighborhood" wA
+neighborhood
+endsnippet
+
+context "text()"
+snippet oe "open" wA
+open
+endsnippet
+
+context "text()"
+snippet pd "product" wA
+product
+endsnippet
+
+context "text()"
+snippet pt "point" wA
+point
+endsnippet
+
+context "text()"
+snippet rp "representation" wA
+representation
+endsnippet
+
+context "text()"
+snippet sb "subspace" wA
+subspace
+endsnippet
+
+context "text()"
+snippet sg "subgroup" wA
+subgroup
+endsnippet
+
+context "text()"
+snippet sj "surjective" wA
+surjective
+endsnippet
+
+context "text()"
+snippet sq "sequence" wA
+sequence
+endsnippet
+
+context "text()"
+snippet ss "space" wA
+space
+endsnippet
+
+context "text()"
+snippet tp "topology" wA
+topology
+endsnippet
+
+context "text()"
+snippet ts "topological space" wA
+topological space
+endsnippet
+
+context "text()"
+snippet vc "vector" wA
+vector
+endsnippet
+
+context "text()"
+snippet vs "vector space" wA
+vector space
+endsnippet
+
+# Math Environments ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet '([ijk])bs' "indexed basis" wrA
+\\{{$1}_{`!p snip.rv = match.group(1)`}\\}
+endsnippet
+
+context "math()"
+snippet bs "basis" wA
+\\{{$1}_{$2}\\}
+endsnippet
+
+context "math()"
+snippet mm3 "3 dim matrix" wA
+\begin{pmatrix} $1 & $2 & $3 \\\\ $4 & $5 & $6 \\\\ $7 & $8 & $9 \end{pmatrix}
+$0
+endsnippet
+
+# Delimiter ––––––––––––––––––––––––––––––––––––––––
+
+context "math"
+snippet <> "inner product" iA
+\left\langle $1 \right\rangle 
+endsnippet
+
+context "math()"
+snippet ][ "norm" iA
+\| $1 \| $0
+endsnippet
+
+# Symbols ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet eig "eigenvalue" iA
+\lambda 
+endsnippet
+
+context "math()"
+snippet vphi "varphi" iA
+\varphi 
+endsnippet
+
+context "math()"
+snippet sig "sigma" iA
+\sigma 
+endsnippet
+
+context "math()"
+snippet lll "l" iA
+\ell 
+endsnippet
+
+context "math()"
+snippet PP "powerset" iA
+\P 
+endsnippet
+
+context "math()"
+snippet Rn "Euclidean space" iA
+\R^n 
+endsnippet
+
+priority 1100
+context "math()"
+snippet 'F(\d)' "field" irA
+\F_`!p snip.rv = match.group(1)` 
+endsnippet
+
+context "math()"
+snippet 'Z(\d)' "cyclic group" irA
+\Z/`!p snip.rv = match.group(1)` 
+endsnippet
+
+context "math()"
+snippet 'R(\d)' "Euclidean space" irA
+\R^`!p snip.rv = match.group(1)` 
+endsnippet
+
+context "math()"
+snippet 'S(\d)' "Spheres" irA
+S^`!p snip.rv = match.group(1)` 
+endsnippet
+
+
+
+# Superscripts ––––––––––––––––––––––––––––––––––––––––
+
+priority 1000
+context "math()"
+snippet --p "perpendicular" iA
+^{\perp}
+endsnippet
+
+context "math()"
+snippet --t "transpose" iA
+^{t}
+endsnippet
+
+context "math()"
+snippet --d "ddual" iA
+^{**}
+endsnippet
+
+# Operators ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet @ "tensor" iA
+\otimes 
+endsnippet
+
+context "math()"
+snippet op "oplus" iA
+\oplus 
+endsnippet
+
+context "math()"
+snippet bop "bigoplus" wA
+\bigoplus
+endsnippet
+
+context "math()"
+snippet b@ "bigotimes" wA
+\bigotimes
+endsnippet
+
+context "math()"
+snippet cl "closure" wA
+\cl{$1} 
+endsnippet
+
+# Group Relations ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet <] "normal" iA
+\triangleleft 
+endsnippet
+
+context "math()"
+snippet <! "normaleq" iA
+\trianglelefteq 
+endsnippet
+
+context "math()"
+snippet x! "semidirect" iA
+\rtimes 
+endsnippet
+
+context "math()"
+snippet ~= "simeq" iA
+\simeq 
+endsnippet
+
+context "math()"
+snippet =~ "cong" iA
+\cong 
+endsnippet
+
+# Advanced Arrows ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet ij. "injective arrow" iA
+\inj 
+endsnippet
+
+context "math()"
+snippet sj. "surjective arrow" iA
+\surj 
+endsnippet
+
+context "math()"
+snippet xa. "overarrow to" iA
+\xrightarrow{$1}$0
+endsnippet
+
+# Functions ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet lv "List of vectors" wA
+{$1}_{$2},\ldots,{$1}_{$3} $0
+endsnippet
+
+context "math()"
+snippet ls "sum of vectors" wA
+{$1}_{$2}+\ldots+{$1}_{$3} $0
+endsnippet
+
+priority 1200
+context "math()"
+snippet '(?<!\\)(gdual|gddual|dim|ker|im|id|spn|sgn|chr|tr|Vect|Hom|Mor|End|Sym|Aut|rank|Stab|gKer|evIm|nll|Ann|GL|SL|PSL|PGL)' "funcs" rwA
+\\`!p snip.rv = match.group(1)` 
+endsnippet
+
+context "math"
+snippet ev. "eval — for clash with evIm" wA
+\ev 
+endsnippet
+
+# Differentials ––––––––––––––––––––––––––––––––––––––––
+
+priority 200
+context "math()"
+snippet lm "limit" wA
+\lim_{$1 \to $2} 
+endsnippet
+

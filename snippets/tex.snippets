@@ -98,8 +98,8 @@ snippet nl "newline" bA
 endsnippet
 
 snippet pb "problem" bA
-\begin{problem} %$1
-	$2
+\begin{problem}[$1] %$2
+	$3
 \end{problem}
 endsnippet
 
@@ -125,6 +125,8 @@ snippet so "solution" bA
 \begin{solution}
 	$1
 \end{solution}
+
+\newpage
 endsnippet
 
 snippet th "theorem" bA
@@ -224,6 +226,10 @@ endsnippet
 context "math()"
 snippet tt "text" iA
 \text{$1}$0
+endsnippet
+
+snippet tt "texttt" wA
+\texttt{$1}
 endsnippet
 
 context "math()"
@@ -343,7 +349,7 @@ endsnippet
 
 context "math()"
 snippet OO "emptyset" iA
-\O 
+\emptyset 
 endsnippet
 
 snippet FF "field" iA
@@ -356,6 +362,11 @@ endsnippet
 
 snippet NN "naturals" iA
 \N
+endsnippet
+
+context "math()""
+snippet TT "topology" iA
+\T
 endsnippet
 
 context "math()"
@@ -371,6 +382,11 @@ endsnippet
 context "math()"
 snippet d. "delta" iA
 \delta 
+endsnippet
+
+context "math()"
+snippet e. "epsilon" iA
+\epsilon 
 endsnippet
 
 context "math()"
@@ -409,12 +425,17 @@ snippet t. "tau" iA
 endsnippet
 
 context "math()"
+snippet v. "varepsilon" iA
+\varepsilon 
+endsnippet
+
+context "math()"
 snippet w. "omega" iA
 \omega 
 endsnippet
 
 context "math()"
-snippet oOo "\infty" iA
+snippet 00 "\infty" iA
 \infty 
 endsnippet
 
@@ -450,8 +471,9 @@ snippet '(?<!\\)(alpha|beta|gamma|delta|epsilon|zeta|eta|theta|vartheta|iota|kap
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
+# missing \xi
 context "math()"
-snippet '(?<!\\)(nu|xi|pi|rho|sigma|tau|upsilon|phi|varphi|chi|psi|omega)' "greeks2" rwA
+snippet '(?<!\\)(nu|pi|rho|sigma|tau|upsilon|phi|varphi|chi|psi|omega)' "greeks2" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
@@ -539,18 +561,31 @@ snippet in "in " iA
 \in 
 endsnippet
 
+priority 200
+context "math()"
+snippet xin "x in " iA
+x \in 
+endsnippet
+
+context "math()"
+snippet nin "n in " iA
+n \in 
+endsnippet
+
+priority 0
+
 context "math()"
 snippet ni "not in " iA
 \not\in 
 endsnippet
 
 context "math()"
-snippet Nn "cap" iA
+snippet nn "cap" iA
 \cap 
 endsnippet
 
 context "math()"
-snippet Uu "cup" iA
+snippet uu "cup" iA
 \cup 
 endsnippet
 
@@ -576,12 +611,12 @@ snippet || "mid" iA
 endsnippet
 
 context "math()"
-snippet uuu "bigcup" iA
+snippet UUU "bigcup" iA
 \bigcup 
 endsnippet
 
 context "math()"
-snippet nnn "bigcap" iA
+snippet NNN "bigcap" iA
 \bigcap 
 endsnippet
 
@@ -653,7 +688,7 @@ snippet =< "implied by" Ai
 endsnippet
 
 context "math()"
-snippet iff "iff" Ai
+snippet <=> "iff" Ai
 \iff 
 endsnippet
 

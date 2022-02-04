@@ -13,6 +13,8 @@
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
 \RequirePackage{comment}
+\RequirePackage{quiver}
+\RequirePackage{hyperref}
 \RequirePackage{csquotes}
 \RequirePackage[
 backend=biber,
@@ -22,6 +24,7 @@ sorting=ynt
 \RequirePackage[shortlabels]{enumitem} % Lettered lists
 
 
+
 %% UNIVERSAL MATH
 \newcommand{\R}{\ensuremath{\mathbb R}}
 \newcommand{\C}{\ensuremath{\mathbb C}}
@@ -29,11 +32,16 @@ sorting=ynt
 \newcommand{\F}{\ensuremath{\mathbb F}}
 \newcommand{\Q}{\ensuremath{\mathbb Q}}
 \newcommand{\N}{\ensuremath{\mathbb N}}
+\newcommand{\T}{\ensuremath{\mathcal T}}
+\newcommand{\CC}{\ensuremath{\mathcal C}}
 \renewcommand{\O}{\emptyset}
 
 \let\temp\phi
 \let\phi\varphi
 \let\varphi\temp
+
+
+\newcommand\TODO[1]{\textcolor{red}{\textbf{#1}}}
 
 
 %% ENVIRONMENTS

@@ -29,6 +29,26 @@ i.i.d.
 endsnippet
 
 context "text()"
+snippet ip "independent" wA
+indepenenent
+endsnippet
+
+context "text()"
+snippet mr "Markov chain" wA
+Markov chain
+endsnippet
+
+context "text()"
+snippet prc "process" wA
+process
+endsnippet
+
+context "text()"
+snippet prp "probability" wA
+probability
+endsnippet
+
+context "text()"
 snippet rv "random variable" wA
 r.v.
 endsnippet
@@ -36,6 +56,16 @@ endsnippet
 context "text()"
 snippet r.v "random variable" wA
 random variable
+endsnippet
+
+context "text()"
+snippet ss "state" wA
+state
+endsnippet
+
+context "text()"
+snippet tpm "transition probability matrix" wA
+transition probability matrix
 endsnippet
  
 # Functions ––––––––––––––––––––––––––––––––––––––––
@@ -57,12 +87,46 @@ endsnippet
 
 priority 1200
 context "math()"
-snippet '(?<!\\)(Bern|Bin|Beta|HGeom|Geom|FS|Pois|Var|Expo|SD|Cov|Corr|NHGeom|Mult)' "funcs" rwA
+snippet '(?<!\\)(Bern|Bin|Beta|HGeom|Geom|FS|Pois|Var|Expo|SD|LN|Cov|Corr|iid|NHGeom|Mult)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
+# Matrices ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet mm2 "2 dim matrix" wA
+\begin{pmatrix} $1 & $2 \\\\ $3 & $4 \end{pmatrix}
+$0
+endsnippet
+
+context "math()"
+snippet mm3 "3 dim matrix" wA
+\begin{pmatrix} $1 & $2 & $3 \\\\ $4 & $5 & $6 \\\\ $7 & $8 & $9 \end{pmatrix}
+$0
+endsnippet
+
+context "math()"
+snippet bm2 "2 dim bmatrix" wA
+\bordermatrix{
+	$1 & $2 & $3 \\cr
+	$4 & $5 & $6 \\cr 
+	$7 & $8 & $9 
+}
+$0
+endsnippet
+
+context "math()"
+snippet bmm "bmatrix" wA
+\bordermatrix{
+	$1
+}
+$0
+endsnippet
+
+
 # Differentials ––––––––––––––––––––––––––––––––––––––––
 
+priority 200
 context "math()"
 snippet lm "limit" wA
 \lim_{$1 \to $2}  

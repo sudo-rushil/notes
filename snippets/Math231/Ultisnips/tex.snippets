@@ -20,7 +20,7 @@ endglobal
 
 priority 1000
 context "text()"
-snippet az "abelian" wA
+snippet abb "abelian" wA
 abelian
 endsnippet
 
@@ -35,8 +35,43 @@ conjugacy
 endsnippet
 
 context "text()"
+snippet cd "closed" wA
+closed
+endsnippet
+
+context "text()"
+snippet cls "closure" wA
+closure
+endsnippet
+
+context "text()"
+snippet cnd "connected" wA
+connected
+endsnippet
+
+context "text()"
+snippet cp "compact" wA
+compact
+endsnippet
+
+context "text()"
+snippet cns "continuous" wA
+continuous
+endsnippet
+
+context "text()"
+snippet dj "disjoint" wA
+disjoint
+endsnippet
+
+context "text()"
 snippet dl "dimensional" wA
 dimensional
+endsnippet
+
+context "text()"
+snippet elt "elt" wA
+element
 endsnippet
 
 context "text()"
@@ -52,6 +87,16 @@ endsnippet
 context "text()"
 snippet gp "group" wA
 group
+endsnippet
+
+context "text()"
+snippet hd "hausdorff" wA
+Hausdorff
+endsnippet
+
+context "text()"
+snippet heo "homeomorphism" wA
+homeomorphism
 endsnippet
 
 context "text()"
@@ -91,7 +136,32 @@ endsnippet
 
 context "text()"
 snippet lt "let be a" wA
-let $1 be a
+let $1 be a 
+endsnippet
+
+context "text()"
+snippet Lt "let be a" wA
+Let $1 be a 
+endsnippet
+
+context "text()"
+snippet nbd "neighborhood" wA
+neighborhood
+endsnippet
+
+context "text()"
+snippet oe "open" wA
+open
+endsnippet
+
+context "text()"
+snippet pd "product" wA
+product
+endsnippet
+
+context "text()"
+snippet pt "point" wA
+point
 endsnippet
 
 context "text()"
@@ -115,8 +185,23 @@ surjective
 endsnippet
 
 context "text()"
-snippet sv "space" wA
+snippet sq "sequence" wA
+sequence
+endsnippet
+
+context "text()"
+snippet ss "space" wA
 space
+endsnippet
+
+context "text()"
+snippet tp "topology" wA
+topology
+endsnippet
+
+context "text()"
+snippet ts "topological space" wA
+topological space
 endsnippet
 
 context "text()"
@@ -186,6 +271,11 @@ snippet PP "powerset" iA
 \P 
 endsnippet
 
+context "math()"
+snippet Rn "Euclidean space" iA
+\R^n 
+endsnippet
+
 priority 1100
 context "math()"
 snippet 'F(\d)' "field" irA
@@ -196,6 +286,18 @@ context "math()"
 snippet 'Z(\d)' "cyclic group" irA
 \Z/`!p snip.rv = match.group(1)` 
 endsnippet
+
+context "math()"
+snippet 'R(\d)' "Euclidean space" irA
+\R^`!p snip.rv = match.group(1)` 
+endsnippet
+
+context "math()"
+snippet 'S(\d)' "Spheres" irA
+S^`!p snip.rv = match.group(1)` 
+endsnippet
+
+
 
 # Superscripts ––––––––––––––––––––––––––––––––––––––––
 
@@ -235,6 +337,11 @@ endsnippet
 context "math()"
 snippet b@ "bigotimes" wA
 \bigotimes
+endsnippet
+
+context "math()"
+snippet cl "closure" wA
+\cl{$1} 
 endsnippet
 
 # Group Relations ––––––––––––––––––––––––––––––––––––––––
@@ -303,3 +410,12 @@ context "math"
 snippet ev. "eval — for clash with evIm" wA
 \ev 
 endsnippet
+
+# Differentials ––––––––––––––––––––––––––––––––––––––––
+
+priority 200
+context "math()"
+snippet lm "limit" wA
+\lim_{$1 \to $2} 
+endsnippet
+
