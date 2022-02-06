@@ -12,6 +12,19 @@ rm_course () {
 	rm ~/Documents/Harvard/Classes/current 2> /dev/null
 }
 
+new_hw () { # run from ~/Classes/<course>/HW
+	last_hw=$(ls -t | grep "HW" | head -n1 | grep -oE "\d+")
+	new_num=$(echo "$last_hw + 1" | bc)
+	mkdir HW${new_num}
+	cd HW${new_num}
+	cp ../HW${last_hw}/hw${last_hw}.tex hw${new_num}.tex
+}
+
+current_hw () { # run from ~/Classes/<course>/HW
+	cur_hw=$(ls -t | grep "HW" | head -n1 | grep -oE "\d+")
+	cd HW${cur_hw}
+}
+
 help_msg () {
 	cat <<HELP
 Usage: ep (ma|st|rm|clean)
@@ -27,36 +40,43 @@ HELP
 
 ep () {
 	case $1 in
-		ma)
-			set_course ~/Projects/Live/notes/snippets/Math
-			;;
-		st)
-			set_course ~/Projects/Live/notes/snippets/Stat
-			;;
+		# ma)
+		# 	set_course ~/Projects/Live/notes/snippets/Math
+		# 	;;
+		# st)
+		# 	set_course ~/Projects/Live/notes/snippets/Stat
+		# 	;;
 		rm)
 			rm_course
 			;;
-		go)
-			case $2 in
-				55)
-					cd ~/Classes/Math55B/HW
-					;;
-				231)
-					cd ~/Classes/Math231BR/HW
-					;;
-				123)
-					cd ~/Classes/Stat123/HW
-					;;
-				171)
-					cd ~/Classes/Stat171/HW
-					;;
-			esac
+		ma)
+			set_course ~/Projects/Live/notes/snippets/Math55
+			cd ~/Classes/Math55B/HW
+			current_hw
 			;;
-		clean)
+		at )
+			set_course ~/Projects/Live/notes/snippets/Math231
+			cd ~/Classes/Math231BR/HW
+			current_hw
+			;;
+		fi)
+			set_course ~/Projects/Live/notes/snippets/Stat
+			cd ~/Classes/Stat123/HW
+			current_hw
+			;;
+		st)
+			set_course ~/Projects/Live/notes/snippets/Stat
+			cd ~/Classes/Stat171/HW
+			current_hw
+			;;
+		cl)
 			# Run *IN* directory!
 			echo "Cleaning build files..."
 			rm -f *synctex*
 			latexmk -c &> /dev/null
+			;;
+		nw)
+			new_hw
 			;;
 		-h)
 			help_msg

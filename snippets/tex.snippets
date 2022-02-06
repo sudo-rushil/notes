@@ -137,7 +137,6 @@ endsnippet
 
 # Text Completions ––––––––––––––––––––––––––––––––––––––––
 
-
 context "text()"
 snippet fy "for any" wA
 for any
@@ -146,6 +145,16 @@ endsnippet
 context "text()"
 snippet ie "i.e." wA
 i.e.
+endsnippet
+
+context "text()"
+snippet lt "let be a" wA
+let $1 be a 
+endsnippet
+
+context "text()"
+snippet Lt "let be a" wA
+Let $1 be a 
 endsnippet
 
 context "text()"
@@ -202,50 +211,45 @@ endsnippet
 
 snippet dm "Math" bA
 \[
-${1:${VISUAL}}
+	${1:${VISUAL}}
 \] $0
 endsnippet
 
 snippet d.m "Math" bA
 \[
-${1:${VISUAL}}
+	${1:${VISUAL}}
 .\] $0
 endsnippet
 
 snippet d,m "Math" bA
 \[
-${1:${VISUAL}}
+	${1:${VISUAL}}
 ,\] $0
 endsnippet
 
 context "math()"
-snippet fn "function" iA
-$1 \colon $2 \to 
+snippet :- "function" iA
+\colon $1 \to 
 endsnippet
 
 context "math()"
 snippet tt "text" iA
-\text{$1}$0
-endsnippet
-
-snippet tt "texttt" wA
-\texttt{$1}
+\text{$1} 
 endsnippet
 
 context "math()"
-snippet ub "underbrace" wA
-\underbrace{$1}_{$2}
+snippet bf "textbf" iA
+\textbf{$1} 
 endsnippet
 
-context "math()"
-snippet ceil "ceil" wA
-\left\lceil $1 \right\rceil $0
-endsnippet
+#snippet tt "texttt" wA
+#\texttt{$1}
+#endsnippet
 
-context "math()"
-snippet floor "floor" wA
-\left\lfloor $1 \right\rfloor $0
-endsnippet
+#context "math()"
+#snippet ub "underbrace" wA
+#\underbrace{$1}_{$2}
+#endsnippet
 
 context "math()"
 snippet mat "mat" wA
@@ -321,6 +325,16 @@ endsnippet
 
 snippet lra "leftangle rightangle" iA
 \left\langle ${1:${VISUAL}} \right\rangle $0
+endsnippet
+
+context "math()"
+snippet lr_ "ceil" wA
+\left\lceil $1 \right\rceil $0
+endsnippet
+
+context "math()"
+snippet lr^ "floor" wA
+\left\lfloor $1 \right\rfloor $0
 endsnippet
 
 # Symbols –––––––––––––––––––––––––––––––––––––––-
@@ -435,6 +449,16 @@ snippet w. "omega" iA
 endsnippet
 
 context "math()"
+snippet vphi "varphi" iA
+\varphi 
+endsnippet
+
+context "math()"
+snippet ll "l" iA
+\ell 
+endsnippet
+
+context "math()"
 snippet 00 "\infty" iA
 \infty 
 endsnippet
@@ -467,13 +491,7 @@ snippet "([a-zA-Z])hat" "hat" riA
 endsnippet
 
 context "math()"
-snippet '(?<!\\)(alpha|beta|gamma|delta|epsilon|zeta|eta|theta|vartheta|iota|kappa|lambda|mu)' "greeks" rwA
-\\`!p snip.rv = match.group(1)` 
-endsnippet
-
-# missing \xi
-context "math()"
-snippet '(?<!\\)(nu|pi|rho|sigma|tau|upsilon|phi|varphi|chi|psi|omega)' "greeks2" rwA
+snippet '(?<!\\)(zeta|vartheta|mu|pi|nu|phi|chi|psi|upsilon)' "greeks" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
@@ -484,16 +502,6 @@ endsnippet
 
 # Superscripts ––––––––––––––––––––––––––––––––––––––––
 
-#context "math()"
-#snippet sr "^2" iA
-#^2 
-#endsnippet
-
-#context "math()"
-#snippet cb "^3" iA
-#^3 
-#endsnippet
-
 context "math()"
 snippet ^^ "to the ... power" iA
 ^{$1}$0
@@ -502,11 +510,6 @@ endsnippet
 context "math()"
 snippet --1 "inverse" iA
 ^{-1}
-endsnippet
-
-context "math()"
-snippet --c "complement" iA
-^{c}
 endsnippet
 
 # Subscripts ––––––––––––––––––––––––––––––––––––––––
@@ -526,11 +529,6 @@ snippet '([A-Za-z])_(\d\d)' "auto subscript2" wrA
 `!p snip.rv = match.group(1)`_{`!p snip.rv = match.group(2)`} 
 endsnippet
 
-# context "math()"
-# snippet '([A-Zabcuvwxyz])([ijknm])' "auto subscript3" wrA
-# `!p snip.rv = match.group(1)`_`!p snip.rv = match.group(2)`
-# endsnippet
-
 # General Operators ––––––––––––––––––––––––––––––––––––––––
 
 priority 0
@@ -549,11 +547,6 @@ snippet oo "circ" iA
 \circ 
 endsnippet
 
-context "math()"
-snippet pm "pm" iA
-\pm 
-endsnippet
-
 # Set Operators ––––––––––––––––––––––––––––––––––––––––
 
 context "math()"
@@ -563,17 +556,11 @@ endsnippet
 
 priority 200
 context "math()"
-snippet xin "x in " iA
-x \in 
-endsnippet
-
-context "math()"
 snippet nin "n in " iA
 n \in 
 endsnippet
 
 priority 0
-
 context "math()"
 snippet ni "not in " iA
 \not\in 
@@ -601,22 +588,17 @@ snippet c=c "subsetneq" Ai
 endsnippet
 
 context "math()"
-snippet \\\ "setminus" iA
-\setminus 
-endsnippet
-
-context "math()"
 snippet || "mid" iA
 \mid  
 endsnippet
 
 context "math()"
-snippet UUU "bigcup" iA
+snippet UU "bigcup" iA
 \bigcup 
 endsnippet
 
 context "math()"
-snippet NNN "bigcap" iA
+snippet NN "bigcap" iA
 \bigcap 
 endsnippet
 
@@ -633,16 +615,6 @@ snippet >= "geq" iA
 endsnippet
 
 context "math()"
-snippet >> ">>" iA
-\gg 
-endsnippet
-
-context "math()"
-snippet << "<<" iA
-\ll 
-endsnippet
-
-context "math()"
 snippet == "equals" iA
 &= $1 \\\\
 endsnippet
@@ -655,24 +627,6 @@ endsnippet
 context "math()"
 snippet ~~ "sym" iA
 \sim 
-endsnippet
-
-# Map Arrows ––––––––––––––––––––––––––––––––––––––––
-
-priority 100
-context "math()"
-snippet -> "to" iA
-\to 
-endsnippet
-
-context "math()"
-snippet !> "mapsto" iA
-\mapsto 
-endsnippet
-
-context "math()"
-snippet <-> "leftrightarrow" iA
-\leftrightarrow 
 endsnippet
 
 # Logical Arrows ––––––––––––––––––––––––––––––––––––––––
@@ -713,13 +667,13 @@ endsnippet
 
 priority 100
 context "math()"
-snippet '(?<!\\)(sin|cos|arccot|cot|csc|ln|log|exp)' "funcs" rwA
+snippet '(?<!\\)(sin|cos|cot|csc|ln|log|exp)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|int|sum|prod)' "funcs" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|int|sum|prod|min|max|pm|mp)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet	
 

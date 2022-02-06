@@ -8,6 +8,7 @@
 \RequirePackage[english]{babel}
 \RequirePackage{amsthm}
 \RequirePackage{amsfonts}
+\RequirePackage{mathrsfs}
 \RequirePackage[margin=1in]{geometry}
 \RequirePackage[most]{tcolorbox}
 \RequirePackage{titlesec}

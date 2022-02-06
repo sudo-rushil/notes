@@ -15,13 +15,18 @@
 \newcommand{\norm}[1]{\left\Vert #1\right\Vert}
 \newcommand{\gdual}[1]{\widehat{ #1 }}
 \newcommand{\gddual}[1]{\widehat{\widehat{ #1 }}}
+\newcommand{\del}{\partial}
 
 \newcommand{\cl}[1]{\overline{ #1 }}
+\newcommand{\ol}[1]{\overline{ #1 }}
+\newcommand{\ul}[1]{\underline{ #1 }}
 
 \renewcommand{\P}{\mathcal P}
 
-\newcommand{\inj}{\hookrightarrow}
-\newcommand{\surj}{\twoheadrightarrow}
+\newcommand{\mon}{\hookrightarrow}
+\newcommand{\epi}{\twoheadrightarrow}
+\newcommand{\iso}{\xrightarrow{\sim}}
+\newcommand{\xto}[1]{\xrightarrow{ #1 }}
 
 \newcommand{\dmo}{\DeclareMathOperator}
 \dmo{\im}{im}
@@ -48,3 +53,43 @@
 \dmo{\GL}{GL}
 \dmo{\PSL}{PSL}
 \dmo{\PGL}{PGL}
+\dmo{\colim}{colim}
+\dmo{\Ext}{Ext}
+\dmo{\Tor}{Tor}
+\dmo{\op}{op}
+
+%% Math 231BR Shortcuts
+
+\newcommand{\tinj}[1][]{\arrow[hook, #1]}
+\newcommand{\tepi}[1][]{\arrow[two heads, #1]}
+\newcommand{\tmon}[1][]{\arrow[tail, #1]}
+\newcommand{\tiso}[1][]{\arrow[rightsquigarrow, #1]}
+\newcommand{\tdash}[1][]{\arrow[dashed, #1]}
+\newcommand{\tmto}[1][]{\arrow[maps to, #1]}
+\newcommand{\tlr}[1][]{\arrow["\lrcorner"{anchor=center, pos=0.125}, draw=none, #1]}
+\newcommand{\tud}[1][]{\arrow["\lrcorner"{anchor=center, pos=0.125, rotate=180}, draw=none, #1]}
+
+\newcommand{\f}{\mathfrak}
+\newcommand{\q}{\mathcal}
+\newcommand{\s}{\mathscr}
+
+\newcommand{\Ab}{\textbf{Ab}}
+\newcommand{\Set}{\textbf{Set}}
+\newcommand{\Cat}{\textbf{Cat}}
+\newcommand{\Top}{\textbf{Top}}
+\newcommand{\ho}{\text{ho}}
+
+% \begin{tikzcd}
+% 	\bullet \\
+% 	& \bullet & \bullet & \bullet & \bullet & \bullet & \bullet \\
+% 	& \bullet & \bullet & \bullet & \bullet & \bullet & \bullet \\
+% 	&&& \bullet & \bullet \\
+% 	&&& \bullet & \bullet
+% 	\arrow["a", from=2-2, to=2-3]
+% 	\arrow["d"', from=2-2, to=3-2]
+% 	\arrow["c"', from=3-2, to=3-3]
+% 	\arrow["b", from=2-3, to=3-3]
+% 	\arrow["\lrcorner"{anchor=center, pos=0.125}, draw=none, from=2-2, to=3-3]
+% 	\arrow[curve={height=12pt}, from=1-1, to=3-2]
+% 	\arrow[curve={height=-12pt}, from=1-1, to=2-3]
+% \end{tikzcd}

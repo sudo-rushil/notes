@@ -217,16 +217,6 @@ endsnippet
 # Math Environments ––––––––––––––––––––––––––––––––––––––––
 
 context "math()"
-snippet '([ijk])bs' "indexed basis" wrA
-\\{{$1}_{`!p snip.rv = match.group(1)`}\\}
-endsnippet
-
-context "math()"
-snippet bs "basis" wA
-\\{{$1}_{$2}\\}
-endsnippet
-
-context "math()"
 snippet mm3 "3 dim matrix" wA
 \begin{pmatrix} $1 & $2 & $3 \\\\ $4 & $5 & $6 \\\\ $7 & $8 & $9 \end{pmatrix}
 $0
@@ -257,12 +247,7 @@ snippet vphi "varphi" iA
 endsnippet
 
 context "math()"
-snippet sig "sigma" iA
-\sigma 
-endsnippet
-
-context "math()"
-snippet lll "l" iA
+snippet ll "l" iA
 \ell 
 endsnippet
 
@@ -296,7 +281,6 @@ context "math()"
 snippet 'S(\d)' "Spheres" irA
 S^`!p snip.rv = match.group(1)` 
 endsnippet
-
 
 
 # Superscripts ––––––––––––––––––––––––––––––––––––––––
@@ -367,11 +351,32 @@ snippet ~= "simeq" iA
 endsnippet
 
 context "math()"
+snippet := "coloneqq" iA
+\coloneqq  
+endsnippet
+
+context "math()"
 snippet =~ "cong" iA
 \cong 
 endsnippet
 
 # Advanced Arrows ––––––––––––––––––––––––––––––––––––––––
+
+priority 100
+context "math()"
+snippet -> "to" iA
+\to 
+endsnippet
+
+context "math()"
+snippet !> "mapsto" iA
+\mapsto 
+endsnippet
+
+context "math()"
+snippet <-> "leftrightarrow" iA
+\leftrightarrow 
+endsnippet
 
 context "math()"
 snippet ij. "injective arrow" iA
