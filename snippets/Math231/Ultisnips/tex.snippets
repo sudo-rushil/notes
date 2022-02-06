@@ -126,8 +126,15 @@ else:
 endsnippet
 
 context "text()"
-snippet inj "injection" wA
-inject
+snippet 'inj(v|n|y)' "injection" rwA
+inject`!p
+if match.group(1) == 'v':
+	snip.rv = 'ive'
+elif match.group(1) == 'n':
+	snip.rv = 'ion'
+else:
+	snip.rv = 'ivity'
+`
 endsnippet
 
 context "text()"
@@ -136,13 +143,23 @@ limit
 endsnippet
 
 context "text()"
-snippet '(mono|epi|homo|mor)' "morphisms" rwA
+snippet '(monom|epi|homo|morp)' "morphisms" rwA
 `!p
 _t = match.group(1)
-if _t == 'mono': snip.rv = 'monomorphism'
+if _t == 'monom': snip.rv = 'monomorphism'
 elif _t == 'epi': snip.rv = 'epimorphism'
 elif _t == 'homo': snip.rv = 'homomorphism'
 else: snip.rv = 'morphism'
+`
+endsnippet
+
+context "text()"
+snippet 'n(t|i)/' "nat" riA
+natural `!p
+if match.group(1) == 't':
+	snip.rv = 'transformation'
+else:
+	snip.rv = 'isomorphism'
 `
 endsnippet
 
@@ -157,11 +174,6 @@ pullback
 endsnippet
 
 context "text()"
-snippet f/ "faithful" wA
-simplex
-endsnippet
-
-context "text()"
 snippet spc "space" wA
 space
 endsnippet
@@ -172,8 +184,15 @@ simplex
 endsnippet
 
 context "text()"
-snippet surj "surjection" wA
-surject
+snippet 'surj(v|n|y)' "surjection" rwA
+surject`!p
+if match.group(1) == 'v':
+	snip.rv = 'ive'
+elif match.group(1) == 'n':
+	snip.rv = 'ion'
+else:
+	snip.rv = 'ivity'
+`
 endsnippet
 
 context "text()"
@@ -281,6 +300,11 @@ endsnippet
 context "math()"
 snippet '([A-Z])(s|f|q)' "Categories" riA
 \\`!p snip.rv = match.group(2)`{`!p snip.rv = match.group(1)`}
+endsnippet
+
+context "math()"
+snippet '(s|f|q)([A-Z])' "Categories 2" riA
+\\`!p snip.rv = match.group(1)`{`!p snip.rv = match.group(2)`}
 endsnippet
 
 context "math()"
