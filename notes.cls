@@ -5,6 +5,7 @@
 %% PACKAGES
 \LoadClass[11pt]{article}
 \RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
 \RequirePackage[english]{babel}
 \RequirePackage{amsthm}
 \RequirePackage{amsfonts}
@@ -23,6 +24,7 @@ style=alphabetic,
 sorting=ynt
 ]{biblatex}
 \RequirePackage[shortlabels]{enumitem} % Lettered lists
+\RequirePackage{lmodern}
 
 
 
@@ -43,6 +45,8 @@ sorting=ynt
 
 
 \newcommand\TODO[1]{\textcolor{red}{\textbf{#1}}}
+
+\newcommand{\cmt}[1]{\text{{\fontfamily{cmtt}\selectfont #1}}}
 
 
 %% ENVIRONMENTS

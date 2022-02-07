@@ -111,8 +111,13 @@ homology
 endsnippet
 
 context "text()"
-snippet htpy "htpy" wA
-homotopy
+snippet 'htp(c|y)' "htpy" rwA
+homotop`!p
+if match.group(1) == 'c':
+	snip.rv = 'ic'
+else:
+	snip.rv = 'y'
+`
 endsnippet
 
 context "text()"
@@ -404,6 +409,16 @@ snippet '(\w{0,1})->' "to" riA
 endsnippet
 
 context "math()"
+snippet to "to" iA
+\xto{$1} 
+endsnippet
+
+context "math()"
+snippet To "to" iA
+\xTo{$1} 
+endsnippet
+
+context "math()"
 snippet !> "mapsto" iA
 \mapsto 
 endsnippet
@@ -438,6 +453,21 @@ snippet cd "commutative diagram" bA
 \[\begin{tikzcd}[$1]
 	$2
 \end{tikzcd}\]
+endsnippet
+
+context "env('tikzcd')"
+snippet lg "large" iA
+large 
+endsnippet
+
+context "env('tikzcd')"
+snippet sl "small" iA
+small 
+endsnippet
+
+context "env('tikzcd')"
+snippet ty "tiny" iA
+tiny 
 endsnippet
 
 context "env('tikzcd')"
