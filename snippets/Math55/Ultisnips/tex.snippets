@@ -20,7 +20,7 @@ endglobal
 
 priority 1000
 context "text()"
-snippet abb "abelian" wA
+snippet abl "abelian" wA
 abelian
 endsnippet
 
@@ -75,8 +75,8 @@ element
 endsnippet
 
 context "text()"
-snippet fn "finite" wA
-finite
+snippet fn "function" wA
+function
 endsnippet
 
 context "text()"
@@ -237,21 +237,6 @@ endsnippet
 # Symbols ––––––––––––––––––––––––––––––––––––––––
 
 context "math()"
-snippet eig "eigenvalue" iA
-\lambda 
-endsnippet
-
-context "math()"
-snippet vphi "varphi" iA
-\varphi 
-endsnippet
-
-context "math()"
-snippet ll "l" iA
-\ell 
-endsnippet
-
-context "math()"
 snippet PP "powerset" iA
 \P 
 endsnippet
@@ -303,8 +288,9 @@ endsnippet
 
 # Operators ––––––––––––––––––––––––––––––––––––––––
 
+priority 100
 context "math()"
-snippet @ "tensor" iA
+snippet ox "tensor" iA
 \otimes 
 endsnippet
 
@@ -314,18 +300,23 @@ snippet op "oplus" iA
 endsnippet
 
 context "math()"
-snippet bop "bigoplus" wA
-\bigoplus
+snippet OP "bigoplus" wA
+\bigoplus 
 endsnippet
 
 context "math()"
-snippet b@ "bigotimes" wA
-\bigotimes
+snippet OX "bigotimes" wA
+\bigotimes 
 endsnippet
 
 context "math()"
-snippet cl "closure" wA
-\cl{$1} 
+snippet ol "overline" wA
+\ol{$1}
+endsnippet
+
+context "math()"
+snippet ul "underline" wA
+\ul{$1}
 endsnippet
 
 # Group Relations ––––––––––––––––––––––––––––––––––––––––
@@ -360,12 +351,27 @@ snippet =~ "cong" iA
 \cong 
 endsnippet
 
-# Advanced Arrows ––––––––––––––––––––––––––––––––––––––––
+context "math()"
+snippet :: "colon" iA
+\colon 
+endsnippet
+
+# Arrows ––––––––––––––––––––––––––––––––––––––––
 
 priority 100
 context "math()"
-snippet -> "to" iA
-\to 
+snippet '(\w{0,1})->' "to" riA
+\xto{`!p snip.rv = match.group(1)`} 
+endsnippet
+
+context "math()"
+snippet to "to" iA
+\xto{$1} 
+endsnippet
+
+context "math()"
+snippet To "to" iA
+\xTo{$1} 
 endsnippet
 
 context "math()"
@@ -374,23 +380,18 @@ snippet !> "mapsto" iA
 endsnippet
 
 context "math()"
-snippet <-> "leftrightarrow" iA
-\leftrightarrow 
+snippet mon. "injective arrow" iA
+\mon 
 endsnippet
 
 context "math()"
-snippet ij. "injective arrow" iA
-\inj 
+snippet epi. "surjective arrow" iA
+\epi 
 endsnippet
 
 context "math()"
-snippet sj. "surjective arrow" iA
-\surj 
-endsnippet
-
-context "math()"
-snippet xa. "overarrow to" iA
-\xrightarrow{$1}$0
+snippet iso. "isomorphism arrow" iA
+\iso 
 endsnippet
 
 # Functions ––––––––––––––––––––––––––––––––––––––––
@@ -407,7 +408,7 @@ endsnippet
 
 priority 1200
 context "math()"
-snippet '(?<!\\)(gdual|gddual|dim|ker|im|id|spn|sgn|chr|tr|Vect|Hom|Mor|End|Sym|Aut|rank|Stab|gKer|evIm|nll|Ann|GL|SL|PSL|PGL)' "funcs" rwA
+snippet '(?<!\\)(sup|gdual|gddual|dim|ker|im|id|spn|sgn|chr|tr|Vect|Hom|Mor|End|Sym|Aut|rank|Stab|gKer|evIm|nll|Ann|GL|SL|PSL|PGL)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 

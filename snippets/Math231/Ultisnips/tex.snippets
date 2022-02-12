@@ -61,6 +61,11 @@ complex
 endsnippet
 
 context "text()"
+snippet Ctfd "consider" wA
+Consider the following diagram
+endsnippet
+
+context "text()"
 snippet dgm "diagram" wA
 diagram
 endsnippet
@@ -77,6 +82,18 @@ if match.group(1) == 'v':
 	snip.rv = 'ce'
 else:
 	snip.rv = 't'
+`
+endsnippet
+
+context "text()"
+snippet '(hf|sf|f)b' "fibration" rwA
+`!p
+if match.group(1) == 'hf':
+	snip.rv = 'Hurewicz fibration'
+elif match.group(1) == 'sf':
+	snip.rv = 'Serre fibration'
+else:
+	snip.rv = 'fibration'
 `
 endsnippet
 
@@ -106,15 +123,27 @@ else:
 endsnippet
 
 context "text()"
+snippet 'h(l|e)p' "htpy property" rwA
+homotopy `!p
+if match.group(1) == 'e':
+	snip.rv = 'extension'
+else:
+	snip.rv = 'lifting'
+` property
+endsnippet
+
+context "text()"
 snippet hmlg "homology" wA
 homology
 endsnippet
 
 context "text()"
-snippet 'htp(c|y)' "htpy" rwA
+snippet 'htp(c|y|s)' "htpy" rwA
 homotop`!p
 if match.group(1) == 'c':
 	snip.rv = 'ic'
+elif match.group(1) == 's':
+	snip.rv = 'ies'
 else:
 	snip.rv = 'y'
 `
@@ -148,6 +177,20 @@ limit
 endsnippet
 
 context "text()"
+snippet 'l(e|eh|eH|eC)s' "long exact sequence" rwA
+long exact `!p
+_t = match.group(1)
+if _t == 'eh':
+	snip.rv = 'homotopy '
+elif _t == 'eH':
+	snip.rv = 'homology '
+elif _t == 'eC':
+	snip.rv = 'cohomology '
+`sequence
+endsnippet
+
+
+context "text()"
 snippet '(monom|epi|homo|morp)' "morphisms" rwA
 `!p
 _t = match.group(1)
@@ -174,8 +217,18 @@ object
 endsnippet
 
 context "text()"
+snippet pt "point" wA
+point
+endsnippet
+
+context "text()"
 snippet pbck "pullback" wA
 pullback
+endsnippet
+
+context "text()"
+snippet ses "short exact sequence" wA
+short exact sequence
 endsnippet
 
 context "text()"
@@ -220,6 +273,11 @@ endsnippet
 context "text()"
 snippet w/ "with" wA
 with
+endsnippet
+
+context "text()"
+snippet x/ "exact" wA
+exact
 endsnippet
 
 # Math Environments ––––––––––––––––––––––––––––––––––––––––
@@ -318,13 +376,7 @@ snippet bg "BG" iA
 endsnippet
 
 context "math()"
-snippet ac "group action" iA
-\q{B}_{$1} \xto{$2} $3
-endsnippet
-
-
-context "math()"
-snippet '(?<!\\)(ho|Ab|Set|Cat|Top)' "Cats" rwA
+snippet '(?<!\\)(ho|Ab|Set|Cat|Top|Spaces)' "Cats" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
@@ -376,6 +428,11 @@ endsnippet
 context "math()"
 snippet ul "underline" wA
 \ul{$1}
+endsnippet
+
+context "math()"
+snippet tl "underline" wA
+\tilde{$1}
 endsnippet
 
 # Equals ––––––––––––––––––––––––––––––––––––––––
@@ -442,7 +499,7 @@ endsnippet
 
 priority 1200
 context "math()"
-snippet '(?<!\\)(dim|ker|im|id|Hom|Aut|Ext|Tor|Stab|GL|SL|PSL|PGL|lim|colim)' "funcs" rwA
+snippet '(?<!\\)(dim|ker|im|id|Hom|Aut|Ext|Tor|Stab|GL|SL|PSL|PGL|dlim|ilim|colim|lim|cpd)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
@@ -471,8 +528,32 @@ tiny
 endsnippet
 
 context "env('tikzcd')"
-snippet ar "arrow" iA
-\ar["$1", $2] 
+snippet ft "from, to" iA
+from=$1, to=$2, 
+endsnippet
+
+context "env('tikzcd')"
+snippet red "red color" iA
+color={rgb,255:red,196;green,49;blue,49}, 
+endsnippet
+
+context "env('tikzcd')"
+snippet grn "green color" iA
+color={rgb,255:red,46;green,168;blue,70}, 
+endsnippet
+
+context "env('tikzcd')"
+snippet 'cr(u|v)' "curve up down" riA
+`!p
+if match.group(1) == 'u':
+	snip.rv = 'curve={height=-12pt}, '
+else:
+	snip.rv = 'curve={height=12pt}, '
+endsnippet
+
+context "env('tikzcd')"
+snippet '(ra|da|la|ua|a)r' "arrow" riA
+\\`!p snip.rv = match.group(1)`r["$1", $2] 
 endsnippet
 
 context "env('tikzcd')"
