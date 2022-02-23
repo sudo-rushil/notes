@@ -29,6 +29,16 @@ between
 endsnippet
 
 context "text()"
+snippet 'bd(y|s)' "boundary/boundaries" rwA
+boundar`!p
+if match.group(1) == 's':
+	snip.rv = 'ies'
+else:
+	snip.rv = 'y'
+`
+endsnippet
+
+context "text()"
 snippet 'cat(y|s)' "category/categories" rwA
 categor`!p
 if match.group(1) == 's':
@@ -58,11 +68,6 @@ endsnippet
 context "text()"
 snippet cplx "complex" wA
 complex
-endsnippet
-
-context "text()"
-snippet Ctfd "consider" wA
-Consider the following diagram
 endsnippet
 
 context "text()"
@@ -177,7 +182,7 @@ limit
 endsnippet
 
 context "text()"
-snippet 'l(e|eh|eH|eC)s' "long exact sequence" rwA
+snippet 'l(e|eh|eH|eC)s/' "long exact sequence" rwA
 long exact `!p
 _t = match.group(1)
 if _t == 'eh':
@@ -191,7 +196,7 @@ endsnippet
 
 
 context "text()"
-snippet '(monom|epi|homo|morp)' "morphisms" rwA
+snippet '(monom|epi|homom|morp)' "morphisms" rwA
 `!p
 _t = match.group(1)
 if _t == 'monom': snip.rv = 'monomorphism'
