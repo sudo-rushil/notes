@@ -29,12 +29,17 @@ sorting=ynt
 
 
 %% UNIVERSAL MATH
-\newcommand{\R}{\ensuremath{\mathbb R}}
-\newcommand{\C}{\ensuremath{\mathbb C}}
-\newcommand{\Z}{\ensuremath{\mathbb Z}}
+\renewcommand{\R}{\mathbf{R}}
+\renewcommand{\C}{\mathbf{C}}
+\renewcommand{\Z}{\mathbf{Z}}
+\renewcommand{\Q}{\mathbf{Q}}
 \newcommand{\F}{\ensuremath{\mathbb F}}
-\newcommand{\Q}{\ensuremath{\mathbb Q}}
 \newcommand{\N}{\ensuremath{\mathbb N}}
+
+\RequirePackage{libertine}
+\RequirePackage[libertine]{newtxmath}
+
+
 \newcommand{\T}{\ensuremath{\mathcal T}}
 \newcommand{\CC}{\ensuremath{\mathcal C}}
 \renewcommand{\O}{\emptyset}

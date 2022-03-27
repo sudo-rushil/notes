@@ -75,9 +75,9 @@ ep () {
 			rm -f *synctex*
 			latexmk -c &> /dev/null
 			;;
-		nw)
-			new_hw
-			;;
+		# nw)
+		# 	new_hw
+		# 	;;
 		-h)
 			help_msg
 			;;
