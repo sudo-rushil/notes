@@ -408,7 +408,7 @@ endsnippet
 
 priority 1200
 context "math()"
-snippet '(?<!\\)(sup|gdual|gddual|dim|ker|im|id|spn|sgn|chr|tr|Vect|Hom|Mor|End|Sym|Aut|rank|Stab|gKer|evIm|nll|Ann|GL|SL|PSL|PGL)' "funcs" rwA
+snippet '(?<!\\)(sup|det|vol|area|inf|max|min|gdual|dim|del|ker|im|id|tr|Vect|Hom|End|Sym|Aut)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
@@ -423,5 +423,25 @@ priority 200
 context "math()"
 snippet lm "limit" wA
 \lim_{$1 \to $2} 
+endsnippet
+
+context "math()"
+snippet dr "dy/dx" wA
+\deriv{$1}{$2} $0
+endsnippet
+
+context "math()"
+snippet pr "∂y/∂x" wA
+\pderiv{$1}{$2} $0
+endsnippet
+
+context "math()"
+snippet AA "\wedge" iA
+\wedge 
+endsnippet
+
+context "math()"
+snippet dd "d" iA
+\,d
 endsnippet
 

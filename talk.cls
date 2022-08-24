@@ -1,9 +1,9 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{notes}
+\ProvidesClass{talk}
 
 
 %% PACKAGES
-\LoadClass[11pt]{article}
+\LoadClass[14pt]{amsart}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[english]{babel}
@@ -29,10 +29,10 @@ sorting=ynt
 
 
 %% UNIVERSAL MATH
-\renewcommand{\R}{\mathbf{R}}
-\renewcommand{\C}{\mathbf{C}}
-\renewcommand{\Z}{\mathbf{Z}}
-\renewcommand{\Q}{\mathbf{Q}}
+\newcommand{\R}{\mathbf{R}}
+\newcommand{\C}{\mathbf{C}}
+\newcommand{\Z}{\mathbf{Z}}
+\newcommand{\Q}{\mathbf{Q}}
 \newcommand{\F}{\ensuremath{\mathbb F}}
 \newcommand{\N}{\ensuremath{\mathbb N}}
 

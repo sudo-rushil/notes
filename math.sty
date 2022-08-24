@@ -48,7 +48,7 @@
 \dmo{\Stab}{Stab}
 \dmo{\gKer}{gKer}
 \dmo{\evIm}{evIm}
-\dmo{\nll}{null}
+% \dmo{\nll}{null}
 \dmo{\Ann}{Ann}
 \dmo{\SL}{SL}
 \dmo{\GL}{GL}
@@ -59,6 +59,15 @@
 \dmo{\Tor}{Tor}
 \dmo{\op}{op}
 \dmo{\Map}{Map}
+\dmo{\coker}{coker}
+\dmo{\vol}{vol}
+\dmo{\area}{area}
+\dmo{\Sq}{Sq}
+\dmo{\Der}{Der}
+\dmo{\Psh}{Psh}
+
+\newcommand{\deriv}[2]{\frac{\text{d} #1}{\text{d} #2}}
+\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
 
 %% Math 231BR Shortcuts
 
@@ -78,7 +87,8 @@
 \newcommand{\Ab}{\textbf{Ab}}
 \newcommand{\Set}{\textbf{Set}}
 \newcommand{\Cat}{\textbf{Cat}}
-\newcommand{\Top}{\textbf{Top}}
+% \renewcommand{\Top}{\textbf{Top}}
+\renewcommand{\Top}{\textbf{Top}}
 \newcommand{\Spaces}{\textbf{Spaces}}
 \newcommand{\ho}{\text{ho}}
 
@@ -89,17 +99,3 @@
 \newcommand{\RP}{\mathbf{RP}}
 \newcommand{\CP}{\mathbf{CP}}
 
-% \begin{tikzcd}
-% 	\bullet \\
-% 	& \bullet & \bullet & \bullet & \bullet & \bullet & \bullet \\
-% 	& \bullet & \bullet & \bullet & \bullet & \bullet & \bullet \\
-% 	&&& \bullet & \bullet \\
-% 	&&& \bullet & \bullet
-% 	\arrow["a", from=2-2, to=2-3]
-% 	\arrow["d"', from=2-2, to=3-2]
-% 	\arrow["c"', from=3-2, to=3-3]
-% 	\arrow["b", from=2-3, to=3-3]
-% 	\arrow["\lrcorner"{anchor=center, pos=0.125}, draw=none, from=2-2, to=3-3]
-% 	\arrow[curve={height=12pt}, from=1-1, to=3-2]
-% 	\arrow[curve={height=-12pt}, from=1-1, to=2-3]
-% \end{tikzcd}

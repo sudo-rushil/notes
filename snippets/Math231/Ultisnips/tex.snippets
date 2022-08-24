@@ -390,6 +390,11 @@ snippet --o "opposite" iA
 ^{\op} 
 endsnippet
 
+context "math()"
+snippet Pre "presheaf" iA
+\Psh 
+endsnippet
+
 # Simplexes ––––––––––––––––––––––––––––––––––––––––
 
 context "math()"
@@ -413,6 +418,21 @@ endsnippet
 context "math()"
 snippet op "oplus" iA
 \oplus 
+endsnippet
+
+context "math()"
+snippet vv "wedge" iA
+\vee 
+endsnippet
+
+context "math()"
+snippet VV "wedge" iA
+\bigvee 
+endsnippet
+
+context "math()"
+snippet ss "smash" iA
+\wedge  
 endsnippet
 
 context "math()"
@@ -504,8 +524,23 @@ endsnippet
 
 priority 1200
 context "math()"
-snippet '(?<!\\)(dim|ker|im|id|Hom|Aut|Map|Ext|RP|CP|Tor|Stab|GL|SL|PSL|PGL|dlim|ilim|colim|lim|cpd)' "funcs" rwA
+snippet '(?<!\\)(dim|ker|im|id|Hom|Aut|Map|Ext|RP|CP|Tor|Stab|GL|SL|PSL|PGL|dlim|ilim|colim|lim|cpd|Der)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
+endsnippet
+
+context "math()"
+snippet ckr "cokernel" wA
+\coker 
+endsnippet
+
+context "math()"
+snippet sq "Square two" iA
+\Sq^2 
+endsnippet
+
+context "math()"
+snippet tr "tors" iA
+\q{C}_{tors} 
 endsnippet
 
 # Diagrams ––––––––––––––––––––––––––––––––––––––––
@@ -701,7 +736,7 @@ snippet un "under" bA
 endsnippet
 
 #square
-snippet sq "square" bA
+snippet sur "square" bA
 \[\begin{tikzcd}
 	$1 \ar[r, "$5"] \ar[d, "$6"'] &
 	$2 \ar[d, "$7"] \\\\

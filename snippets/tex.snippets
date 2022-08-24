@@ -666,7 +666,7 @@ endsnippet
 # Functions ––––––––––––––––––––––––––––––––––––––––
 
 context "math()"
-snippet ff "integral" iA
+snippet f1 "integral" iA
 \int 
 endsnippet
 
@@ -683,9 +683,14 @@ endsnippet
 
 priority 200
 context "math()"
-snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|int|sum|prod|min|max|pm|mp)' "funcs" rwA
+snippet '(?<!\\)(arcsin|arccos|arctan|arccot|arccsc|arcsec|int|sum|min|max|pm|mp)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet	
+
+context "math()"
+snippet pd "prod" iA
+\prod 
+endsnippet
 
 
 # vim:ft=snippets
