@@ -26,32 +26,16 @@ sorting=ynt
 \RequirePackage[shortlabels]{enumitem} % Lettered lists
 \RequirePackage{lmodern}
 
-
-
-%% UNIVERSAL MATH
-\newcommand{\R}{\mathbf{R}}
-\newcommand{\C}{\mathbf{C}}
-\newcommand{\Z}{\mathbf{Z}}
-\newcommand{\Q}{\mathbf{Q}}
-\newcommand{\F}{\ensuremath{\mathbb F}}
-\newcommand{\N}{\ensuremath{\mathbb N}}
-
 \RequirePackage{libertine}
 \RequirePackage[libertine]{newtxmath}
-
-
-\newcommand{\T}{\ensuremath{\mathcal T}}
-\newcommand{\CC}{\ensuremath{\mathcal C}}
-\renewcommand{\O}{\emptyset}
 
 \let\temp\phi
 \let\phi\varphi
 \let\varphi\temp
 
-
 \newcommand\TODO[1]{\textcolor{red}{\textbf{#1}}}
 
-\newcommand{\cmt}[1]{\text{{\fontfamily{cmtt}\selectfont #1}}}
+% \newcommand{\cmt}[1]{\text{{\fontfamily{cmtt}\selectfont #1}}}
 
 
 %% ENVIRONMENTS
@@ -180,14 +164,14 @@ sorting=ynt
 \setlength{\headheight}{14pt}
 
 \setlength{\parindent}{0pt}
-\setlength{\parskip}{10ex}
+\setlength{\parskip}{2.5ex}
 
 \titleformat
 {\section} % command
 {\bfseries\Large\itshape} % format
 {\thesection}{.5em}{} % before-code
 [
-\vspace{-20mm}%
+\vspace{-8mm}%
 \rule{0.75\textwidth}{1pt}
 \normalfont\bfseries
 ] % after-code
@@ -197,12 +181,12 @@ sorting=ynt
 {\bfseries\Large\itshape} % format
 {\thesubsection.}{.5em}{} % before-code
 [
-\vspace{-20mm}%
+\vspace{-8mm}%
 \rule{0.5\textwidth}{0.75pt}
 \normalfont\bfseries
 ] % after-code
 
-\titlespacing*{\section}{0pt}{-15mm}{-10mm}
-\titlespacing*{\subsection}{0pt}{-15mm}{-10mm}
+\titlespacing*{\section}{0pt}{0mm}{0mm}
+\titlespacing*{\subsection}{0pt}{0mm}{0mm}
 
-\renewcommand{\emph}[1]{\underline{\bfseries{#1}}}
+% \renewcommand{\emph}[1]{\underline{\bfseries{#1}}}

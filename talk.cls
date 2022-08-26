@@ -3,206 +3,185 @@
 
 
 %% PACKAGES
-\LoadClass[14pt]{amsart}
+\LoadClass[leqno]{amsart}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[english]{babel}
-\RequirePackage{amsthm}
-\RequirePackage{amsfonts}
+\RequirePackage[fontsize=13pt]{scrextend}
+\RequirePackage{setspace}
+% \RequirePackage{titling}
+% \renewcommand{\maketitlehooka}{\Large}
+% \renewcommand{\maketitlehookb}{\normalsize}
+
 \RequirePackage{mathrsfs}
 \RequirePackage[margin=1in]{geometry}
-\RequirePackage[most]{tcolorbox}
-\RequirePackage{titlesec}
+\usepackage[usenames,dvipsnames]{xcolor}
 \RequirePackage{fancyhdr}
 \RequirePackage{comment}
 \RequirePackage{quiver}
+\RequirePackage{url}
 \RequirePackage{hyperref}
 \RequirePackage{csquotes}
-\RequirePackage[
-backend=biber,
-style=alphabetic,
-sorting=ynt
-]{biblatex}
 \RequirePackage[shortlabels]{enumitem} % Lettered lists
 \RequirePackage{lmodern}
-
-
-
-%% UNIVERSAL MATH
-\newcommand{\R}{\mathbf{R}}
-\newcommand{\C}{\mathbf{C}}
-\newcommand{\Z}{\mathbf{Z}}
-\newcommand{\Q}{\mathbf{Q}}
-\newcommand{\F}{\ensuremath{\mathbb F}}
-\newcommand{\N}{\ensuremath{\mathbb N}}
 
 \RequirePackage{libertine}
 \RequirePackage[libertine]{newtxmath}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\T}{\ensuremath{\mathcal T}}
-\newcommand{\CC}{\ensuremath{\mathcal C}}
-\renewcommand{\O}{\emptyset}
+\hypersetup{%
+  bookmarksnumbered=true,%
+  bookmarks=true,%
+  colorlinks=true,%
+  linkcolor=BlueViolet,%
+  citecolor=BlueViolet,%
+  filecolor=BlueViolet,%
+  menucolor=BlueViolet,%
+  urlcolor=BlueViolet,%
+  pdfnewwindow=true,%
+  pdfstartview=FitBH}   
+  
+\pagestyle{plain}
+
+\let\fullref\autoref
+%
+%  \autoref is very crude.  It uses counters to distinguish environments
+%  so that if say {lemma} uses the {theorem} counter, then autrorefs
+%  which should come out Lemma X.Y in fact come out Theorem X.Y.  To
+%  correct this give each its own counter eg:
+%                 \newtheorem{theorem}{Theorem}[section]
+%                 \newtheorem{lemma}{Lemma}[section]
+%  and then equate the counters by commands like:
+%                 \makeatletter
+%                   \let\c@lemma\c@theorem
+%                  \makeatother
+%
+%  To work correctly the environment name must have a corrresponding 
+%  \XXXautorefname defined.  The following command does the job:
+%
+\def\makeautorefname#1#2{\expandafter\def\csname#1autorefname\endcsname{#2}}
+%
+%  Some standard autorefnames.  If the environment name for an autoref 
+%  you need is not listed below, add a similar line to your TeX file:
+%  
+%\makeautorefname{equation}{Equation}%
+\def\equationautorefname~#1\null{(#1)\null}
+\makeautorefname{footnote}{footnote}%
+\makeautorefname{item}{item}%
+\makeautorefname{figure}{Figure}%
+\makeautorefname{table}{Table}%
+\makeautorefname{part}{Part}%
+\makeautorefname{appendix}{Appendix}%
+\makeautorefname{chapter}{Chapter}%
+\makeautorefname{section}{Section}%
+\makeautorefname{subsection}{Section}%
+\makeautorefname{subsubsection}{Section}%
+\makeautorefname{theorem}{Theorem}%
+\makeautorefname{thm}{Theorem}%
+\makeautorefname{cor}{Corollary}%
+\makeautorefname{lem}{Lemma}%
+\makeautorefname{prop}{Proposition}%
+\makeautorefname{pro}{Property}
+\makeautorefname{conj}{Conjecture}%
+\makeautorefname{defn}{Definition}%
+\makeautorefname{notn}{Notation}
+\makeautorefname{notns}{Notations}
+\makeautorefname{rem}{Remark}%
+\makeautorefname{quest}{Question}%
+\makeautorefname{exmp}{Example}%
+\makeautorefname{ax}{Axiom}%
+\makeautorefname{claim}{Claim}%
+\makeautorefname{ass}{Assumption}%
+\makeautorefname{asss}{Assumptions}%
+\makeautorefname{con}{Construction}%
+\makeautorefname{prob}{Problem}%
+\makeautorefname{warn}{Warning}%
+\makeautorefname{obs}{Observation}%
+\makeautorefname{conv}{Convention}%
+
+
+%
+%                  *** End of hyperref stuff ***
+
+%theoremstyle{plain} --- default
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{lem}{Lemma}[section]
+\newtheorem{prob}{Problem}[section]
+\newtheorem{conj}{Conjecture}[section]
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\newtheorem{ass}{Assumption}[section]
+\newtheorem{asss}{Assumptions}[section]
+\newtheorem{ax}{Axiom}[section]
+\newtheorem{con}{Construction}[section]
+\newtheorem{exmp}{Example}[section]
+\newtheorem{notn}{Notation}[section]
+\newtheorem{notns}{Notations}[section]
+\newtheorem{pro}{Property}[section]
+\newtheorem{quest}{Question}[section]
+\newtheorem{rem}{Remark}[section]
+\newtheorem{warn}{Warning}[section]
+
+%%%% hack to get fullref working correctly
+\makeatletter
+\let\c@obs=\c@thm
+\let\c@cor=\c@thm
+\let\c@prop=\c@thm
+\let\c@lem=\c@thm
+\let\c@prob=\c@thm
+\let\c@con=\c@thm
+\let\c@conj=\c@thm
+\let\c@defn=\c@thm
+\let\c@notn=\c@thm
+\let\c@notns=\c@thm
+\let\c@exmp=\c@thm
+\let\c@ax=\c@thm
+\let\c@pro=\c@thm
+\let\c@ass=\c@thm
+\let\c@warn=\c@thm
+\let\c@rem=\c@thm
+\let\c@sch=\c@thm
+\let\c@equation\c@thm
+\numberwithin{equation}{section}
+\makeatother
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\bibliographystyle{plain}
 
 \let\temp\phi
 \let\phi\varphi
 \let\varphi\temp
 
-
-\newcommand\TODO[1]{\textcolor{red}{\textbf{#1}}}
-
-\newcommand{\cmt}[1]{\text{{\fontfamily{cmtt}\selectfont #1}}}
+\renewcommand{\datename}{\textit{Date}:}
 
 
-%% ENVIRONMENTS
-\newtcolorbox{digression}{
-    blanker,breakable,
-    halign=justify,
-    left=20pt,
-    before skip=5pt,after skip=10pt,
-    coltext=blue!75!black
-}
+% \usepackage{abstract}
+% \renewcommand{\abstractname}{}    % clear the title
+% \renewcommand{\absnamepos}{empty}
 
-\newtheoremstyle{break}% name
-  {}%         Space above, empty = `usual value'
-  {}%         Space below
-  {\itshape}% Body font
-  {}%         Indent amount (empty = no indent, \parindent = para indent)
-  {\bfseries}% Thm head font
-  {}%        Punctuation after thm head
-  {\newline}% Space after thm head: \newline = linebreak
-  {}%         Thm head spec
-
-\newtheoremstyle{defbreak}% name
-  {}%         Space above, empty = `usual value'
-  {}%         Space below
-  {}%         Body font
-  {}%         Indent amount (empty = no indent, \parindent = para indent)
-  {\bfseries}% Thm head font
-  {}%        Punctuation after thm head
-  {\newline}% Space after thm head: \newline = linebreak
-  {}%         Thm head spec
-  
-\newtheoremstyle{rmkbreak}% name
-  {}%         Space above, empty = `usual value'
-  {}%         Space below
-  {}%         Body font
-  {}%         Indent amount (empty = no indent, \parindent = para indent)
-  {\itshape}% Thm head font
-  {:}%        Punctuation after thm head
-  { }% Space after thm head: \newline = linebreak
-  {}%         Thm head spec
-
-\theoremstyle{break}
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem*{proposition}{Proposition}
-\newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{corollary}[theorem]{Corollary}
-
-\theoremstyle{defbreak}
-\newtheorem{defn}[theorem]{Definition}
-\newtheorem*{fact}{Fact}
-\newtheorem{example}[theorem]{Example}
-\newtheorem{problem}[section]{Problem}
-\newtheorem*{solution}{Solution}
-
-\theoremstyle{rmkbreak}
-\newtheorem*{remark}{Remark}
-
-% \renewcommand*{\proofname}{Solution}
-
-%%%% Double line
-\tcolorboxenvironment{theorem}{% `theorem' from `amsthm'
-    blanker,breakable,
-    left=4mm,right=0mm,
-    before skip=15pt,after skip=15pt,
-    borderline west={0.5pt}{0pt}{black},
-    borderline west={0.5pt}{1.5pt}{black},
-}
-\tcolorboxenvironment{defn}{% `definition' from `amsthm'
-    blanker,breakable,
-    left=4mm,right=0mm,
-    before skip=15pt,after skip=15pt,
-    borderline west={0.5pt}{0pt}{black},
-    borderline west={0.5pt}{1.5pt}{black},
-}
-\tcolorboxenvironment{problem}{% `definition' from `amsthm'
-    colback=black!5!white,colframe=black,
-    breakable,arc=1mm,
-    left=2mm,right=2mm,
-    before skip=15pt,after skip=15pt,
-    sharp corners=downhill,
-    boxrule=0.2mm
-}
-
-%%%% Single line
-\tcolorboxenvironment{proposition}{% `proposition' from `amsthm'
-    blanker,breakable,
-    left=4mm,right=0mm,
-    before skip=15pt,after skip=15pt,
-    % borderline west={0.5pt}{0pt}{black},
-}
-\tcolorboxenvironment{corollary}{% `corollary' from `amsthm'
-    blanker,breakable,
-    left=4mm,right=0mm,
-    before skip=15pt,after skip=15pt,
-    % borderline west={0.5pt}{0pt}{black},
-}
-
-%%%% Box or Indent
-\tcolorboxenvironment{example}{% `example' from `amsthm'
-    blanker,breakable,boxsep=2mm,
-    before skip=15pt,after skip=15pt,
-    borderline={0.5pt}{0pt}{black},
-}
-\tcolorboxenvironment{solution}{% `proof' from `amsthm'
-    blanker,breakable,
-    left=4mm,right=0mm,
-    before skip=15pt,after skip=15pt
-}
-\tcolorboxenvironment{proof}{% `proof' from `amsthm'
-    blanker,breakable,
-    left=8mm,right=8mm,
-    before skip=15pt,after skip=15pt
-}
+% \newcommand\TODO[1]{\textcolor{red}{\textbf{#1}}}
+% \newcommand{\cmt}[1]{\text{{\fontfamily{cmtt}\selectfont #1}}}
 
 
 %% FORMATTING
-\pagestyle{fancy}
+% \pagestyle{fancy}
 
-\fancyhf{}
-\newcommand{\makeheader}[2]{
-    \fancyhead[L]{#1}
-    \fancyhead[R]{#2}
-}
-\fancyfoot[R]{Pg. \thepage}
+% \fancyhf{}
+% \newcommand{\makeheader}[2]{
+%     \fancyhead[L]{#1}
+%     \fancyhead[R]{#2}
+% }
+% \fancyfoot[R]{Pg. \thepage}
 
-\setlength{\headheight}{14pt}
+% \setlength{\headheight}{14pt}
 
-\setlength{\parindent}{0pt}
-\setlength{\parskip}{10ex}
+% \setlength{\parindent}{0pt}
+% \setlength{\parskip}{10ex}
 
-\titleformat
-{\section} % command
-{\bfseries\Large\itshape} % format
-{\thesection}{.5em}{} % before-code
-[
-\vspace{-20mm}%
-\rule{0.75\textwidth}{1pt}
-\normalfont\bfseries
-] % after-code
-
-\titleformat
-{\subsection} % command
-{\bfseries\Large\itshape} % format
-{\thesubsection.}{.5em}{} % before-code
-[
-\vspace{-20mm}%
-\rule{0.5\textwidth}{0.75pt}
-\normalfont\bfseries
-] % after-code
-
-\titlespacing*{\section}{0pt}{-15mm}{-10mm}
-\titlespacing*{\subsection}{0pt}{-15mm}{-10mm}
-
-\renewcommand{\emph}[1]{\underline{\bfseries{#1}}}
+% \renewcommand{\emph}[1]{\underline{\bfseries{#1}}}

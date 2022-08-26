@@ -6,22 +6,49 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{mathtools}
-\RequirePackage{amsfonts}
+\RequirePackage{MnSymbol}
+\RequirePackage[mathscr]{eucal}
 
-%% MATH 55A SHORTCUTS
 
-% \newcommand{\inn}[1]{\left\langle #1\right\rangle}
-% \newcommand{\tens}{\otimes}
-\newcommand{\norm}[1]{\left\Vert #1\right\Vert}
-\newcommand{\gdual}[1]{\widehat{ #1 }}
-\newcommand{\gddual}[1]{\widehat{\widehat{ #1 }}}
-\newcommand{\del}{\partial}
+%% Operators
 
-\newcommand{\cl}[1]{\overline{ #1 }}
-\newcommand{\ol}[1]{\overline{ #1 }}
-\newcommand{\ul}[1]{\underline{ #1 }}
+\newcommand{\dmo}{\DeclareMathOperator}
+\dmo{\img}{im}
+\dmo{\id}{id}
+\dmo{\Vect}{Vect}
+\dmo{\Hom}{Hom}
+\dmo{\End}{End}
+\dmo{\Sym}{Sym}
+\dmo{\Aut}{Aut}
+\dmo{\colim}{colim}
+\dmo{\Ext}{Ext}
+\dmo{\Tor}{Tor}
+\dmo{\Th}{Th}
+\dmo{\op}{op}
+\dmo{\Map}{Map}
+\dmo{\coker}{coker}
+\dmo{\Fun}{Fun}
+\dmo{\Spec}{Spec}
+\dmo{\hocolim}{hocolim}
+\dmo{\holim}{holim}
 
-\renewcommand{\P}{\mathcal P}
+\def\cA{\mathcal A}\def\cB{\mathcal B}
+\def\cc{\mathcal C}\def\cC{\mathbf C}
+\def\cd{\mathcal D}
+\def\ce{\mathcal E}\def\cf{\mathcal F}\def\cG{\mathcal G}\def\cH{\mathcal H}
+\def\cI{\mathcal I}\def\cJ{\mathcal J}\def\cK{\mathcal K}\def\cL{\mathcal L}
+\def\cM{\mathcal M}\def\cN{\mathcal N}\def\cO{\mathbf O}\def\cP{\mathcal P}
+\def\cQ{\mathcal Q}\def\cR{\mathcal R}\def\cS{\mathcal S}\def\cT{\mathcal T}
+\def\cU{\mathcal U}\def\cV{\mathcal V}\def\cW{\mathcal W}\def\cX{\mathcal X}
+\def\cY{\mathcal Y}\def\cZ{\mathcal Z}
+
+\def\AA{\mathbb A}\def\BB{\mathbb B}\def\CC{\mathbf C}\def\DD{\mathbb D}
+\def\EE{\mathbb E}\def\FF{\mathbf F}\def\GG{\mathbb G}\def\HH{\mathbb H}
+\def\II{\mathbb I}\def\JJ{\mathbb J}\def\KK{\mathbb K}\def\LL{\mathbb L}
+\def\MM{\mathcal M}\def\NN{\mathbb N}\def\OO{\mathbb O}\def\PP{\mathbf P}
+\def\QQ{\mathbf Q}\def\RR{\mathbf R}\def\SS{\mathbb S}\def\TT{\mathbb T}
+\def\UU{\mathbb U}\def\VV{\mathbb V}\def\WW{\mathbb W}\def\XX{\mathbb X}
+\def\YY{\mathbb Y}\def\ZZ{\mathbf Z}
 
 \newcommand{\mon}{\hookrightarrow}
 \newcommand{\epi}{\twoheadrightarrow}
@@ -29,73 +56,22 @@
 \newcommand{\xto}[1]{\xrightarrow{ #1 }}
 \newcommand{\xTo}[1]{\xRightarrow{ #1 }}
 
-\newcommand{\dmo}{\DeclareMathOperator}
-\dmo{\im}{im}
-\dmo{\id}{id}
-\dmo{\spn}{span}
-\dmo{\sgn}{sgn}
-\dmo{\chr}{char}
-\dmo{\ev}{ev}
-\dmo{\tr}{tr}
-\dmo{\Vect}{Vect}
-\dmo{\Hom}{Hom}
-\dmo{\Mor}{Mor}
-\dmo{\End}{End}
-\dmo{\Sym}{Sym}
-\dmo{\Aut}{Aut}
-\dmo{\rank}{rank}
-\dmo{\lcm}{lcm}
-\dmo{\Stab}{Stab}
-\dmo{\gKer}{gKer}
-\dmo{\evIm}{evIm}
-% \dmo{\nll}{null}
-\dmo{\Ann}{Ann}
-\dmo{\SL}{SL}
-\dmo{\GL}{GL}
-\dmo{\PSL}{PSL}
-\dmo{\PGL}{PGL}
-\dmo{\colim}{colim}
-\dmo{\Ext}{Ext}
-\dmo{\Tor}{Tor}
-\dmo{\op}{op}
-\dmo{\Map}{Map}
-\dmo{\coker}{coker}
-\dmo{\vol}{vol}
-\dmo{\area}{area}
-\dmo{\Sq}{Sq}
-\dmo{\Der}{Der}
-\dmo{\Psh}{Psh}
+\usepackage{amsbsy}
 
-\newcommand{\deriv}[2]{\frac{\text{d} #1}{\text{d} #2}}
-\newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\CP}{\mathbf{CP}}
+\newcommand{\RP}{\mathbf{RP}}
 
-%% Math 231BR Shortcuts
+% \newcommand{\Set}{\mathrm{Set}}
+% \newcommand{\Gra}{\mathrm{Gr}}
+% \newcommand{\GL}{\mathrm{GL}}
+% \newcommand{\gl}{\mathit{gl}}
 
-\newcommand{\tinj}[1][]{\arrow[hook, #1]}
-\newcommand{\tepi}[1][]{\arrow[two heads, #1]}
-\newcommand{\tmon}[1][]{\arrow[tail, #1]}
-\newcommand{\tiso}[1][]{\arrow[rightsquigarrow, #1]}
-\newcommand{\tdash}[1][]{\arrow[dashed, #1]}
-\newcommand{\tmto}[1][]{\arrow[maps to, #1]}
-\newcommand{\tlr}[1][]{\arrow["\lrcorner"{anchor=center, pos=0.125}, draw=none, #1]}
-\newcommand{\tud}[1][]{\arrow["\lrcorner"{anchor=center, pos=0.125, rotate=180}, draw=none, #1]}
-
-\newcommand{\f}{\mathfrak}
-\newcommand{\q}{\mathcal}
-\newcommand{\s}{\mathscr}
-
-\newcommand{\Ab}{\textbf{Ab}}
-\newcommand{\Set}{\textbf{Set}}
-\newcommand{\Cat}{\textbf{Cat}}
-% \renewcommand{\Top}{\textbf{Top}}
-\renewcommand{\Top}{\textbf{Top}}
-\newcommand{\Spaces}{\textbf{Spaces}}
+\newcommand{\Ab}{\mathrm{Ab}}
+\newcommand{\Set}{\mathrm{Set}}
+\newcommand{\Cat}{\mathrm{Cat}}
+% \newcommand{\Top}{\mathrm{Top}}
+\renewcommand{\Top}{\mathrm{Top}}
 \newcommand{\ho}{\text{ho}}
 
-\newcommand{\cpd}{\coprod}
-\newcommand{\ilim}{\varprojlim}
-\newcommand{\dlim}{\varinjlim}
-
-\newcommand{\RP}{\mathbf{RP}}
-\newcommand{\CP}{\mathbf{CP}}
-
+% \newcommand{\ilim}{\varprojlim}
+% \newcommand{\dlim}{\varinjlim}

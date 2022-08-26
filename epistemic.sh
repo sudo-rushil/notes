@@ -13,8 +13,9 @@ rm_course () {
 }
 
 new_hw () { # run from ~/Classes/<course>/HW
-	last_hw=$(ls -t | grep "HW" | head -n1 | grep -oE "\d+")
-	new_num=$(echo "$last_hw + 1" | bc)
+	# last_hw=$(ls -t | grep "HW" | head -n1 | grep -oE "\d+")
+	# new_num=$(echo "$last_hw + 1" | bc)
+	new_num=$2
 	mkdir HW${new_num}
 	cd HW${new_num}
 	cp ../HW${last_hw}/hw${last_hw}.tex hw${new_num}.tex
@@ -50,23 +51,19 @@ ep () {
 			rm_course
 			;;
 		ma)
-			set_course ~/Projects/Live/notes/snippets/Math55
-			cd ~/Classes/Math55B/HW
+			set_course ~/Projects/Live/notes/snippets/Math
+			cd ~/Classes/Math99R/HW
 			current_hw
 			;;
-		at )
-			set_course ~/Projects/Live/notes/snippets/Math231
-			cd ~/Classes/Math231BR/HW
-			current_hw
-			;;
-		fi)
-			set_course ~/Projects/Live/notes/snippets/Stat
-			cd ~/Classes/Stat123/HW
-			current_hw
+		kn)
+			set_course ~/Projects/Live/notes/snippets/Math
+			cd ~/Classes/18.919/Talks
+			cur_tk=$(ls -t | grep "Talk" | head -n1 | grep -oE "\d+")
+			cd Talk${cur_tk}
 			;;
 		st)
 			set_course ~/Projects/Live/notes/snippets/Stat
-			cd ~/Classes/Stat171/HW
+			cd ~/Classes/Stat210/HW
 			current_hw
 			;;
 		cl)
@@ -75,9 +72,9 @@ ep () {
 			rm -f *synctex*
 			latexmk -c &> /dev/null
 			;;
-		# nw)
-		# 	new_hw
-		# 	;;
+		nw)
+			new_hw $2
+			;;
 		-h)
 			help_msg
 			;;

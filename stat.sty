@@ -1,4 +1,4 @@
- \NeedsTeXFormat{LaTeX2e}
+\NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{stat}
 
 %% PACKAGES
@@ -6,14 +6,32 @@
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
 \RequirePackage{mathtools}
-\RequirePackage{amsfonts}
+\RequirePackage{MnSymbol}
+\RequirePackage[mathscr]{eucal}
 
 %% STAT SHORTCUTS
 
-\newcommand{\bracenom}{\genfrac{\lbrace}{\rbrace}{0pt}{}}
-\renewcommand{\N}{\mathcal{N}}
-\newcommand{\LN}{\mathcal{LN}}
+% \renewcommand{\N}{\mathcal{N}}
+% \newcommand{\LN}{\mathcal{LN}}
 \newcommand{\iid}{\overset{\text{i.i.d.}}{\sim}}
+
+\def\cA{\mathcal A}\def\cB{\mathcal B}
+\def\cc{\mathcal C}\def\cC{\mathbf C}
+\def\cd{\mathcal D}
+\def\ce{\mathcal E}\def\cf{\mathcal F}\def\cG{\mathcal G}\def\cH{\mathcal H}
+\def\cI{\mathcal I}\def\cJ{\mathcal J}\def\cK{\mathcal K}\def\cL{\mathcal L}
+\def\cM{\mathcal M}\def\cN{\mathcal N}\def\cO{\mathbf O}\def\cP{\mathcal P}
+\def\cQ{\mathcal Q}\def\cR{\mathcal R}\def\cS{\mathcal S}\def\cT{\mathcal T}
+\def\cU{\mathcal U}\def\cV{\mathcal V}\def\cW{\mathcal W}\def\cX{\mathcal X}
+\def\cY{\mathcal Y}\def\cZ{\mathcal Z}
+
+\def\AA{\mathbb A}\def\BB{\mathbb B}\def\CC{\mathbf C}\def\DD{\mathbb D}
+\def\EE{\mathbb E}\def\FF{\mathbf F}\def\GG{\mathbb G}\def\HH{\mathbb H}
+\def\II{\mathbb I}\def\JJ{\mathbb J}\def\KK{\mathbb K}\def\LL{\mathbb L}
+\def\MM{\mathcal M}\def\NN{\mathbb N}\def\OO{\mathbb O}\def\PP{\mathbb P}
+\def\QQ{\mathbf Q}\def\RR{\mathbf R}\def\SS{\mathbb S}\def\TT{\mathbb T}
+\def\UU{\mathbb U}\def\VV{\mathbb V}\def\WW{\mathbb W}\def\XX{\mathbb X}
+\def\YY{\mathbb Y}\def\ZZ{\mathbf Z}
 
 \newcommand{\dmo}{\DeclareMathOperator}
 \dmo{\Bin}{Bin}
@@ -33,12 +51,9 @@
 \dmo{\Beta}{Beta}
 \dmo{\Gam}{Gamma}
 
-\newcommand{\bm}[1]{\boldsymbol{#1}}
-
-\newcommand{\lag}{\mathcal L}
- 
-\newcommand{\del}{\partial}
+% \newcommand{\bm}[1]{\boldsymbol{#1}}
+% \newcommand{\lag}{\mathcal L}
+% \newcommand{\del}{\partial}
 \newcommand{\deriv}[2]{\frac{\text{d} #1}{\text{d} #2}}
-\newcommand{\dv}[1]{\deriv{}{#1}}
 \newcommand{\pderiv}[2]{\frac{\partial #1}{\partial #2}}
-\newcommand{\pv}[1]{\pderiv{}{#1}}
+\newcommand{\bracenom}{\genfrac{\lbrace}{\rbrace}{0pt}{}}
