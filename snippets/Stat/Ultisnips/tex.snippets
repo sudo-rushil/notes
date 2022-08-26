@@ -149,7 +149,7 @@ endsnippet
 
 context "math()"
 snippet 'dd([A-Za-z])' "d/dx" wrA
-\dv{`!p snip.rv = match.group(1)`}
+\deriv{}{`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
@@ -159,7 +159,7 @@ endsnippet
 
 context "math()"
 snippet 'pp([A-Za-z])' "∂/∂x" wrA
-\pv{`!p snip.rv = match.group(1)`}
+\pderiv{}{`!p snip.rv = match.group(1)`}
 endsnippet
 
 context "math()"
@@ -167,4 +167,8 @@ snippet pr "∂y/∂x" wA
 \pderiv{$1}{$2} $0
 endsnippet
 
+context "math()"
+snippet dd "d" iA
+\,d
+endsnippet
 

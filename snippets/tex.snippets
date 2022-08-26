@@ -266,33 +266,33 @@ snippet set "set" wA
 \left\\{ $1 \right\\}
 endsnippet
 
-context "math()"
-snippet mbb "mathbb" iA
-\mathbb{$1}$0
-endsnippet
-
-context "math()"
-snippet mcal "mathcal" iA
-\mathcal{$1}$0
-endsnippet
-
-context "math()"
-snippet mfrak "mathfrak" iA
-\mathfrak{$1}$0
-endsnippet
+# context "math()"
+# snippet mbb "mathbb" iA
+# \mathbb{$1}$0
+# endsnippet
+#
+# context "math()"
+# snippet mcal "mathcal" iA
+# \mathcal{$1}$0
+# endsnippet
+# 
+# context "math()"
+# snippet mfrak "mathfrak" iA
+# \mathfrak{$1}$0
+# endsnippet
 
 snippet "([A-Za-z])mk" "math mode" rwA
 $`!p snip.rv=match.group(1)`$
 endsnippet
 
 context "math()"
-snippet "([A-Z])mb" "mathbb" riA
-\mathbb{`!p snip.rv=match.group(1)`} 
+snippet "c([c-fA-CG-Z])" "math curly" riA
+\c`!p snip.rv=match.group(1)`
 endsnippet
 
 context "math()"
-snippet "([A-Z])mc" "mathcal" riA
-\mathcal{`!p snip.rv=match.group(1)`} 
+snippet "([A-Z])\1" "math bold" riA
+\\`!p snip.rv=match.group(1) + match.group(1)`
 endsnippet
 
 ## CRITICAL: Requires anything with a slash is literal
@@ -300,7 +300,7 @@ endsnippet
 # priority 1000
 # context "math()"
 # snippet '(?<=\\)(\w+)' "slash-esc" rwA
-# \\`!p snip.rv = match.group(1)` 
+# \\`!p snip.rv = match.group(1) + match.group(1)` 
 # endsnippet
 
 # Delimiters ––––––––––––––––––––––––––––––––––––––––
@@ -323,7 +323,11 @@ snippet lr[ "left[ right]" iA
 \left[ ${1:${VISUAL}} \right] $0
 endsnippet
 
-snippet lra "leftangle rightangle" iA
+snippet lr] "left\Vert right\Vert" iA
+\left\Vert ${1:${VISUAL}} \right\Vert $0
+endsnippet
+
+snippet <> "leftangle rightangle" iA
 \left\langle ${1:${VISUAL}} \right\rangle $0
 endsnippet
 
@@ -349,38 +353,9 @@ snippet fy "forall" iA
 \forall 
 endsnippet
 
-snippet RR "reals" iA
-\R
-endsnippet
-
-snippet ZZ "integers" iA
-\Z
-endsnippet
-
-snippet CC "complex" iA
-\C
-endsnippet
-
 context "math()"
 snippet 0/0 "emptyset" iA
 \emptyset 
-endsnippet
-
-snippet FF "field" iA
-\F
-endsnippet
-
-snippet QQ "rationals" iA
-\Q
-endsnippet
-
-snippet NN "naturals" iA
-\N
-endsnippet
-
-context "math()""
-snippet TT "topology" iA
-\T
 endsnippet
 
 context "math()"
@@ -469,7 +444,7 @@ snippet !! "l" iA
 endsnippet
 
 context "math()"
-snippet OO "\infty" iA
+snippet ∞ "\infty" iA
 \infty 
 endsnippet
 
@@ -588,7 +563,7 @@ endsnippet
 
 # Note: \subset means subset OR equal; proper given by \subsetneq! (ref: Math 55 Slack)
 context "math()"
-snippet cc "subset" Ai
+snippet (( "subset" Ai
 \subset 
 endsnippet
 
@@ -603,12 +578,12 @@ snippet || "mid" iA
 endsnippet
 
 context "math()"
-snippet UU "bigcup" iA
+snippet CUP "bigcup" iA
 \bigcup 
 endsnippet
 
 context "math()"
-snippet NN "bigcap" iA
+snippet CAP "bigcap" iA
 \bigcap 
 endsnippet
 
