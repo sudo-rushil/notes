@@ -61,6 +61,12 @@ ep () {
 			cur_tk=$(ls -t | grep "Talk" | head -n1 | grep -oE "\d+")
 			cd Talk${cur_tk}
 			;;
+		tf)
+			set_course ~/Projects/Live/notes/snippets/Stat
+			cd ~/Classes/Stat110TF/Section
+			cur_sc=$(ls -t | grep "section" | head -n1 | grep -oE "\d+")
+			cd section${cur_sc}
+			;;
 		st)
 			set_course ~/Projects/Live/notes/snippets/Stat
 			cd ~/Classes/Stat210/HW

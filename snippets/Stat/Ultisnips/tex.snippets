@@ -86,6 +86,11 @@ snippet bi "binominal" wA
 endsnippet
 
 context "math()"
+snippet !_! "indep" wA
+\indep 
+endsnippet
+
+context "math()"
 snippet Uf "uniform" wA
 \Unif
 endsnippet
@@ -95,9 +100,19 @@ snippet Gm "gamma" wA
 \Gam
 endsnippet
 
+context "math()"
+snippet :: "colon" iA
+\colon 
+endsnippet
+
+context "math()"
+snippet := "coloneqq" iA
+\coloneqq 
+endsnippet
+
 priority 1200
 context "math()"
-snippet '(?<!\\)(Bern|Bin|Beta|HGeom|Geom|FS|Pois|Var|Expo|SD|LN|Cov|Corr|iid|NHGeom|Mult)' "funcs" rwA
+snippet '(?<!\\)(Bern|Bin|Beta|HGeom|Geom|FS|Pois|Var|Expo|SD|LN|Cov|Corr|iid|NHGeom|Mult|sup|inf)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
