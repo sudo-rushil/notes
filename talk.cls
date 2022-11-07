@@ -105,10 +105,10 @@
 %                  *** End of hyperref stuff ***
 
 %theoremstyle{plain} --- default
-\newtheorem{thm}{Theorem}[section]
+\newtheorem{theorem}{Theorem}[section]
 \newtheorem{cor}{Corollary}[section]
-\newtheorem{prop}{Proposition}[section]
-\newtheorem{lem}{Lemma}[section]
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
 \newtheorem{prob}{Problem}[section]
 \newtheorem{conj}{Conjecture}[section]
 
@@ -128,31 +128,31 @@
 
 %%%% hack to get fullref working correctly
 \makeatletter
-\let\c@obs=\c@thm
-\let\c@cor=\c@thm
-\let\c@prop=\c@thm
-\let\c@lem=\c@thm
-\let\c@prob=\c@thm
-\let\c@con=\c@thm
-\let\c@conj=\c@thm
-\let\c@defn=\c@thm
-\let\c@notn=\c@thm
-\let\c@notns=\c@thm
-\let\c@exmp=\c@thm
-\let\c@ax=\c@thm
-\let\c@pro=\c@thm
-\let\c@ass=\c@thm
-\let\c@warn=\c@thm
-\let\c@rem=\c@thm
-\let\c@sch=\c@thm
-\let\c@equation\c@thm
+\let\c@obs=\c@theorem
+\let\c@cor=\c@theorem
+\let\c@prop=\c@theorem
+\let\c@lem=\c@theorem
+\let\c@prob=\c@theorem
+\let\c@con=\c@theorem
+\let\c@conj=\c@theorem
+\let\c@defn=\c@theorem
+\let\c@notn=\c@theorem
+\let\c@notns=\c@theorem
+\let\c@exmp=\c@theorem
+\let\c@ax=\c@theorem
+\let\c@pro=\c@theorem
+\let\c@ass=\c@theorem
+\let\c@warn=\c@theorem
+\let\c@rem=\c@theorem
+\let\c@sch=\c@theorem
+\let\c@equation\c@theorem
 \numberwithin{equation}{section}
 \makeatother
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\bibliographystyle{plain}
+% \bibliographystyle{plain}
 
 \let\temp\phi
 \let\phi\varphi
