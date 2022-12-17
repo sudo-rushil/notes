@@ -79,7 +79,7 @@
 \makeautorefname{subsubsection}{Section}%
 \makeautorefname{theorem}{Theorem}%
 \makeautorefname{thm}{Theorem}%
-\makeautorefname{cor}{Corollary}%
+\makeautorefname{corollary}{Corollary}%
 \makeautorefname{lem}{Lemma}%
 \makeautorefname{prop}{Proposition}%
 \makeautorefname{pro}{Property}
@@ -106,7 +106,7 @@
 
 %theoremstyle{plain} --- default
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{cor}{Corollary}[section]
+\newtheorem{corollary}{Corollary}[section]
 \newtheorem{proposition}{Proposition}[section]
 \newtheorem{lemma}{Lemma}[section]
 \newtheorem{prob}{Problem}[section]
@@ -129,9 +129,9 @@
 %%%% hack to get fullref working correctly
 \makeatletter
 \let\c@obs=\c@theorem
-\let\c@cor=\c@theorem
-\let\c@prop=\c@theorem
-\let\c@lem=\c@theorem
+\let\c@corollary=\c@theorem
+\let\c@proposition=\c@theorem
+\let\c@lemma=\c@theorem
 \let\c@prob=\c@theorem
 \let\c@con=\c@theorem
 \let\c@conj=\c@theorem

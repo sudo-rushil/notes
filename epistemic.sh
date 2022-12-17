@@ -4,6 +4,10 @@ set_course () {
 	echo "Setting course: $1..."
 
 	rm ~/Documents/Harvard/Classes/current 2> /dev/null
+	### Temporary fix for Galois theory course note texing
+	rm ~/.vim/Ultisnips/tex.snippets 2> /dev/null
+	ln -s ~/Projects/Live/notes/snippets/tex.snippets ~/.vim/Ultisnips/tex.snippets
+	###
 	ln -s $1 ~/Documents/Harvard/Classes/current
 }
 
@@ -50,23 +54,26 @@ ep () {
 		rm)
 			rm_course
 			;;
-		ma)
-			set_course ~/Projects/Live/notes/snippets/Math
-			cd ~/Classes/Math99R/HW
-			current_hw
+		gl)
+			# set_course ~/Projects/Live/notes/snippets/Math
+			rm ~/.vim/Ultisnips/tex.snippets 2> /dev/null
+			rm ~/Classes/current 2> /dev/null
+			ln -s ~/Projects/Live/notes/snippets/Galois/Ultisnips/tex.snippets ~/.vim/Ultisnips
+			cd ~/Classes/Galois2023/lectures
+			git pull
 			;;
-		kn)
+		ma)
 			set_course ~/Projects/Live/notes/snippets/Math
 			cd ~/Classes/18.919/Talks
 			cur_tk=$(ls -t | grep "Talk" | head -n1 | grep -oE "\d+")
 			cd Talk${cur_tk}
 			;;
-		tf)
-			set_course ~/Projects/Live/notes/snippets/Stat
-			cd ~/Classes/Stat110TF/Section
-			cur_sc=$(ls -t | grep "section" | head -n1 | grep -oE "\d+")
-			cd section${cur_sc}
-			;;
+		# tf)
+		# 	set_course ~/Projects/Live/notes/snippets/Stat
+		# 	cd ~/Classes/Stat110TF/Section
+		# 	cur_sc=$(ls -t | grep "section" | head -n1 | grep -oE "\d+")
+		# 	cd section${ccd ur_sc}
+		# 	;;
 		st)
 			set_course ~/Projects/Live/notes/snippets/Stat
 			cd ~/Classes/Stat210/HW

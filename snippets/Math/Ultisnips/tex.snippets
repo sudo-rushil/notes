@@ -299,7 +299,7 @@ endsnippet
 
 context "math()"
 snippet ][ "norm" iA
-\| $1 \| $0
+[[ $1 ]] $0
 endsnippet
 
 # Symbols/Spaces ––––––––––––––––––––––––––––––––––––––––
@@ -321,7 +321,7 @@ snippet 'R(\d|m|n)' "Euclidean space" irA
 endsnippet
 
 context "math()"
-snippet 'S(\d|m|n)' "Spheres" irA
+snippet 'S(\d|n)' "Spheres" irA
 S^`!p snip.rv = match.group(1)` 
 endsnippet
 
@@ -373,7 +373,7 @@ snippet bg "BG" iA
 endsnippet
 
 context "math()"
-snippet '(?<!\\)(ho|Ab|Set|Cat|Top|Spc|Sp|Mod)' "Cats" rwA
+snippet '(?<!\\)(ho|Ab|Set|Cat|Top|Spc|Sch|CAlg|Vect|Sp|Sm|Mod)' "Cats" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
@@ -477,6 +477,12 @@ endsnippet
 # Arrows ––––––––––––––––––––––––––––––––––––––––
 
 priority 100
+
+context "math()"
+snippet />> "closed immersion" iA
+\nhookrightarrow 
+endsnippet
+
 context "math()"
 snippet '(\w{0,1})->' "to" riA
 \xto{`!p snip.rv = match.group(1)`} 
@@ -516,7 +522,7 @@ endsnippet
 
 priority 1200
 context "math()"
-snippet '(?<!\\)(dim|ker|im|id|Hom|Vect|Aut|Sym|Map|Th|Ext|RP|CP|Tor|colim|holim|hocolim)' "funcs" rwA
+snippet '(?<!\\)(lim|dim|ker|im|id|Hom|Bl|proj|Aut|Sym|Map|Th|Ext|RP|CP|Tor|colim|holim|hocolim|spec|spf)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 

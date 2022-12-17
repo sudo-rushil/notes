@@ -9,7 +9,6 @@
 \RequirePackage{MnSymbol}
 \RequirePackage[mathscr]{eucal}
 
-
 %% Operators
 
 \newcommand{\dmo}{\DeclareMathOperator}
@@ -28,16 +27,19 @@
 \dmo{\Map}{Map}
 \dmo{\coker}{coker}
 \dmo{\Fun}{Fun}
-\dmo{\Spec}{Spec}
+\dmo{\spec}{Spec}
+\dmo{\spf}{Spf}
 \dmo{\hocolim}{hocolim}
 \dmo{\holim}{holim}
+\dmo{\Bl}{Bl}
+\dmo{\proj}{Proj}
 
 \def\cA{\mathcal A}\def\cB{\mathcal B}
 \def\cc{\mathcal C}\def\cC{\mathbf C}
 \def\cd{\mathcal D}
 \def\ce{\mathcal E}\def\cf{\mathcal F}\def\cG{\mathcal G}\def\cH{\mathcal H}
 \def\cI{\mathcal I}\def\cJ{\mathcal J}\def\cK{\mathcal K}\def\cL{\mathcal L}
-\def\cM{\mathcal M}\def\cN{\mathcal N}\def\cO{\mathbf O}\def\cP{\mathcal P}
+\def\cM{\mathcal M}\def\cN{\mathcal N}\def\cO{\mathcal O}\def\cP{\mathcal P}
 \def\cQ{\mathcal Q}\def\cR{\mathcal R}\def\cS{\mathcal S}\def\cT{\mathcal T}
 \def\cU{\mathcal U}\def\cV{\mathcal V}\def\cW{\mathcal W}\def\cX{\mathcal X}
 \def\cY{\mathcal Y}\def\cZ{\mathcal Z}
@@ -45,10 +47,12 @@
 \def\AA{\mathbb A}\def\BB{\mathbb B}\def\CC{\mathbf C}\def\DD{\mathbb D}
 \def\EE{\mathbb E}\def\FF{\mathbf F}\def\GG{\mathbb G}\def\HH{\mathbb H}
 \def\II{\mathbb I}\def\JJ{\mathbb J}\def\KK{\mathbb K}\def\LL{\mathbb L}
-\def\MM{\mathcal M}\def\NN{\mathbb N}\def\OO{\mathbb O}\def\PP{\mathbf P}
+\def\MM{\mathcal M}\def\NN{\mathbb N}\def\OO{\mathbb O}\def\PP{\mathbb P}
 \def\QQ{\mathbf Q}\def\RR{\mathbf R}\def\SS{\mathbb S}\def\TT{\mathbb T}
 \def\UU{\mathbb U}\def\VV{\mathbb V}\def\WW{\mathbb W}\def\XX{\mathbb X}
 \def\YY{\mathbb Y}\def\ZZ{\mathbf Z}
+
+\def\fg{\mathfrak g}\def\fm{\mathfrak m}\def\fp{\mathfrak p}\def\fq{\mathfrak q}
 
 \newcommand{\mon}{\hookrightarrow}
 \newcommand{\epi}{\twoheadrightarrow}
@@ -67,15 +71,20 @@
 % \newcommand{\gl}{\mathit{gl}}
 
 \newcommand{\Ab}{\mathbf{Ab}}
+\newcommand{\CAlg}{\mathbf{CAlg}}
 \newcommand{\Vect}{\mathbf{Vect}}
 \newcommand{\Mod}{\mathbf{Mod}}
 \newcommand{\Sp}{\mathbf{Sp}}
 \newcommand{\Set}{\mathbf{Set}}
+\newcommand{\Sch}{\mathbf{Sch}}
+\newcommand{\Sm}{\mathbf{Sm}}
 \newcommand{\Spc}{\mathbf{Spc}}
 \newcommand{\Cat}{\mathbf{Cat}}
 % \newcommand{\Top}{\mathrm{Top}}
 \renewcommand{\Top}{\mathbf{Top}}
 \newcommand{\ho}{\text{ho}}
+
+\let\hat\widehat
 
 % \newcommand{\ilim}{\varprojlim}
 % \newcommand{\dlim}{\varinjlim}
