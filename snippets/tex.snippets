@@ -209,6 +209,16 @@ snippet cs "cases" wA
 \end{cases}
 endsnippet
 
+snippet ldm "Labeled Math" bA
+\begin{equation}\label{eq:$1}
+	${2:${VISUAL}}
+\end{equation} $0
+endsnippet
+
+snippet rq "Reference equation" wA
+\eqref{eq:$1} 
+endsnippet
+
 snippet dm "Math" bA
 \[
 	${1:${VISUAL}}
@@ -238,8 +248,8 @@ snippet tt "text" iA
 endsnippet
 
 context "math()"
-snippet bf "textbf" iA
-\textbf{$1} 
+snippet bf "mathbf" iA
+\mathbf{$1} 
 endsnippet
 
 #snippet tt "texttt" wA
@@ -293,6 +303,11 @@ endsnippet
 context "math()"
 snippet "([A-Z])\1" "math bold" riA
 \\`!p snip.rv=match.group(1) + match.group(1)` 
+endsnippet
+
+context "math()"
+snippet '(?<!\\)(fg|fm|fp|fq)' "math frak" rwA
+\\`!p snip.rv = match.group(1)` 
 endsnippet
 
 ## CRITICAL: Requires anything with a slash is literal

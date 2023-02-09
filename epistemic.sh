@@ -62,21 +62,31 @@ ep () {
 			cd ~/Classes/Galois2023/lectures
 			git pull
 			;;
-		ma)
-			set_course ~/Projects/Live/notes/snippets/Math
-			cd ~/Classes/18.919/Talks
-			cur_tk=$(ls -t | grep "Talk" | head -n1 | grep -oE "\d+")
-			cd Talk${cur_tk}
-			;;
+		# ma)
+		# 	set_course ~/Projects/Live/notes/snippets/Math
+		# 	cd ~/Classes/18.919/Talks
+		# 	cur_tk=$(ls -t | grep "Talk" | head -n1 | grep -oE "\d+")
+		# 	cd Talk${cur_tk}
+		# 	;;
 		# tf)
 		# 	set_course ~/Projects/Live/notes/snippets/Stat
 		# 	cd ~/Classes/Stat110TF/Section
 		# 	cur_sc=$(ls -t | grep "section" | head -n1 | grep -oE "\d+")
 		# 	cd section${ccd ur_sc}
 		# 	;;
-		st)
+		18)
+			set_course ~/Projects/Live/notes/snippets/Math
+			cd ~/Classes/18.726/HW
+			current_hw
+			;;
+		11)
 			set_course ~/Projects/Live/notes/snippets/Stat
-			cd ~/Classes/Stat210/HW
+			cd ~/Classes/Stat111/HW
+			current_hw
+			;;
+		22)
+			set_course ~/Projects/Live/notes/snippets/Math
+			cd ~/Classes/Math222/HW
 			current_hw
 			;;
 		cl)
