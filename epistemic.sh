@@ -62,33 +62,45 @@ ep () {
 			cd ~/Classes/Galois2023/lectures
 			git pull
 			;;
+		ch)
+			# set_course ~/Projects/Live/notes/snippets/Math
+			rm ~/.vim/Ultisnips/tex.snippets 2> /dev/null
+			rm ~/Classes/current 2> /dev/null
+			ln -s ~/Projects/Live/notes/snippets/UChicago/Ultisnips/tex.snippets ~/.vim/Ultisnips
+			cd ~/Classes/UChicago/paper
+			;;
 		# ma)
 		# 	set_course ~/Projects/Live/notes/snippets/Math
 		# 	cd ~/Classes/18.919/Talks
 		# 	cur_tk=$(ls -t | grep "Talk" | head -n1 | grep -oE "\d+")
 		# 	cd Talk${cur_tk}
 		# 	;;
-		# tf)
-		# 	set_course ~/Projects/Live/notes/snippets/Stat
-		# 	cd ~/Classes/Stat110TF/Section
-		# 	cur_sc=$(ls -t | grep "section" | head -n1 | grep -oE "\d+")
-		# 	cd section${ccd ur_sc}
-		# 	;;
+		tf)
+			set_course ~/Projects/Live/notes/snippets/Stat
+			cd ~/Classes/Stat110TF/Section
+			cur_sc=$(ls -t | grep "section" | head -n1 | grep -oE "\d+")
+			cd section${cur_sc}
+			;;
 		18)
 			set_course ~/Projects/Live/notes/snippets/Math
-			cd ~/Classes/18.726/HW
+			cd ~/Classes/18.965/HW
 			current_hw
 			;;
-		11)
+		21)
 			set_course ~/Projects/Live/notes/snippets/Stat
-			cd ~/Classes/Stat111/HW
+			cd ~/Classes/Stat211/HW
 			current_hw
 			;;
-		22)
+		28)
 			set_course ~/Projects/Live/notes/snippets/Math
-			cd ~/Classes/Math222/HW
+			cd ~/Classes/Math289Y/HW
 			current_hw
 			;;
+		# 22)
+		# 	set_course ~/Projects/Live/notes/snippets/Math
+		# 	cd ~/Classes/Math222/HW
+		# 	current_hw
+		# 	;;
 		cl)
 			# Run *IN* directory!
 			echo "Cleaning build files..."

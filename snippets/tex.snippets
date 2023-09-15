@@ -306,7 +306,7 @@ snippet "([A-Z])\1" "math bold" riA
 endsnippet
 
 context "math()"
-snippet '(?<!\\)(fg|fm|fp|fq)' "math frak" rwA
+snippet '(?<!\\)(fg|fm|fp|fq|ft)' "math frak" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
@@ -464,8 +464,8 @@ snippet ∞ "\infty" iA
 endsnippet
 
 context "math()"
-snippet ... "ldots" iA
-\ldots 
+snippet ... "dots" iA
+\dots 
 endsnippet
 
 priority 10

@@ -177,6 +177,12 @@ else:
 `$2
 endsnippet
 
+snippet qn "Equation" bA
+\begin{equation}
+	$1
+\end{equation} 
+endsnippet
+
 snippet al "Align" bA
 \begin{align*}
 	${1:${VISUAL}}
@@ -188,11 +194,6 @@ snippet bn "big function" bA
 	$1 \colon $2 &\longrightarrow $3 \\\\
 	$4 &\longmapsto $0
 .\end{align*}
-endsnippet
-
-context "math()"
-snippet bx "Boxed math" wA
-\boxed{$1}
 endsnippet
 
 context "math()"

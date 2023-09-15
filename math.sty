@@ -7,13 +7,14 @@
 \RequirePackage{amssymb}
 \RequirePackage{mathtools}
 \RequirePackage{MnSymbol}
-\RequirePackage[mathscr]{eucal}
+% \RequirePackage[mathscr]{eucal}
 
 %% Operators
 
 \newcommand{\dmo}{\DeclareMathOperator}
 \dmo{\im}{im}
 \dmo{\id}{id}
+\dmo{\rk}{rk}
 \dmo{\res}{res}
 \dmo{\Hom}{Hom}
 \dmo{\End}{End}
@@ -37,32 +38,45 @@
 \dmo{\thh}{THH}
 \dmo{\hh}{HH}
 \dmo{\Supp}{Supp}
+\dmo{\Cl}{Cl}
+\dmo{\Pic}{Pic}
+\dmo{\NS}{NS}
+\dmo{\divv}{div}
+\dmo{\degg}{deg}
+\renewcommand{\deg}{\degg}
 
 \dmo{\Sp}{Sp}
 \dmo{\GL}{GL}
 \dmo{\SL}{SL}
+\dmo{\PGL}{PGL}
 \dmo{\SO}{SO}
+
+% Changes:
+% (1) Commented out MnSymbol and eucal
+% (2) Changed SCR for cF, cO, cL
+% (3) Commented out AMSFonts and old font
 
 \def\cA{\mathcal A}\def\cB{\mathcal B}
 \def\cc{\mathcal C}\def\cC{\mathcal C}
 \def\cd{\mathcal D}
-\def\ce{\mathcal E}\def\cf{\mathcal F}\def\cF{\mathcal F}
+\def\ce{\mathcal E}\def\cf{\mathcal F}\def\cF{\mathscr F}
 \def\cG{\mathcal G}\def\cH{\mathcal H}
-\def\cI{\mathcal I}\def\cJ{\mathcal J}\def\cK{\mathcal K}\def\cL{\mathcal L}
-\def\cM{\mathcal M}\def\cN{\mathcal N}\def\cO{\mathcal O}\def\cP{\mathcal P}
+\def\cI{\mathscr I}\def\cJ{\mathcal J}\def\cK{\mathcal K}\def\cL{\mathscr L}
+\def\cM{\mathscr M}\def\cN{\mathscr N}\def\cO{\mathscr O}\def\cP{\mathcal P}
 \def\cQ{\mathcal Q}\def\cR{\mathcal R}\def\cS{\mathcal S}\def\cT{\mathcal T}
-\def\cU{\mathcal U}\def\cV{\mathcal V}\def\cW{\mathcal W}\def\cX{\mathcal X}
+\def\cU{\mathscr U}\def\cV{\mathcal V}\def\cW{\mathcal W}\def\cX{\mathcal X}
 \def\cY{\mathcal Y}\def\cZ{\mathcal Z}
 
 \def\AA{\mathbb A}\def\BB{\mathbb B}\def\CC{\mathbf C}\def\DD{\mathbb D}
-\def\EE{\mathbf E}\def\FF{\mathbf F}\def\GG{\mathbb G}\def\HH{\mathbb H}
+\def\EE{\mathbf E}\def\FF{\mathbf F}\def\GG{\mathbf G}\def\HH{\mathbb H}
 \def\II{\mathbb I}\def\JJ{\mathbb J}\def\KK{\mathbb K}\def\LL{\mathbf L}
-\def\MM{\mathcal M}\def\NN{\mathbb N}\def\OO{\mathrm O}\def\PP{\mathbb P}
+\def\MM{\mathcal M}\def\NN{\mathbb N}\def\OO{\mathrm O}\def\PP{\mathbf P}
 \def\QQ{\mathbf Q}\def\RR{\mathbf R}\def\SS{\mathbb S}\def\TT{\mathbb T}
 \def\UU{\mathbb U}\def\VV{\mathbb V}\def\WW{\mathbb W}\def\XX{\mathbb X}
 \def\YY{\mathbb Y}\def\ZZ{\mathbf Z}
 
 \def\fg{\mathfrak g}\def\fm{\mathfrak m}\def\fp{\mathfrak p}\def\fq{\mathfrak q}
+\def\ft{\mathfrak t}
 
 \newcommand{\mon}{\hookrightarrow}
 \newcommand{\epi}{\twoheadrightarrow}
@@ -70,7 +84,7 @@
 \newcommand{\xto}[1]{\xrightarrow{ #1 }}
 \newcommand{\xTo}[1]{\xRightarrow{ #1 }}
 
-\usepackage{amsbsy}
+% \usepackage{amsbsy}
 
 \newcommand{\CP}{\mathbf{CP}}
 \newcommand{\RP}{\mathbf{RP}}
@@ -94,8 +108,8 @@
 \newcommand{\Sm}{\mathbf{Sm}}
 \newcommand{\Spc}{\mathbf{Spc}}
 \newcommand{\Cat}{\mathbf{Cat}}
-% \newcommand{\Top}{\mathrm{Top}}
-\renewcommand{\Top}{\mathbf{Top}}
+% \newcommand{\Top}{\mathbf{Top}}
+% \renewcommand{\Top}{\mathbf{Top}}
 \newcommand{\ho}{\text{ho}}
 
 \let\hat\widehat

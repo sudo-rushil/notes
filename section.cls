@@ -20,6 +20,7 @@
 \RequirePackage{quiver}
 \RequirePackage{hyperref}
 \RequirePackage{csquotes}
+\RequirePackage{etoolbox}
 \RequirePackage[shortlabels]{enumitem} % Lettered lists
 \RequirePackage{lmodern}
 \RequirePackage{pdfpages}
@@ -86,3 +87,7 @@
 }
 
 % \renewcommand{\emph}[1]{\underline{\bfseries{#1}}}
+
+% \newcommand\answer{\ifanswers\color{red}}
+% \let\endanswer{\else\pagebreak\fi}
+

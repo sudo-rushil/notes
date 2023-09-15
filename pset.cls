@@ -26,8 +26,10 @@ sorting=ynt
 \RequirePackage[shortlabels]{enumitem} % Lettered lists
 \RequirePackage{lmodern}
 
-\RequirePackage{libertine}
-\RequirePackage[libertine]{newtxmath}
+% \RequirePackage{libertine}
+% \RequirePackage[libertine]{newtxmath}
+
+\RequirePackage{newpxtext,newpxmath}
 
 \let\temp\phi
 \let\phi\varphi

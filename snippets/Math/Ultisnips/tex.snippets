@@ -406,7 +406,7 @@ endsnippet
 
 context "math()"
 snippet del "del" iA
-\partial
+\partial 
 endsnippet
 
 context "math()"
@@ -440,6 +440,11 @@ endsnippet
 context "math()"
 snippet ss "smash" iA
 \wedge  
+endsnippet
+
+context "math()"
+snippet AA "wedge" iA
+\bigwedge 
 endsnippet
 
 context "math()"
@@ -542,13 +547,18 @@ endsnippet
 
 priority 1200
 context "math()"
-snippet '(?<!\\)(lim|dim|res|ker|im|id|Hom|Bl|proj|Aut|Sym|Map|Th|Ext|RP|CP|GL|SL|Tor|colim|holim|hocolim|spec|spf)' "funcs" rwA
+snippet '(?<!\\)(lim|dim|res|det|deg|ker|im|id|Hom|Bl|proj|Aut|Sym|Map|Th|Ext|RP|CP|GL|SL|Cl|Pic|Tor|colim|holim|hocolim|spec|spf)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
 context "math()"
 snippet ckr "cokernel" wA
 \coker 
+endsnippet
+
+context "math()"
+snippet div "div" wA
+\divv 
 endsnippet
 
 context "math()"
