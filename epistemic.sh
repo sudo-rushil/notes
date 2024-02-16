@@ -81,19 +81,24 @@ ep () {
 			cur_sc=$(ls -t | grep "section" | head -n1 | grep -oE "\d+")
 			cd section${cur_sc}
 			;;
-		18)
-			set_course ~/Projects/Live/notes/snippets/Math
-			cd ~/Classes/18.965/HW
+		17)
+			set_course ~/Projects/Live/notes/snippets/Stat
+			cd ~/Classes/18.676/HW
+			current_hw
+			;;
+		15)
+			set_course ~/Projects/Live/notes/snippets/Stat
+			cd ~/Classes/18.656/HW
 			current_hw
 			;;
 		21)
-			set_course ~/Projects/Live/notes/snippets/Stat
-			cd ~/Classes/Stat211/HW
+			set_course ~/Projects/Live/notes/snippets/Math
+			cd ~/Classes/Math213BR/HW
 			current_hw
 			;;
-		28)
-			set_course ~/Projects/Live/notes/snippets/Math
-			cd ~/Classes/Math289Y/HW
+		29)
+			set_course ~/Projects/Live/notes/snippets/Stat
+			cd ~/Classes/Stat291/HW
 			current_hw
 			;;
 		# 22)

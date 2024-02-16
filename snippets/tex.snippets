@@ -176,8 +176,8 @@ endsnippet
 
 snippet mk "Math" wA
 $${1}$`!p
-if t[2] and t[2][0] not in ',.?- :;)':
-# [',', '.', '?', '-', ' ', ':', ';', ')']:
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ', ':', ';', ')', "'"]:
+#',.?- :;)':
 	snip.rv = ' '
 else:
 	snip.rv = ''
@@ -305,11 +305,6 @@ snippet "([A-Z])\1" "math bold" riA
 \\`!p snip.rv=match.group(1) + match.group(1)` 
 endsnippet
 
-context "math()"
-snippet '(?<!\\)(fg|fm|fp|fq|ft)' "math frak" rwA
-\\`!p snip.rv = match.group(1)` 
-endsnippet
-
 ## CRITICAL: Requires anything with a slash is literal
 
 # priority 1000
@@ -338,8 +333,9 @@ snippet lr[ "left[ right]" iA
 \left[ ${1:${VISUAL}} \right] $0
 endsnippet
 
-snippet lr] "left\Vert right\Vert" iA
-\left\Vert ${1:${VISUAL}} \right\Vert $0
+#snippet lr] "left\Vert right\Vert" iA
+snippet !! "left\Vert right\Vert" iA
+\left\| ${1:${VISUAL}} \right\| $0
 endsnippet
 
 snippet <> "leftangle rightangle" iA
@@ -347,12 +343,12 @@ snippet <> "leftangle rightangle" iA
 endsnippet
 
 context "math()"
-snippet lr_ "ceil" wA
+snippet lr^ "ceil" wA
 \left\lceil $1 \right\rceil $0
 endsnippet
 
 context "math()"
-snippet lr^ "floor" wA
+snippet lr_ "floor" wA
 \left\lfloor $1 \right\rfloor $0
 endsnippet
 
@@ -453,10 +449,10 @@ snippet vphi "varphi" iA
 \varphi 
 endsnippet
 
-context "math()"
-snippet !! "l" iA
-\ell 
-endsnippet
+# context "math()"
+# snippet !! "l" iA
+# \ell 
+# endsnippet
 
 context "math()"
 snippet ∞ "\infty" iA
@@ -475,6 +471,11 @@ snippet "bar" "bar" riA
 endsnippet
 
 context "math()"
+snippet "dot" "dot" riA
+\dot{$1} 
+endsnippet
+
+context "math()"
 snippet "hat" "hat" riA
 \hat{$1}$0
 endsnippet
@@ -483,6 +484,11 @@ priority 100
 context "math()"
 snippet "([a-zA-Z])bar" "bar" riA
 \overline{`!p snip.rv=match.group(1)`}
+endsnippet
+
+context "math()"
+snippet "([a-zA-Z])dot" "dot" riA
+\dot{`!p snip.rv=match.group(1)`}
 endsnippet
 
 context "math()"

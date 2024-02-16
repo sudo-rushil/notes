@@ -310,6 +310,16 @@ snippet mm3 "3 dim matrix" wA
 $0
 endsnippet
 
+context "math()"
+snippet rm "mathrm" iA
+\mathrm{$1} $0
+endsnippet
+
+context "math()"
+snippet '(?<!\\)(fg|fm|fp|fq|ft)' "math frak" rwA
+\\`!p snip.rv = match.group(1)` 
+endsnippet
+
 # Delimiter ––––––––––––––––––––––––––––––––––––––––
 
 context "math()"
@@ -468,7 +478,7 @@ snippet ul "underline" wA
 endsnippet
 
 context "math()"
-snippet tl "underline" wA
+snippet tl "underline" iA
 \tilde{$1}
 endsnippet
 
@@ -509,8 +519,8 @@ snippet />> "closed immersion" iA
 endsnippet
 
 context "math()"
-snippet '(\w{0,1})->' "to" riA
-\xto{`!p snip.rv = match.group(1)`} 
+snippet >> "to" iA
+\xto{} 
 endsnippet
 
 context "math()"
@@ -547,7 +557,7 @@ endsnippet
 
 priority 1200
 context "math()"
-snippet '(?<!\\)(lim|dim|res|det|deg|ker|im|id|Hom|Bl|proj|Aut|Sym|Map|Th|Ext|RP|CP|GL|SL|Cl|Pic|Tor|colim|holim|hocolim|spec|spf)' "funcs" rwA
+snippet '(?<!\\)(xi|lim|nabla|dim|res|det|deg|ker|im|id|Hom|Bl|proj|Aut|Sym|Map|Th|Ext|RP|CP|GL|SL|Cl|Pic|Tor|colim|holim|hocolim|spec|spf|sup)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
@@ -564,6 +574,16 @@ endsnippet
 context "math()"
 snippet cpd "coprod" wA
 \coprod 
+endsnippet
+
+context "math()"
+snippet ifn "inf" wA
+\inf 
+endsnippet
+
+context "math()"
+snippet --- "setminus" iA
+\setminus 
 endsnippet
 
 

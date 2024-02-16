@@ -87,9 +87,9 @@
 \makeautorefname{defn}{Definition}%
 \makeautorefname{notn}{Notation}
 \makeautorefname{notns}{Notations}
-\makeautorefname{rem}{Remark}%
+\makeautorefname{remark}{Remark}%
 \makeautorefname{quest}{Question}%
-\makeautorefname{exmp}{Example}%
+\makeautorefname{example}{Example}%
 \makeautorefname{ax}{Axiom}%
 \makeautorefname{claim}{Claim}%
 \makeautorefname{ass}{Assumption}%
@@ -118,12 +118,12 @@
 \newtheorem{asss}{Assumptions}[section]
 \newtheorem{ax}{Axiom}[section]
 \newtheorem{con}{Construction}[section]
-\newtheorem{exmp}{Example}[section]
+\newtheorem{example}{Example}[section]
 \newtheorem{notn}{Notation}[section]
 \newtheorem{notns}{Notations}[section]
 \newtheorem{pro}{Property}[section]
 \newtheorem{quest}{Question}[section]
-\newtheorem{rem}{Remark}[section]
+\newtheorem{remark}{Remark}[section]
 \newtheorem{warn}{Warning}[section]
 
 %%%% hack to get fullref working correctly

@@ -11,7 +11,7 @@
 \RequirePackage{amsfonts}
 \RequirePackage{mathrsfs}
 \RequirePackage[margin=1in]{geometry}
-\RequirePackage[most]{tcolorbox}
+\RequirePackage[most, breakable]{tcolorbox}
 \RequirePackage{titlesec}
 \RequirePackage{fancyhdr}
 \RequirePackage{comment}
@@ -27,7 +27,7 @@ sorting=ynt
 \RequirePackage{lmodern}
 
 % \RequirePackage{libertine}
-% \RequirePackage[libertine]{newtxmath}
+% \RequirePackage[vvarbb, cmintegrals, libertine]{newtxmath}
 
 \RequirePackage{newpxtext,newpxmath}
 
@@ -89,7 +89,8 @@ sorting=ynt
 \newtheorem{defn}[theorem]{Definition}
 \newtheorem*{fact}{Fact}
 \newtheorem{example}[theorem]{Example}
-\newtheorem{problem}[section]{Problem}
+\newtheorem{problem}{Problem}
+% \newtheorem{problem}[section]{Problem}
 \newtheorem*{solution}{Solution}
 
 \theoremstyle{rmkbreak}

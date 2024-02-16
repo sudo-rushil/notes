@@ -81,6 +81,11 @@ endsnippet
 # Functions ––––––––––––––––––––––––––––––––––––––––
 
 context "math()"
+snippet bs "boldsymbol" iA
+\bs{$1} 
+endsnippet
+
+context "math()"
 snippet bi "binominal" wA
 \binom{$1}{$2} 
 endsnippet
@@ -88,6 +93,16 @@ endsnippet
 context "math()"
 snippet !_! "indep" wA
 \indep 
+endsnippet
+
+context "math()"
+snippet sgn "sign" wA
+\sgn 
+endsnippet
+
+context "math()"
+snippet ox "tensor" iA
+\otimes  
 endsnippet
 
 context "math()"
@@ -114,6 +129,11 @@ priority 1200
 context "math()"
 snippet '(?<!\\)(Bern|Bin|Beta|HGeom|Geom|FS|Pois|Var|Expo|SD|LN|Cauchy|Cov|Corr|iid|NHGeom|Mult|sup|inf|Wei)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
+endsnippet
+
+context "math()"
+snippet tl "underline" iA
+\tilde{$1}
 endsnippet
 
 # Matrices ––––––––––––––––––––––––––––––––––––––––
@@ -177,18 +197,18 @@ snippet dr "dy/dx" wA
 endsnippet
 
 context "math()"
-snippet 'pp([A-Za-z])' "∂/∂x" wrA
-\pderiv{}{`!p snip.rv = match.group(1)`}
+snippet del "∂/∂x" iA
+\partial 
 endsnippet
 
 context "math()"
-snippet pr "∂y/∂x" wA
+snippet pr "∂y/∂x" iA
 \pderiv{$1}{$2} $0
 endsnippet
 
 context "math()"
 snippet dd "d" iA
-\,d
+\d 
 endsnippet
 
 context "math()"
@@ -199,6 +219,11 @@ endsnippet
 context "math()"
 snippet lf "liminf" iA
 \liminf_{$1 \to $2} $0
+endsnippet
+
+context "math()"
+snippet "L([a-z0-9])" "Lp" riA
+\left\| $1 \right\|_{L^{`!p snip.rv=match.group(1)`}} 
 endsnippet
 
 # Arrows ––––––––––––––––––––––––––––––––––––––––––––
@@ -220,8 +245,13 @@ snippet D>> "distribution convergence" iA
 endsnippet
 
 context "math()"
-snippet -> "to" iA
-\xto{}  
+snippet >> "to" iA
+\xto{} 
+endsnippet
+
+context "math()"
+snippet !> "to" iA
+\mapsto 
 endsnippet
 
 context "math()"
