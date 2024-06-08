@@ -6,6 +6,8 @@
 \LoadClass[11pt]{article}
 \RequirePackage[utf8]{inputenc}
 \RequirePackage[T1]{fontenc}
+
+\RequirePackage{microtype}
 \RequirePackage[english]{babel}
 \RequirePackage{amsthm}
 \RequirePackage{amsfonts}
@@ -34,6 +36,10 @@ sorting=ynt
 \let\temp\phi
 \let\phi\varphi
 \let\varphi\temp
+
+\let\temp\epsilon
+\let\epsilon\varepsilon
+\let\varepsilon\temp
 
 \newcommand\TODO[1]{\textcolor{red}{\textbf{#1}}}
 

@@ -25,7 +25,7 @@ endsnippet
 
 context "text()"
 snippet iid "iid" wA
-i.i.d.\\
+i.i.d.\\ 
 endsnippet
 
 context "text()"
@@ -44,23 +44,28 @@ Markov chain
 endsnippet
 
 context "text()"
-snippet prc "process" wA
-process
-endsnippet
-
-context "text()"
-snippet prob. "probability" wA
+snippet prb "probability" wA
 probability
 endsnippet
 
 context "text()"
 snippet rv "random variable" wA
-r.v.
+r.v.\\ 
 endsnippet
 
 context "text()"
 snippet r.v "random variable" wA
 random variable
+endsnippet
+
+context "text()"
+snippet wp "with probability" wA
+w.p.\\ 
+endsnippet
+
+context "text()"
+snippet wp "with probability" wA
+with probability 
 endsnippet
 
 context "text()"
@@ -121,19 +126,63 @@ snippet :: "colon" iA
 endsnippet
 
 context "math()"
+snippet << "much less" iA
+\ll 
+endsnippet
+
+context "math()"
+snippet <! "contiguous" iA
+\triangleleft 
+endsnippet
+
+context "math()"
 snippet := "coloneqq" iA
 \coloneqq 
 endsnippet
 
 priority 1200
 context "math()"
-snippet '(?<!\\)(Bern|Bin|Beta|HGeom|Geom|FS|Pois|Var|Expo|SD|LN|Cauchy|Cov|Corr|iid|NHGeom|Mult|sup|inf|Wei)' "funcs" rwA
+snippet '(?<!\\)(Bern|Bin|Beta|HGeom|Geom|FS|Pois|Var|Expo|SD|LN|Cauchy|Cov|Corr|iid|NHGeom|Mult|sup|Wei)' "funcs" rwA
 \\`!p snip.rv = match.group(1)` 
 endsnippet
 
 context "math()"
-snippet tl "underline" iA
+snippet tl "tilde" iA
 \tilde{$1}
+endsnippet
+
+context "math()"
+snippet '(?<!\\)(nabla|dim|det|id)' "funcs" rwA
+\\`!p snip.rv = match.group(1)` 
+endsnippet
+
+context "math()"
+snippet ifn "inf" wA
+\inf 
+endsnippet
+
+context "math()"
+snippet --- "setminus" iA
+\setminus 
+endsnippet
+
+# Stat 291 ––––––––––––––––––––––––––––––––––––––––
+
+context "math()"
+snippet PH "p-spin Hamiltonian" iA
+H_{N,p}
+endsnippet
+
+context "math()"
+snippet TH "tensor PCA Hamiltonian" iA
+\hat{H}_{N,p}
+endsnippet
+
+
+# spherical derivatives
+context "math()"
+snippet '(?<!\\)(rad|sph|shhe|tnh|GOE|Crt|Tr)' "funcs" rwA
+\\`!p snip.rv = match.group(1)` 
 endsnippet
 
 # Matrices ––––––––––––––––––––––––––––––––––––––––
@@ -263,4 +312,5 @@ context "math()"
 snippet To "to" iA
 \xTo{$1} 
 endsnippet
+
 
