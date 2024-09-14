@@ -4,6 +4,8 @@
 
 **Author:** Rushil Mallarapu
 
+Note: version of Sioyek used was 1.1.0 (2022-02-18), definitely don't use that and use Sioyek 2.0.0 instead!
+
 <!-- Installing the class
 Drag the `.cls` file into your the folder of your current LaTeX project. If you want the class to be available for all projects on your system, drag the `.cls` file into your LaTeX document tree (your `texmf` folder). Note that this might be different depending on different versions of TeX. On Mac, find your `texmf` folder by running `kpsewhich -var-value=TEXMFHOME`. Then, directory `.../texmf/tex/latex/notes` to a `notes` folder which will hold the `.cls` file. 
 
